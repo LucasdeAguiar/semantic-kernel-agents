@@ -2,12 +2,21 @@ import asyncio
 import logging
 from pathlib import Path
 
+from dotenv import load_dotenv
+import os
+
 from semantic_kernel import Kernel
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
+
 from orchestrator.triage_agent import TriageAgent
 from agents.agent_loader import carregar_agentes_dinamicamente
+
 from core.memory_manager import ChatHistoryManager
 from core.function_caller import setup_default_functions
+
+load_dotenv()
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 
 # Configurar logging mais limpo
 logging.basicConfig(
@@ -28,10 +37,6 @@ logging.getLogger('semantic_kernel').setLevel(logging.WARNING)
 # Manter logs importantes dos agentes
 logging.getLogger('orchestrator.triage_agent').setLevel(logging.INFO)
 logging.getLogger('agents.agent_loader').setLevel(logging.INFO)
-
-# SUA CHAVE API OPENAI
-OPENAI_API_KEY = "openaikey"
-
 
 async def main():
     """
@@ -151,10 +156,9 @@ if __name__ == "__main__":
     if not verificar_dependencias():
         exit(1)
     
-    # Verificar se a chave API está configurada
-    if not OPENAI_API_KEY or OPENAI_API_KEY == "SUA_OPENAI_API_KEY":
-        print("⚠️ ATENÇÃO: Configure sua chave OpenAI API no arquivo main.py")
-        print("🔑 Substitua OPENAI_API_KEY pela sua chave real")
+    if not OPENAI_API_KEY:
+        print("⚠️ ATENÇÃO: A variável OPENAI_API_KEY não foi encontrada no .env")
+        print("🔑 Crie um arquivo .env com a chave OPENAI_API_KEY=...")
         
         # Permitir continuar mesmo sem chave para teste da estrutura
         resposta = input("Continuar mesmo assim? (s/N): ")

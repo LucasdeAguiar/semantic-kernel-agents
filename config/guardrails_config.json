@@ -1,0 +1,8 @@
+[
+  {
+    "name": "FoodGuardrail",
+    "description": "Bloqueia qualquer menção a alimentos ou tópicos relacionados à comida",
+    "type": "semantic",
+    "enabled": true
+  }
+]

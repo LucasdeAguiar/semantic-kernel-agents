@@ -11,6 +11,7 @@ from semantic_kernel.contents import ChatMessageContent, AuthorRole
 
 from core.memory_manager import ChatHistoryManager
 from core.moderation import ContentModerator
+from core.guardrails import GuardrailsManager
 
 import logging
 
@@ -29,8 +30,10 @@ class TriageAgent:
         self.specialist_agents = {}
         self.handoff_orchestration = None
         self.runtime = None
+
         self.memory_manager = ChatHistoryManager()
         self.moderator = ContentModerator(api_key=self.api_key)
+        self.guardrails = GuardrailsManager(api_key=self.api_key)
 
         self._setup_agents()
         self._setup_handoff_orchestration()
@@ -154,6 +157,18 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
         try:
             if not self.runtime:
                 self.iniciar_runtime()
+
+            # 1️⃣ Verificar se a mensagem viola algum guardrail dinâmico
+            guardrail_result = self.guardrails.analisar_mensagem(mensagem)
+            if guardrail_result.blocked:
+                blocked_message = ChatMessageContent(
+                    role=AuthorRole.ASSISTANT,
+                    content=f"⛔ Sua mensagem foi bloqueada por regras de segurança ({guardrail_result.guardrail_name}): {guardrail_result.reason}",
+                    name="Sistema"
+                )
+                self.memory_manager.add_message(blocked_message)
+                print(f"🤖 Sistema: {blocked_message.content}")
+                return blocked_message.content
 
             # Verificar moderação ANTES de processar
             moderation_result = self.moderator.analisar_mensagem(mensagem)
