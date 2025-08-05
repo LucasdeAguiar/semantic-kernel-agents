@@ -8,7 +8,10 @@ from semantic_kernel.agents import ChatCompletionAgent, HandoffOrchestration, Or
 from semantic_kernel.agents.runtime import InProcessRuntime
 from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
 from semantic_kernel.contents import ChatMessageContent, AuthorRole
+
 from core.memory_manager import ChatHistoryManager
+from core.moderation import ContentModerator
+
 import logging
 
 logger = logging.getLogger(__name__)
@@ -27,6 +30,8 @@ class TriageAgent:
         self.handoff_orchestration = None
         self.runtime = None
         self.memory_manager = ChatHistoryManager()
+        self.moderator = ContentModerator(api_key=self.api_key)
+
         self._setup_agents()
         self._setup_handoff_orchestration()
     
@@ -102,33 +107,35 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
         self.handoff_orchestration = HandoffOrchestration(
             members=all_agents,
             handoffs=handoffs,
-            agent_response_callback=self._agent_response_callback,
-            human_response_function=self._human_response_function
+            agent_response_callback=self._agent_response_callback
         )
     
     def _agent_response_callback(self, message: ChatMessageContent) -> None:
-        """Callback para capturar respostas dos agentes"""
+        """Callback para capturar respostas dos agentes - evita duplicatas"""
         # Salvar na memória
         self.memory_manager.add_message(message)
         
-        # Log limpo - mostrar mensagem completa sem truncar
-        agent_name = message.name or "Sistema"
-        content = message.content
+        # Verificar se já exibimos esta mensagem (evitar duplicatas)
+        message_key = f"{message.name}:{message.content[:100]}"
+        if not hasattr(self, '_displayed_messages'):
+            self._displayed_messages = set()
         
-        # Só truncar se for extremamente longo (mais de 1000 chars)
-        if len(content) > 1000:
-            content = content[:1000] + "...\n[Mensagem truncada - muito longa]"
+        if message_key not in self._displayed_messages:
+            self._displayed_messages.add(message_key)
+            
+            # Log limpo - mostrar mensagem completa sem truncar
+            agent_name = message.name or "Sistema"
+            content = message.content
+            
+            # Só truncar se for extremamente longo (mais de 1000 chars)
+            if len(content) > 1000:
+                content = content[:1000] + "...\n[Mensagem truncada - muito longa]"
+            
+            print(f"🤖 {agent_name}: {content}")
         
-        print(f"🤖 {agent_name}: {content}")
-    
-    def _human_response_function(self) -> ChatMessageContent:
-        """Função para obter input do usuário (human-in-the-loop)"""
-        # Para modo automatizado, retornar mensagem vazia
-        message = ChatMessageContent(
-            role=AuthorRole.USER,
-            content=""
-        )
-        return message
+        # Limpar cache se ficar muito grande (evitar memory leak)
+        if len(self._displayed_messages) > 100:
+            self._displayed_messages.clear()
     
     def iniciar_runtime(self):
         """Inicia o runtime de orquestração"""
@@ -147,6 +154,24 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
         try:
             if not self.runtime:
                 self.iniciar_runtime()
+
+            # Verificar moderação ANTES de processar
+            moderation_result = self.moderator.analisar_mensagem(mensagem)
+            if moderation_result.flagged:
+                categorias = [k for k, v in moderation_result.categories.items() if v]
+                logger.warning(f"🛑 Mensagem bloqueada por moderação: {categorias}")
+                
+                # Criar mensagem de bloqueio e adicionar ao histórico
+                blocked_message = ChatMessageContent(
+                    role=AuthorRole.ASSISTANT,
+                    content=f"⚠️ Conteúdo sensível detectado ({', '.join(categorias)}). A mensagem foi bloqueada.",
+                    name="Sistema"
+                )
+                self.memory_manager.add_message(blocked_message)
+                print(f"🤖 Sistema: {blocked_message.content}")
+                
+                # Retornar imediatamente sem processar pela orquestração
+                return blocked_message.content
             
             # Criar mensagem do usuário
             user_message = ChatMessageContent(
@@ -156,11 +181,6 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
             
             # IMPORTANTE: Salvar SEMPRE no histórico completo (nunca deletar)
             self.memory_manager.add_message(user_message)
-            
-            # Verificar se temos muitas mensagens (só avisar, não deletar)
-            history_count = len(self.memory_manager.get_history())
-            if history_count > 50:
-                print(f"📊 Histórico tem {history_count} mensagens (contexto será otimizado automaticamente)")
             
             # Executar orquestração
             orchestration_result = await asyncio.wait_for(
@@ -175,7 +195,7 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
             return str(result) if result else "Conversa finalizada."
             
         except asyncio.TimeoutError:
-            error_msg = "⏰ Timeout: O processamento demorou muito. Tente novamente."
+            error_msg = "⏰ Timeout: O processamento demorou muito. Tente novamente."   
             logger.error(error_msg)
             return error_msg
             
@@ -184,7 +204,6 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
             error_msg = f"❌ Erro ao processar mensagem: {error_str[:100]}..."
             logger.error(error_msg)
             
-            # Se for erro do modelo, só avisar (não deletar histórico)
             if "model_error" in error_str or "invalid content" in error_str:
                 logger.info("🔄 Erro de modelo detectado. Sistema otimizará contexto automaticamente.")
                 return "🔄 Sistema detectou sobrecarga. Tente reformular sua pergunta de forma mais simples."

@@ -1,193 +1,8 @@
 [
   {
     "ai_model_id": null,
-    "metadata": {},
-    "content_type": "message",
-    "role": "system",
-    "name": null,
-    "items": [
-      {
-        "ai_model_id": null,
-        "metadata": {},
-        "content_type": "text",
-        "text": "Contexto: Conversação em andamento. Responda apenas à próxima pergunta.",
-        "encoding": null
-      }
-    ],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": "gpt-4",
     "metadata": {
-      "id": "chatcmpl-BzoqKZROG1ViaP5wUMbCmJ8lkZVoo",
-      "created": 1754073148,
-      "system_fingerprint": null,
-      "usage": {
-        "prompt_tokens": 570,
-        "prompt_tokens_details": {
-          "audio_tokens": 0,
-          "cached_tokens": 0
-        },
-        "completion_tokens": 76,
-        "completion_tokens_details": {
-          "accepted_prediction_tokens": 0,
-          "audio_tokens": 0,
-          "reasoning_tokens": 0,
-          "rejected_prediction_tokens": 0
-        }
-      }
-    },
-    "content_type": "message",
-    "role": "assistant",
-    "name": "FinanceAgent",
-    "items": [],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": "gpt-4",
-    "metadata": {
-      "logprobs": null,
-      "id": "chatcmpl-BzoqUznkx7dnpFpWxS5vRbPkEDZpp",
-      "created": 1754073158,
-      "system_fingerprint": null,
-      "usage": {
-        "prompt_tokens": 380,
-        "prompt_tokens_details": {
-          "audio_tokens": 0,
-          "cached_tokens": 0
-        },
-        "completion_tokens": 13,
-        "completion_tokens_details": {
-          "accepted_prediction_tokens": 0,
-          "audio_tokens": 0,
-          "reasoning_tokens": 0,
-          "rejected_prediction_tokens": 0
-        }
-      }
-    },
-    "content_type": "message",
-    "role": "assistant",
-    "name": "TriageAgent",
-    "items": [
-      {
-        "ai_model_id": null,
-        "metadata": {},
-        "content_type": "function_call",
-        "id": "call_gtRVrO7pf3hvanCY4kRSX8Ai",
-        "call_id": null,
-        "index": 0,
-        "name": "Handoff-transfer_to_TechSupportAgent",
-        "function_name": "transfer_to_TechSupportAgent",
-        "plugin_name": "Handoff",
-        "arguments": "{}"
-      }
-    ],
-    "encoding": null,
-    "finish_reason": "tool_calls",
-    "status": null
-  },
-  {
-    "ai_model_id": null,
-    "metadata": {},
-    "content_type": "message",
-    "role": "tool",
-    "name": "TriageAgent",
-    "items": [
-      {
-        "ai_model_id": null,
-        "metadata": {
-          "arguments": {},
-          "used_arguments": {}
-        },
-        "content_type": "function_result",
-        "id": "call_gtRVrO7pf3hvanCY4kRSX8Ai",
-        "call_id": null,
-        "result": "None",
-        "name": "Handoff-transfer_to_TechSupportAgent",
-        "function_name": "transfer_to_TechSupportAgent",
-        "plugin_name": "Handoff",
-        "encoding": null
-      }
-    ],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": "gpt-4",
-    "metadata": {
-      "id": "chatcmpl-BzoqUznkx7dnpFpWxS5vRbPkEDZpp",
-      "created": 1754073158,
-      "system_fingerprint": null,
-      "usage": {
-        "prompt_tokens": 380,
-        "prompt_tokens_details": {
-          "audio_tokens": 0,
-          "cached_tokens": 0
-        },
-        "completion_tokens": 13,
-        "completion_tokens_details": {
-          "accepted_prediction_tokens": 0,
-          "audio_tokens": 0,
-          "reasoning_tokens": 0,
-          "rejected_prediction_tokens": 0
-        }
-      }
-    },
-    "content_type": "message",
-    "role": "assistant",
-    "name": "TriageAgent",
-    "items": [],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": "gpt-4",
-    "metadata": {
-      "logprobs": null,
-      "id": "chatcmpl-BzoqVEy2uDNnF7nPQSK8cKKj6S0XW",
-      "created": 1754073159,
-      "system_fingerprint": null,
-      "usage": {
-        "prompt_tokens": 136,
-        "prompt_tokens_details": {
-          "audio_tokens": 0,
-          "cached_tokens": 0
-        },
-        "completion_tokens": 368,
-        "completion_tokens_details": {
-          "accepted_prediction_tokens": 0,
-          "audio_tokens": 0,
-          "reasoning_tokens": 0,
-          "rejected_prediction_tokens": 0
-        }
-      }
-    },
-    "content_type": "message",
-    "role": "assistant",
-    "name": "TechSupportAgent",
-    "items": [
-      {
-        "ai_model_id": null,
-        "metadata": {},
-        "content_type": "text",
-        "text": "Sinto muito por estar enfrentando problemas com seu aplicativo bancário. Aqui estão algumas etapas de solução de problemas que você pode seguir:\n\n1. **Verifique sua conexão com a Internet**: Certifique-se de ter uma conexão estável à Internet que seja forte o suficiente para fazer transferências. Se você está em uma área com sinal fraco, isso pode encerrar a comunicação do aplicativo com o servidor antes de concluir sua transferência, causando travamentos.\n\n2. **Atualize seu aplicativo**: Às vezes, os bancos lançam atualizações de software destinadas a corrigir bugs e melhorar a segurança. Verifique se há atualizações disponíveis para o aplicativo em sua loja de aplicativos.\n\n3. **Reinicialize o dispositivo**: Problemas temporários de software e hardware às vezes podem ser resolvidos simplesmente reiniciando o seu dispositivo.\n\n4. **Reinstale o aplicativo**: Se o problema persistir, tente desinstalar o aplicativo e, em seguida, instale-o novamente. Isso pode corrigir quaisquer problemas de instalação que possam ter travado o aplicativo.\n\n5. **Entre em contato com o atendimento ao cliente do banco**: Se você tentou todas as opções acima e ainda está tendo problemas, provavelmente é melhor entrar em contato com o atendimento ao cliente do banco. Eles poderão fornecer assistência adicional ou denunciar o problema se for algo que outros usuários também estão experimentando.\n\nSe você achar que a transferência foi feita mas não aparece na sua conta, aí então seria necessário entrar em contato com o suporte financeiro.",
-        "encoding": null
-      }
-    ],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": null,
-    "metadata": {
-      "agent_id": "4e17130d-ab9f-44d3-b21a-77ba5261ec4c"
+      "agent_id": "84e05bd6-8245-4908-a6ed-8546a5db1f5c"
     },
     "content_type": "message",
     "role": "user",
@@ -197,7 +12,7 @@
         "ai_model_id": null,
         "metadata": {},
         "content_type": "text",
-        "text": "ah beleza, consegui resolver, agora Quero saber como abrir uma conta poupança.",
+        "text": "olá, tudo bem",
         "encoding": null
       }
     ],
@@ -206,117 +21,15 @@
     "status": null
   },
   {
+    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
-      "id": "chatcmpl-BzoqmvPtGW1cwCF2y5l37j9Pts8Km",
-      "created": 1754073176,
+      "id": "chatcmpl-C0v0glL5wRFN58u6gHUJ66OVkaDtM",
+      "created": 1754335182,
       "system_fingerprint": null,
       "usage": {
-        "prompt_tokens": 515,
-        "prompt_tokens_details": {
-          "audio_tokens": 0,
-          "cached_tokens": 0
-        },
-        "completion_tokens": 110,
-        "completion_tokens_details": {
-          "accepted_prediction_tokens": 0,
-          "audio_tokens": 0,
-          "reasoning_tokens": 0,
-          "rejected_prediction_tokens": 0
-        }
-      }
-    },
-    "content_type": "message",
-    "role": "assistant",
-    "name": "TechSupportAgent",
-    "items": [
-      {
-        "ai_model_id": null,
-        "metadata": {},
-        "content_type": "function_call",
-        "id": "call_tBYHP5TPmNDv4ZiQPzRnYebq",
-        "call_id": null,
-        "index": 0,
-        "name": "Handoff-complete_task",
-        "function_name": "complete_task",
-        "plugin_name": "Handoff",
-        "arguments": "{\n\"task_summary\": \"O usuário estava tendo problemas com seu aplicativo bancário travando durante as transferências. Eu sugeri que o usuário verifique sua conexão com a Internet, atualize o aplicativo, reinicie o dispositivo, reinstale o aplicativo e, por fim, entre em contato com o suporte do banco se nenhuma das soluções propostas funcionasse. O usuário não pediu mais assistência, então considero esta tarefa completa.\"\n}"
-      }
-    ],
-    "encoding": null,
-    "finish_reason": "tool_calls",
-    "status": null
-  },
-  {
-    "ai_model_id": null,
-    "metadata": {},
-    "content_type": "message",
-    "role": "tool",
-    "name": "TechSupportAgent",
-    "items": [
-      {
-        "ai_model_id": null,
-        "metadata": {
-          "arguments": {
-            "task_summary": "O usuário estava tendo problemas com seu aplicativo bancário travando durante as transferências. Eu sugeri que o usuário verifique sua conexão com a Internet, atualize o aplicativo, reinicie o dispositivo, reinstale o aplicativo e, por fim, entre em contato com o suporte do banco se nenhuma das soluções propostas funcionasse. O usuário não pediu mais assistência, então considero esta tarefa completa."
-          },
-          "used_arguments": {
-            "task_summary": "O usuário estava tendo problemas com seu aplicativo bancário travando durante as transferências. Eu sugeri que o usuário verifique sua conexão com a Internet, atualize o aplicativo, reinicie o dispositivo, reinstale o aplicativo e, por fim, entre em contato com o suporte do banco se nenhuma das soluções propostas funcionasse. O usuário não pediu mais assistência, então considero esta tarefa completa."
-          }
-        },
-        "content_type": "function_result",
-        "id": "call_tBYHP5TPmNDv4ZiQPzRnYebq",
-        "call_id": null,
-        "result": "None",
-        "name": "Handoff-complete_task",
-        "function_name": "complete_task",
-        "plugin_name": "Handoff",
-        "encoding": null
-      }
-    ],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": "gpt-4",
-    "metadata": {
-      "id": "chatcmpl-BzoqmvPtGW1cwCF2y5l37j9Pts8Km",
-      "created": 1754073176,
-      "system_fingerprint": null,
-      "usage": {
-        "prompt_tokens": 515,
-        "prompt_tokens_details": {
-          "audio_tokens": 0,
-          "cached_tokens": 0
-        },
-        "completion_tokens": 110,
-        "completion_tokens_details": {
-          "accepted_prediction_tokens": 0,
-          "audio_tokens": 0,
-          "reasoning_tokens": 0,
-          "rejected_prediction_tokens": 0
-        }
-      }
-    },
-    "content_type": "message",
-    "role": "assistant",
-    "name": "TechSupportAgent",
-    "items": [],
-    "encoding": null,
-    "finish_reason": null,
-    "status": null
-  },
-  {
-    "ai_model_id": "gpt-4",
-    "metadata": {
-      "logprobs": null,
-      "id": "chatcmpl-Bzor33FWvGPxftnUdMIFKIUJfnRzC",
-      "created": 1754073193,
-      "system_fingerprint": null,
-      "usage": {
-        "prompt_tokens": 384,
+        "prompt_tokens": 369,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cached_tokens": 0
@@ -337,21 +50,103 @@
       {
         "ai_model_id": null,
         "metadata": {},
+        "content_type": "text",
+        "text": "Olá! Como posso ajudar você hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "assistant",
+    "name": "Sistema",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "⚠️ Conteúdo sensível detectado (illicit, illicit_violent, illicit/violent). A mensagem foi bloqueada.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "44e87437-8f7d-4843-8df8-b4859b372e7c"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "estou com problemas pra realizar o login, poderia me ajudar ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C0v1Ls3ecY5qfkWMIZRo4508nkIgi",
+      "created": 1754335223,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 379,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 13,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
         "content_type": "function_call",
-        "id": "call_x8drsYaD04XkU76uZ1S6VV0q",
+        "id": "call_xj7Kes8B7fy7VtHr1kg6E0pC",
         "call_id": null,
         "index": 0,
-        "name": "Handoff-transfer_to_FinanceAgent",
-        "function_name": "transfer_to_FinanceAgent",
+        "name": "Handoff-transfer_to_TechSupportAgent",
+        "function_name": "transfer_to_TechSupportAgent",
         "plugin_name": "Handoff",
         "arguments": "{}"
       }
     ],
     "encoding": null,
     "finish_reason": "tool_calls",
-    "status": null
+    "status": null,
+    "function_invoke_attempt": 0
   },
   {
+    "choice_index": 0,
     "ai_model_id": null,
     "metadata": {},
     "content_type": "message",
@@ -365,12 +160,105 @@
           "used_arguments": {}
         },
         "content_type": "function_result",
-        "id": "call_x8drsYaD04XkU76uZ1S6VV0q",
+        "id": "call_xj7Kes8B7fy7VtHr1kg6E0pC",
         "call_id": null,
         "result": "None",
-        "name": "Handoff-transfer_to_FinanceAgent",
-        "function_name": "transfer_to_FinanceAgent",
+        "name": "Handoff-transfer_to_TechSupportAgent",
+        "function_name": "transfer_to_TechSupportAgent",
         "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C0v1Ls3ecY5qfkWMIZRo4508nkIgi",
+      "created": 1754335223,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 379,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 13,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C0v1N0drWwAy5kZkUXcj3MNxzlNRN",
+      "created": 1754335225,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 135,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 56,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TechSupportAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, estou aqui para ajudar! Poderia me dar mais detalhes sobre o problema? Você está recebendo alguma mensagem de erro ao tentar fazer login? Isso está acontecendo em um site ou em um aplicativo específico?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "78bda9b2-dc98-49fe-a9dc-1700bb488936"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "na verdade acabei de resolver aqui, agora consegui acessar o portal do trabalhador, no caso, quanto tempo eu tenho que tirar pra almoço ? tem que ser em um horario especifico ?",
         "encoding": null
       }
     ],
@@ -379,13 +267,88 @@
     "status": null
   },
   {
+    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
-      "id": "chatcmpl-Bzor33FWvGPxftnUdMIFKIUJfnRzC",
-      "created": 1754073193,
+      "logprobs": null,
+      "id": "chatcmpl-C0v2axjzIpBkpClpfU5BzE2WuVj8D",
+      "created": 1754335300,
       "system_fingerprint": null,
       "usage": {
-        "prompt_tokens": 384,
+        "prompt_tokens": 410,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_IpTfVPGDFuvM0ILiJVHjTwAw",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_HRAgent",
+        "function_name": "transfer_to_HRAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_IpTfVPGDFuvM0ILiJVHjTwAw",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_HRAgent",
+        "function_name": "transfer_to_HRAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C0v2axjzIpBkpClpfU5BzE2WuVj8D",
+      "created": 1754335300,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 410,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cached_tokens": 0
@@ -405,22 +368,24 @@
     "items": [],
     "encoding": null,
     "finish_reason": null,
-    "status": null
+    "status": null,
+    "function_invoke_attempt": 0
   },
   {
+    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
-      "id": "chatcmpl-Bzor46FnswdnXTyACh546KrtckoaV",
-      "created": 1754073194,
+      "id": "chatcmpl-C0v2bkf3TGPPm7xNilT5ZvfxAn7RN",
+      "created": 1754335301,
       "system_fingerprint": null,
       "usage": {
-        "prompt_tokens": 145,
+        "prompt_tokens": 204,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cached_tokens": 0
         },
-        "completion_tokens": 278,
+        "completion_tokens": 142,
         "completion_tokens_details": {
           "accepted_prediction_tokens": 0,
           "audio_tokens": 0,
@@ -431,13 +396,35 @@
     },
     "content_type": "message",
     "role": "assistant",
-    "name": "FinanceAgent",
+    "name": "HRAgent",
     "items": [
       {
         "ai_model_id": null,
         "metadata": {},
         "content_type": "text",
-        "text": "Abrir uma conta poupança é um processo simples e geralmente pode ser feito online, no entanto, pode variar dependendo do banco. Aqui estão passos gerais:\n\n1. Escolha o Banco: Faça uma pesquisa para decidir qual banco é o melhor para você. Considere fatores como taxas de juros, facilidade de acesso, reputação e nível de serviço ao cliente. \n\n2. Solicite online ou pessoalmente: Muitos bancos permitem que você abra uma conta poupança online. Será necessário fornecer algumas informações, incluindo seu nome, endereço, data de nascimento e número do seguro social. Se preferir, você pode ir ao banco e conversar pessoalmente com um representante.\n\n3. Depósito Inicial: We geralmente é necessário um depósito inicial para abrir a conta. O valor varia de banco para banco.\n\n4. Configuração: Configure as configurações da conta, como depósitos diretos, transferências automáticas e alertas de saldo baixo.\n\nLembre-se de ler todas as informações fornecidas pelo banco sobre a conta, incluindo taxas e requisitos de saldo mínimo. É importante escolher a conta que melhor se adapta às suas necessidades financeiras.",
+        "text": "As regras para horário de almoço podem variar de acordo com a política da empresa, porém de modo geral, a lei brasileira estabelece que para uma jornada de trabalho de 8 horas, o intervalo para refeições deve ser de no mínimo 1 hora e no máximo 2 horas. Quanto ao horário especifico, isso também depende da política da empresa, algumas empresas têm horários flexíveis, enquanto outras estabelecem horários fixos para o almoço. Recomendaria que verifique o manual do funcionário ou fale com o gerente do departamento de RH para informações mais específicas.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "3fe5fa85-345e-48a1-b338-adf0f1eccd22"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "entendi, agora estou querendo vender um produto, quais sao as melhores estrategias pra vender um produto ?",
         "encoding": null
       }
     ],
@@ -446,19 +433,20 @@
     "status": null
   },
   {
+    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
-      "id": "chatcmpl-BzorF72IyJpm6pyuFTFe7RroBcpyP",
-      "created": 1754073205,
+      "id": "chatcmpl-C0v3eWBrfyEApC4QoeKbOl7rqi61d",
+      "created": 1754335366,
       "system_fingerprint": null,
       "usage": {
-        "prompt_tokens": 433,
+        "prompt_tokens": 392,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cached_tokens": 0
         },
-        "completion_tokens": 80,
+        "completion_tokens": 12,
         "completion_tokens_details": {
           "accepted_prediction_tokens": 0,
           "audio_tokens": 0,
@@ -469,69 +457,69 @@
     },
     "content_type": "message",
     "role": "assistant",
-    "name": "FinanceAgent",
+    "name": "TriageAgent",
     "items": [
       {
         "ai_model_id": null,
         "metadata": {},
         "content_type": "function_call",
-        "id": "call_1bNyIUz4TX59ZTtgHgYfgYw5",
+        "id": "call_iOpEaoPTB3EGGs0QJoduaJrE",
         "call_id": null,
         "index": 0,
-        "name": "Handoff-complete_task",
-        "function_name": "complete_task",
+        "name": "Handoff-transfer_to_SalesAgent",
+        "function_name": "transfer_to_SalesAgent",
         "plugin_name": "Handoff",
-        "arguments": "{\n\"task_summary\": \"O usuário precisava de informações sobre como abrir uma conta poupança. Eu forneci a ele um procedimento passo a passo de como abrir uma conta poupança, incluindo a escolha do banco, solicitar online ou pessoalmente, fazer um depósito inicial e configurar a conta.\"\n}"
+        "arguments": "{}"
       }
     ],
     "encoding": null,
     "finish_reason": "tool_calls",
-    "status": null
+    "status": null,
+    "function_invoke_attempt": 0
   },
   {
+    "choice_index": 0,
     "ai_model_id": null,
     "metadata": {},
     "content_type": "message",
     "role": "tool",
-    "name": "FinanceAgent",
+    "name": "TriageAgent",
     "items": [
       {
         "ai_model_id": null,
         "metadata": {
-          "arguments": {
-            "task_summary": "O usuário precisava de informações sobre como abrir uma conta poupança. Eu forneci a ele um procedimento passo a passo de como abrir uma conta poupança, incluindo a escolha do banco, solicitar online ou pessoalmente, fazer um depósito inicial e configurar a conta."
-          },
-          "used_arguments": {
-            "task_summary": "O usuário precisava de informações sobre como abrir uma conta poupança. Eu forneci a ele um procedimento passo a passo de como abrir uma conta poupança, incluindo a escolha do banco, solicitar online ou pessoalmente, fazer um depósito inicial e configurar a conta."
-          }
+          "arguments": {},
+          "used_arguments": {}
         },
         "content_type": "function_result",
-        "id": "call_1bNyIUz4TX59ZTtgHgYfgYw5",
+        "id": "call_iOpEaoPTB3EGGs0QJoduaJrE",
         "call_id": null,
         "result": "None",
-        "name": "Handoff-complete_task",
-        "function_name": "complete_task",
+        "name": "Handoff-transfer_to_SalesAgent",
+        "function_name": "transfer_to_SalesAgent",
         "plugin_name": "Handoff",
         "encoding": null
       }
     ],
     "encoding": null,
     "finish_reason": null,
-    "status": null
+    "status": null,
+    "function_invoke_attempt": null
   },
   {
+    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
-      "id": "chatcmpl-BzorF72IyJpm6pyuFTFe7RroBcpyP",
-      "created": 1754073205,
+      "id": "chatcmpl-C0v3eWBrfyEApC4QoeKbOl7rqi61d",
+      "created": 1754335366,
       "system_fingerprint": null,
       "usage": {
-        "prompt_tokens": 433,
+        "prompt_tokens": 392,
         "prompt_tokens_details": {
           "audio_tokens": 0,
           "cached_tokens": 0
         },
-        "completion_tokens": 80,
+        "completion_tokens": 12,
         "completion_tokens_details": {
           "accepted_prediction_tokens": 0,
           "audio_tokens": 0,
@@ -542,10 +530,51 @@
     },
     "content_type": "message",
     "role": "assistant",
-    "name": "FinanceAgent",
+    "name": "TriageAgent",
     "items": [],
     "encoding": null,
     "finish_reason": null,
-    "status": null
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C0v3g5mjuzWGVHfX5Vb8UtM7cvVxl",
+      "created": 1754335368,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 184,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 242,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "SalesAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Algumas das melhores estratégias para vender um produto são:\n\n1. Conhecer o seu produto: Saber tudo sobre o produto que você está vendendo é fundamental. Você deve ser capaz de responder a qualquer pergunta que um cliente em potencial possa fazer.\n\n2. Conhecer o seu público-alvo: Saber quem é o seu público-alvo e o que eles procuram em um produto pode ajudá-lo a apresentar o seu produto da melhor maneira possível.\n\n3. Construir relações com os clientes: Estabelecer uma relação de confiança com os seus clientes pode levar a vendas recorrentes e a referências.\n\n4. Oferecer um excelente atendimento ao cliente: Ser útil, amigável e profissional pode incentivar os clientes a comprar de você.\n\n5. Usar técnicas de venda: Coisas como a criação de uma sensação de urgência ou a oferta de promoções podem incentivar os clientes a fazer uma compra.\n\nLembre-se, cada situação de venda é única, por isso é importante ser flexível e adaptar a sua abordagem conforme necessário.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
   }
 ]

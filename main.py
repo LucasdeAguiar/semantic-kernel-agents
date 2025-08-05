@@ -30,7 +30,7 @@ logging.getLogger('orchestrator.triage_agent').setLevel(logging.INFO)
 logging.getLogger('agents.agent_loader').setLevel(logging.INFO)
 
 # SUA CHAVE API OPENAI
-OPENAI_API_KEY = "open-ai-key"
+OPENAI_API_KEY = "openaikey"
 
 
 async def main():

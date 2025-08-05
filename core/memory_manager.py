@@ -41,7 +41,7 @@ class ChatHistoryManager:
     
     def _load_history_if_exists(self):
         """Carrega histórico do arquivo se existir"""
-        if self.persist_file.exists():
+        if self.persist_file.exists() and self.persist_file.stat().st_size > 0:
             try:
                 with open(self.persist_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)
