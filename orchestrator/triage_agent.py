@@ -152,7 +152,8 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
     
     async def processar_mensagem(self, mensagem: str) -> str:
         """
-        Método principal para processar mensagens usando handoff orchestration com contexto otimizado
+        Método principal para processar mensagens usando handoff orchestration 
+        com contexto fornecido via system message dinâmico
         """
         try:
             if not self.runtime:
@@ -197,10 +198,16 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
             # IMPORTANTE: Salvar SEMPRE no histórico completo (nunca deletar)
             self.memory_manager.add_message(user_message)
             
-            # Executar orquestração
+            # 🔄 Adicionar contexto via system message antes de processar
+            context_summary = self._create_context_summary()
+            enhanced_message = f"{context_summary}\n\nUsuário atual: {mensagem}"
+            
+            print(f"📋 Processando com contexto resumido ({len(self.memory_manager.get_history())} mensagens no histórico)")
+            
+            # Executar orquestração com contexto incluído na mensagem
             orchestration_result = await asyncio.wait_for(
                 self.handoff_orchestration.invoke(
-                    task=user_message,
+                    task=enhanced_message,
                     runtime=self.runtime
                 ),
                 timeout=25.0
@@ -224,6 +231,24 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
                 return "🔄 Sistema detectou sobrecarga. Tente reformular sua pergunta de forma mais simples."
             
             return error_msg
+    
+    def _create_context_summary(self) -> str:
+        """
+        Cria um resumo do contexto das últimas interações para incluir na mensagem
+        """
+        recent_messages = self.memory_manager.get_recent_messages(count=6)  # Últimas 6 mensagens
+        
+        if len(recent_messages) <= 1:
+            return "[CONTEXTO: Primeira interação]"
+        
+        context_parts = []
+        for msg in recent_messages[-5:]:  # Últimas 5 mensagens (excluindo a atual)
+            role = "Usuário" if msg.role.value == "user" else f"Assistente({msg.name or 'Sistema'})"
+            content = str(msg.content)[:100] + "..." if len(str(msg.content)) > 100 else str(msg.content)
+            context_parts.append(f"- {role}: {content}")
+        
+        context = "\n".join(context_parts)
+        return f"[CONTEXTO DA CONVERSA:\n{context}\n]"
     
     def obter_historico(self) -> list[ChatMessageContent]:
         """Retorna o histórico completo da conversa"""

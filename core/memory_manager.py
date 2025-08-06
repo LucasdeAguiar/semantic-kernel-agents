@@ -1,4 +1,5 @@
 from semantic_kernel.contents import ChatHistory, ChatMessageContent
+from semantic_kernel.contents.utils.author_role import AuthorRole
 from typing import List
 import json
 from pathlib import Path
@@ -81,42 +82,37 @@ class ChatHistoryManager:
                          if hasattr(msg, 'name') and msg.name == agent_name]
         return agent_messages[-count:] if len(agent_messages) > count else agent_messages
     
-    def get_context_for_agent(self, current_agent: str, user_message: ChatMessageContent, max_messages: int = 5) -> List[ChatMessageContent]:
+    def get_context_for_agent(self, agent_name: str, max_interactions: int = 5) -> ChatHistory:
         """
-        Cria contexto otimizado para um agente específico:
-        - Mensagem atual do usuário
-        - Últimas 5 mensagens do agente atual
-        - Últimas 2 mensagens de outros agentes (para contexto de handoff)
+        Retorna um ChatHistory com contexto otimizado para um agente específico.
+        Seguindo os padrões do Semantic Kernel para manter contexto relevante.
         """
-        context_messages = []
+        context_history = ChatHistory()
         
-        # 1. Adicionar mensagens recentes do agente atual
-        agent_messages = self.get_recent_messages_by_agent(current_agent, max_messages)
-        context_messages.extend(agent_messages)
+        # Obter mensagens relevantes do agente atual
+        agent_messages = self.get_recent_messages_by_agent(agent_name, max_interactions)
         
-        # 2. Adicionar últimas mensagens de outros agentes para contexto de handoff
-        other_agents_messages = []
-        for msg in reversed(list(self.chat_history.messages)):
-            if (hasattr(msg, 'name') and msg.name and msg.name != current_agent and 
-                msg.role.value == "assistant" and len(other_agents_messages) < 2):
-                other_agents_messages.append(msg)
+        # Obter últimas mensagens de usuários para contexto
+        user_messages = [msg for msg in self.chat_history.messages 
+                        if msg.role == AuthorRole.USER][-5:]  # Últimas 5 mensagens de usuários
         
-        # Adicionar na ordem correta (mais antigas primeiro)
-        context_messages.extend(reversed(other_agents_messages))
+        # Combinar mensagens mantendo ordem cronológica
+        all_relevant = []
         
-        # 3. Adicionar mensagem atual do usuário
-        context_messages.append(user_message)
+        # Adicionar mensagens do usuário
+        all_relevant.extend(user_messages)
         
-        # Ordenar por ordem cronológica e remover duplicatas
-        unique_messages = []
-        seen_contents = set()
-        for msg in sorted(context_messages, key=lambda x: getattr(x, 'timestamp', 0)):
-            content_key = f"{msg.role.value}:{msg.content[:50]}"
-            if content_key not in seen_contents:
-                unique_messages.append(msg)
-                seen_contents.add(content_key)
+        # Adicionar mensagens do agente
+        all_relevant.extend(agent_messages)
         
-        return unique_messages[-10:]  # Máximo 10 mensagens no contexto total
+        # Ordenar por timestamp ou posição original
+        all_relevant.sort(key=lambda x: getattr(x, 'timestamp', 0))
+        
+        # Adicionar ao ChatHistory limitando a 10 mensagens mais recentes
+        for msg in all_relevant[-10:]:
+            context_history.add_message(msg)
+        
+        return context_history
 
     def get_recent_messages(self, count: int = 10) -> List[ChatMessageContent]:
         """Retorna as últimas N mensagens"""
