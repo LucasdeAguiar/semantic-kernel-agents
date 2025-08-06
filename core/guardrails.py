@@ -16,7 +16,6 @@ class GuardrailResult:
     def __repr__(self):
         return f"<GuardrailResult blocked={self.blocked} reason='{self.reason}'>"
 
-
 class GuardrailsManager:
     def __init__(self, config_path="config/guardrails_config.json", api_key=None):
         self.guardrails_config = self._load_config(config_path)
@@ -35,10 +34,6 @@ class GuardrailsManager:
             return []
 
     def analisar_mensagem(self, texto: str) -> GuardrailResult:
-        """
-        Analisa mensagem aplicando guardrails definidos na configuração.
-        Suporta tanto keyword quanto semantic guardrails.
-        """
         logger.debug(f"[GUARDRAIL] Analisando mensagem: {texto[:50]}...")
         
         for rule in self.guardrails_config:
@@ -46,16 +41,17 @@ class GuardrailsManager:
                 continue
 
             rule_name = rule.get("name", "Unknown")
-            rule_type = rule.get("type", "keyword")
-            
-            logger.debug(f"[GUARDRAIL] Verificando regra: {rule_name} (tipo: {rule_type})")
+            logger.debug(f"[GUARDRAIL] Verificando regra: {rule_name}")
 
-            if rule_type == "keyword":
+            # Verificação por palavra-chave 
+            keywords = rule.get("keywords", [])
+            if keywords:
                 result = self._check_keyword_guardrail(texto, rule)
                 if result.blocked:
                     return result
 
-            elif rule_type == "semantic" and self.client:
+            # Verificação semântica (se houver descrição e client)
+            if self.client and rule.get("description", ""):
                 result = self._check_semantic_guardrail(texto, rule)
                 if result.blocked:
                     return result
@@ -63,13 +59,13 @@ class GuardrailsManager:
         logger.debug(f"[GUARDRAIL] Nenhuma violação detectada para: {texto[:50]}...")
         return GuardrailResult(blocked=False)
 
+
     def _check_keyword_guardrail(self, texto: str, rule: Dict) -> GuardrailResult:
-        """Verifica guardrails baseados em palavras-chave"""
         keywords = rule.get("keywords", [])
         
         for palavra in keywords:
             if palavra.lower() in texto.lower():
-                logger.warning(f"[GUARDRAIL] 🚫 BLOQUEADO por palavra-chave: '{palavra}' na frase: {texto}")
+                logger.warning(f"[GUARDRAIL] BLOQUEADO por palavra-chave: '{palavra}' na frase: {texto}")
                 return GuardrailResult(
                     blocked=True,
                     reason=f"Contém palavra proibida: '{palavra}'",
@@ -79,10 +75,6 @@ class GuardrailsManager:
         return GuardrailResult(blocked=False)
 
     def _check_semantic_guardrail(self, texto: str, rule: Dict) -> GuardrailResult:
-        """
-        Verifica guardrails semânticos usando OpenAI.
-        Implementação simples e robusta.
-        """
         try:
             description = rule.get("description", "")
             name = rule.get("name", "SemanticGuardrail")
@@ -98,9 +90,9 @@ Responda apenas com:
 Seguido de uma breve explicação em uma linha."""
 
             response = self.client.chat.completions.create(
-                model="gpt-3.5-turbo",
+                model="gpt-4o",
                 messages=[
-                    {"role": "system", "content": "Você é um sistema de moderação que analisa se mensagens violam políticas específicas. Seja rigoroso mas justo."},
+                    {"role": "system", "content": "Você é um sistema de moderação que analisa se mensagens violam políticas específicas."},
                     {"role": "user", "content": prompt}
                 ],
                 max_tokens=100,
@@ -111,14 +103,14 @@ Seguido de uma breve explicação em uma linha."""
             
             if result_text.startswith("BLOCK"):
                 explanation = result_text.replace("BLOCK", "").strip()
-                logger.warning(f"[GUARDRAIL] 🔥 BLOQUEADO por {name}: {explanation}")
+                logger.warning(f"[GUARDRAIL] BLOQUEADO por {name}: {explanation}")
                 return GuardrailResult(
                     blocked=True,
                     reason=explanation or "Violação detectada por análise semântica",
                     guardrail_name=name
                 )
             
-            logger.debug(f"[GUARDRAIL] ✅ Aprovado por {name}")
+            logger.debug(f"[GUARDRAIL] Aprovado por {name}")
             return GuardrailResult(blocked=False)
             
         except Exception as e:

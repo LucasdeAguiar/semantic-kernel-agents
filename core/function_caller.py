@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 
 class FunctionRegistry:
     """
-    Registro central de funções que podem ser chamadas pelos agentes.
+    Central de funções que podem ser chamadas pelos agentes.
     Permite adicionar funções dinamicamente e organizá-las em plugins.
     """
     
@@ -23,7 +23,7 @@ class FunctionRegistry:
         if plugin_name not in self.functions:
             self.functions[plugin_name] = {}
         
-        # Adicionar decorador kernel_function se não estiver presente
+        # Adicionar decorator kernel_function se não estiver presente
         if not hasattr(function, '__kernel_function__'):
             function = kernel_function(
                 name=function_name,
@@ -37,7 +37,7 @@ class FunctionRegistry:
         """Registra um plugin completo"""
         self.plugins[plugin_name] = plugin_instance
         
-        # Auto-descobrir funções com decorador @kernel_function
+        # Auto-descobrir funções com decorator @kernel_function
         for attr_name in dir(plugin_instance):
             attr = getattr(plugin_instance, attr_name)
             if callable(attr) and hasattr(attr, '__kernel_function__'):
@@ -81,7 +81,6 @@ class UtilityFunctions:
     def calculate(self, expression: str) -> str:
         """Calcula uma expressão matemática simples"""
         try:
-            # Apenas operações básicas por segurança
             allowed_chars = "0123456789+-*/.() "
             if all(c in allowed_chars for c in expression):
                 result = eval(expression)
@@ -164,7 +163,6 @@ class TechSupportFunctions:
     )
     def check_system_status(self, system_name: str) -> str:
         """Simula verificação de status de sistema"""
-        # Simular alguns sistemas
         systems = {
             "email": "operacional",
             "website": "operacional", 

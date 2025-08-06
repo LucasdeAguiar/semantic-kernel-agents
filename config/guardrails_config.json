@@ -1,8 +1,14 @@
 [
   {
-    "name": "FoodGuardrail",
-    "description": "Bloqueia qualquer menção a alimentos ou tópicos relacionados à comida",
-    "type": "semantic",
+    "name": "TransformersGuardrail",
+    "description": "Bloqueia qualquer menção ao filme/desenho Transformers.",
+    "keywords": ["transformers", "autobots", "decepticons"],
+    "enabled": true
+  },
+  {
+    "name": "ComidaGuardrail",
+    "description": "Impede menções a alimentos, refeições ou ingestão de comida.",
+    "keywords": ["pizza", "comida", "jantar", "almoço", "fome"],
     "enabled": true
   }
 ]

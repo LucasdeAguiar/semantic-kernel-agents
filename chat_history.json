@@ -1,0 +1,2148 @@
+[
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "65ab58d5-4ec2-48cc-99c9-93222ac0fa82"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "olá, tudo bem ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1Z621hNDgzEXvuB2GB0O267mGxST",
+      "created": 1754489274,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 312,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 19,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá! Tudo bem, obrigado. Como posso ajudá-lo hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "assistant",
+    "name": "Sistema",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "⛔ Sua mensagem foi bloqueada por regras de segurança (ComidaGuardrail): - A mensagem menciona uma refeição e alimentos específicos, violando a política.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "assistant",
+    "name": "Sistema",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "⛔ Sua mensagem foi bloqueada por regras de segurança (TransformersGuardrail): Contém palavra proibida: 'transformers'",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "cc83f954-461b-45dc-9707-cc60fbed8ab6"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Você pode me recomendar um bom livro?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1Z6tL0pajj2ktqxvsc317XaiQZL0",
+      "created": 1754489327,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 315,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_qY0oE3VNGDF8dMTxLfme3k04",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_SalesAgent",
+        "function_name": "transfer_to_SalesAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_qY0oE3VNGDF8dMTxLfme3k04",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_SalesAgent",
+        "function_name": "transfer_to_SalesAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1Z6tL0pajj2ktqxvsc317XaiQZL0",
+      "created": 1754489327,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 315,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1Z6vHxCP9330rDTk7GwLA4q2CIFq",
+      "created": 1754489329,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 165,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 121,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "SalesAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, eu adoraria ajudar! No entanto, eu precisaria de mais detalhes para fazer uma boa recomendação. \n\nEstá procurando por um gênero específico, como ficção, não-ficção, fantasia, mistério, autoajuda, etc? Além disso, você prefere autores clássicos, contemporâneos, ou uma mistura de ambos? Por último, há algum livro ou autor que você gostou no passado que pode me ajudar a personalizar a minha recomendação?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "assistant",
+    "name": "Sistema",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "⚠️ Conteúdo sensível detectado (illicit, illicit_violent, illicit/violent). A mensagem foi bloqueada.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "f6aef45a-62b0-4c2a-a927-d1d8122511e6"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "olá, tudo bem ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cYg5XSFXlKngJTXM0VHU1ZHrZTU",
+      "created": 1754502582,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 312,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 19,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá! Estou bem, obrigado. Como posso ajudá-lo hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "7cc2a70f-93d6-40e0-88e7-f70327a2de7d"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "estou com uma duvida de finanças,poderia me ajudar ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cZ8KwH7D7wrqKyC4mlKC0X02B96",
+      "created": 1754502610,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 323,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_PF0sK66XSEyGxp1d7SrM4OWz",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_PF0sK66XSEyGxp1d7SrM4OWz",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1cZ8KwH7D7wrqKyC4mlKC0X02B96",
+      "created": 1754502610,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 323,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cZ9YttdRHCw5yi88LEc9OL9MWl7",
+      "created": 1754502611,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 142,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 30,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, ficarei feliz em ajudar! Por favor, me diga qual é a sua dúvida sobre finanças.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "7cc2a70f-93d6-40e0-88e7-f70327a2de7d"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "gostaria de fazer um emprestimo",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cZN20A6uEd4gc2ehLmqxrgwIplZ",
+      "created": 1754502625,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 316,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_hP4OqltYq1r7Zfhygde3iPPc",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_hP4OqltYq1r7Zfhygde3iPPc",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1cZN20A6uEd4gc2ehLmqxrgwIplZ",
+      "created": 1754502625,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 316,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cZOxy0PqGdLndOoFaQlKmrN2UJE",
+      "created": 1754502626,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 135,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 347,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, ficarei feliz em te ajudar com isso. No entanto, como assistente de IA, não posso processar empréstimos. No entanto, posso te guiar sobre os passos que geralmente são tomados para solicitar um empréstimo.\n\n1. Avalie suas necessidades: Determine quanto dinheiro você precisa e para que finalidade. Este montante deve ser o que você pode pagar de volta.\n\n2. Verifique sua pontuação de crédito: Os credores olharão para sua pontuação de crédito para determinar se eles devem emprestar dinheiro a você e qual taxa de juros eles cobrarão.\n\n3. Compare os credores: As taxas de juros, termos de empréstimo e requisitos de qualificação variam entre diferentes credores e tipos de empréstimos. Tente obter uma cotação de pelo menos três diferentes.\n\n4. Preencha um pedido de empréstimo: Uma vez que você escolheu o melhor empréstimo para você, preencha um pedido de empréstimo. Você precisará fornecer informações pessoais e financeiras.\n\n5. Aguarde a aprovação: Depois de submeter seu pedido, o credor levará algum tempo para rever e tomar uma decisão. Se você for aprovado, o credor lhe dará um plano de pagamento detalhando as taxas, a taxa de juros e os termos de reembolso.\n\nRecomendo que entre em contato com seu banco ou credor de sua preferência para começar este processo.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "7cc2a70f-93d6-40e0-88e7-f70327a2de7d"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "entendi, para um emprestimo de 1000 reais, qual seria o numero de parcelas ideal pra nao ficar arriscado ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1caF6sYuP4Md0pKeGFzKkgG4L74l",
+      "created": 1754502679,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 338,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_tIsiFY7Jauzyyr8NpLkMc90a",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_tIsiFY7Jauzyyr8NpLkMc90a",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1caF6sYuP4Md0pKeGFzKkgG4L74l",
+      "created": 1754502679,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 338,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1caGRADbhQY15IFqwMPTCy0MPRpl",
+      "created": 1754502680,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 157,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 221,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "O número ideal de parcelas para um empréstimo de R$ 1000,00 realmente depende das suas finanças pessoais, incluindo o seu fluxo de caixa mensal e quanto você pode dar ao luxo de pagar de volta a cada mês, bem como as taxas de juros associadas ao empréstimo. \n\nÉ crucial que você escolha um prazo de pagamento que não crie dificuldades financeiras para você a longo prazo. Normalmente, um prazo de pagamento mais longo significa parcelas menores por mês, mas você pode acabar pagando mais em juros a longo prazo.\n\nDito isto, para um empréstimo pequeno como R$ 1000,00, muitas pessoas optam por um prazo de 12 a 24 meses. Mas lembre-se, cada situação é única. É altamente recomendável que você consulte um consultor financeiro ou planejador financeiro antes de tomar qualquer decisão.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "7cc2a70f-93d6-40e0-88e7-f70327a2de7d"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "entao se eu pegar um emprestimo de 1000 reais em 16 meses é valido ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cawiSG8ZtoYY3DzQtkaFof80z5Y",
+      "created": 1754502722,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 330,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_mSKE27Yxbra07xlgUDQZFxRn",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_mSKE27Yxbra07xlgUDQZFxRn",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1cawiSG8ZtoYY3DzQtkaFof80z5Y",
+      "created": 1754502722,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 330,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cay931q9l8tlqQWH5NBXzf0xai8",
+      "created": 1754502724,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 149,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 252,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Depende do tipo de empréstimo, da instituição financeira, das taxas de juros e das suas qualificações de crédito. Na maioria dos casos, um empréstimo de R$1000,00 a ser pago em 16 meses é plausível. Porém, é preciso considerar as taxas de juros aplicadas. Exemplos de empréstimos que você pode considerar para este tipo de prazo incluem empréstimos pessoais, linhas de crédito e até mesmo certos tipos de empréstimos a juros baixos.\n\nAntes de você pegar o empréstimo, é essencial entender as condições, como as taxas de juros, as penalidades por pagamentos atrasados e o valor total que você acabará pagando ao longo do tempo. \n\nNão se esqueça de comparar as ofertas de diferentes instituições financeiras para encontrar a melhor taxa de juros e condições de pagamento.\n\nLembre-se sempre de fazer um planejamento financeiro para garantir que os pagamentos mensais do empréstimo caberão no seu orçamento.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "7cc2a70f-93d6-40e0-88e7-f70327a2de7d"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "beleza, vou pensar em outros valores de emprestimo, qual valor e quantidade de parcela eu tinha sugerido se era valido mesmo ? só pra eu anotar aqui",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cc7cltvG7oY37qfI3SqyTckktuB",
+      "created": 1754502795,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 344,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_feAWTajcBSHcQzavYCE7OPPh",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_feAWTajcBSHcQzavYCE7OPPh",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1cc7cltvG7oY37qfI3SqyTckktuB",
+      "created": 1754502795,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 344,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cc8otCfTgJuuaT2WZYtdpUHJWew",
+      "created": 1754502796,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 163,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 98,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Lamento, mas como assistente, eu não tenho a habilidade de acessar conversas passadas ou informações não fornecidas nesta sessão específica de chat. No entanto, estou à disposição para ajudar você a calcular um novo empréstimo e discutir possíveis opções de parcelamento. Você poderia fornecer o valor que está considerando emprestar e o número de parcelas em que gostaria de dividir?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "06985431-22c3-4965-ab03-6f308e14289c"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "nao tem acesso ao historico ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1ccZzONjkpYpocjdj17WG5zj0D1z",
+      "created": 1754502823,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 314,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 13,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_N3HigTKPurJF315MWYI9jYv0",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_TechSupportAgent",
+        "function_name": "transfer_to_TechSupportAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_N3HigTKPurJF315MWYI9jYv0",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_TechSupportAgent",
+        "function_name": "transfer_to_TechSupportAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1ccZzONjkpYpocjdj17WG5zj0D1z",
+      "created": 1754502823,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 314,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 13,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1ccaNBhu3iyUTIKwuXOcPVw4ox9u",
+      "created": 1754502824,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 128,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 75,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TechSupportAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Como assistente técnico, tenho acesso apenas às informações técnicas para solucionar problemas. Se você precisa de informações sobre seu histórico de transações ou outro tipo de registro, sugiro que entre em contato com o setor apropriado. Posso transferir seu pedido para o agente de triagem, que poderá ajudá-lo melhor.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "154659a8-8e69-428c-b647-ee89201f84f8"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Meu nome é João Silva",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1coI5Ng0VDGIapIXhzmtst3U0uKA",
+      "created": 1754503550,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 313,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 16,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá, João Silva. Como posso ajudá-lo hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "154659a8-8e69-428c-b647-ee89201f84f8"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Qual é o meu nome?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1coPloDOdivHEwne64TFF1RNR4gY",
+      "created": 1754503557,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 312,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 34,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Desculpe, mas como um agente de triagem, não tenho informações pessoais sobre os usuários. Como eu posso ajudar você hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "6abfe22e-34a4-478f-848d-1c10fc69b921"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Preciso de ajuda com investimentos para aposentadoria",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1coUkOMFS03gDUWpV1xT10o44wwW",
+      "created": 1754503562,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 320,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_H7GFDtuUNjxnFXembNhCtIPH",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_H7GFDtuUNjxnFXembNhCtIPH",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1coUkOMFS03gDUWpV1xT10o44wwW",
+      "created": 1754503562,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 320,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1coVVOAj6EHTzApPSQbjKN7NTPNE",
+      "created": 1754503563,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 139,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 156,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, eu ficarei feliz em ajudá-lo a planejar seu investimento para a aposentadoria. Para começar, você poderia me contar um pouco mais sobre a sua situação atual? Por exemplo:\n\n1. Você já tem algum investimento feito para a aposentadoria?\n2. Qual é a sua idade atual e em que idade você planeja se aposentar?\n3. Que tipo de estilo de vida você espera ter na aposentadoria?\n4. Qual é o seu apetite ao risco em relação aos investimentos? Você se sente confortável em assumir mais riscos para potencialmente obter um retorno maior ou prefere uma abordagem mais conservadora?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "154659a8-8e69-428c-b647-ee89201f84f8"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Você lembra qual é o meu nome?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1cod63LDMFHOT5GVMruFoGUdKR5r",
+      "created": 1754503571,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 316,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 64,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Desculpe, mas como agente de triagem, eu não tenho acesso a informações pessoais. Posso ajudá-lo com questões relacionadas a finanças, TI, vendas ou recursos humanos. Por favor, conte-me mais sobre o assunto que você precisa de ajuda.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Meu nome é João Silva",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Qual é o meu nome?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Preciso de ajuda com investimentos para aposentadoria",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Você lembra qual é o meu nome?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "16962ee8-72c4-4c19-b1f3-7e7c93816513"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "olá, tudo bem ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1d1LeIA7zkQnu5kI1k6UDBQwlCFN",
+      "created": 1754504359,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 312,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 18,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá! Tudo bem e você? Como posso ajudá-lo hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "16962ee8-72c4-4c19-b1f3-7e7c93816513"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "estou com uma duvida",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1d1VWpFg12Q9F6MOcVrUrnNY8xCQ",
+      "created": 1754504369,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 312,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 25,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, posso te ajudar. Por favor, forneça mais detalhes sobre sua dúvida.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "f79cc78c-d5b1-4bfa-8360-af273556eeea"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "quantas horas eu tenho que trabalhar no dia como clt ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1d1qWteiaW6SWTwDQF7pheITYfyi",
+      "created": 1754504390,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 321,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_vhMYV8firWpHS9RuoHXhIo0s",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_HRAgent",
+        "function_name": "transfer_to_HRAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_vhMYV8firWpHS9RuoHXhIo0s",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_HRAgent",
+        "function_name": "transfer_to_HRAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1d1qWteiaW6SWTwDQF7pheITYfyi",
+      "created": 1754504390,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 321,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1d1rb3xZZNzCVSnOU6TpgJc6q8Ip",
+      "created": 1754504391,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 171,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 110,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "HRAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "A jornada de trabalho padrão para um trabalhador contratado pelo regime CLT (Consolidação das Leis do Trabalho) no Brasil é de 8 horas por dia, totalizando 44 horas por semana. No entanto, a duração do trabalho pode variar de acordo com o tipo de trabalho e o acordo ou contrato de trabalho. Também é importante mencionar que está prevista na lei a possibilidade de horas extras, que não devem exceder duas horas por dia.",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {
+      "agent_id": "d15e02c0-5451-436f-9e71-2e7a9f0a62ad"
+    },
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "entendi, agora tenho uma duvida sobre emprestimos",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1d2Emo5SQNuwXL1NeF1un9QyKMWT",
+      "created": 1754504414,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 320,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_rYggyijPQZqKGARqQw89czVj",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_rYggyijPQZqKGARqQw89czVj",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1d2Emo5SQNuwXL1NeF1un9QyKMWT",
+      "created": 1754504414,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 320,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1d2F5vBjReI8oMsEOvEWKGHyrNDb",
+      "created": 1754504415,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 139,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 24,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Claro, estou aqui para ajudar! Qual é a sua dúvida sobre empréstimos?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
+  }
+]

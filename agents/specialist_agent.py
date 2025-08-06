@@ -5,7 +5,6 @@ from semantic_kernel.connectors.ai.open_ai import OpenAIChatCompletion
 def criar_agente_especialista(config: dict, api_key: str) -> ChatCompletionAgent:
     """
     Factory function para criar agentes especialistas dinamicamente
-    seguindo o padrão da documentação oficial do Semantic Kernel.
     """
     
     # Criar serviço OpenAI para o agente
