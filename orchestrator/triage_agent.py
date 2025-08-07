@@ -123,6 +123,16 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
         if not hasattr(self, '_displayed_messages'):
             self._displayed_messages = set()
         
+        # Salvar a última resposta do agente para uso posterior
+        if (hasattr(message, 'role') and 
+            message.role.value == "assistant" and 
+            message.name and 
+            message.name != "Sistema"):
+            self._last_agent_response = {
+                "name": message.name,
+                "content": message.content
+            }
+        
         if message_key not in self._displayed_messages:
             self._displayed_messages.add(message_key)
             
@@ -158,6 +168,9 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
         try:
             if not self.runtime:
                 self.iniciar_runtime()
+
+            # Limpar resposta anterior
+            self._last_agent_response = None
 
             # 1️⃣ Verificar se a mensagem viola algum guardrail dinâmico
             guardrail_result = self.guardrails.analisar_mensagem(mensagem)
@@ -214,6 +227,12 @@ Use as funções transfer_to_* para direcionar. Seja breve."""
             )
             
             result = await orchestration_result.get()
+            
+            # Se temos uma resposta salva do callback, usar ela
+            if hasattr(self, '_last_agent_response') and self._last_agent_response:
+                return self._last_agent_response['content']
+            
+            # Caso contrário, usar o resultado da orquestração
             return str(result) if result else "Conversa finalizada."
             
         except asyncio.TimeoutError:

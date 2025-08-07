@@ -289,7 +289,6 @@
     "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
@@ -325,8 +324,7 @@
     ],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
   },
   {
     "ai_model_id": null,
@@ -405,7 +403,6 @@
     "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
@@ -446,11 +443,9 @@
     ],
     "encoding": null,
     "finish_reason": "tool_calls",
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": null,
     "metadata": {},
     "content_type": "message",
@@ -475,11 +470,9 @@
     ],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": null
+    "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "id": "chatcmpl-C1daWxBOsaAbqN9KL2xUiGHCHbUnS",
@@ -506,11 +499,9 @@
     "items": [],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
@@ -546,8 +537,7 @@
     ],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
   },
   {
     "ai_model_id": null,
@@ -569,7 +559,6 @@
     "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
@@ -610,11 +599,9 @@
     ],
     "encoding": null,
     "finish_reason": "tool_calls",
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": null,
     "metadata": {},
     "content_type": "message",
@@ -639,11 +626,9 @@
     ],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": null
+    "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "id": "chatcmpl-C1daziI5u9HIleIfjeKXU6sRcHB1M",
@@ -670,11 +655,9 @@
     "items": [],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
   },
   {
-    "choice_index": 0,
     "ai_model_id": "gpt-4",
     "metadata": {
       "logprobs": null,
@@ -710,7 +693,219 @@
     ],
     "encoding": null,
     "finish_reason": null,
-    "status": null,
-    "function_invoke_attempt": 0
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "olá, tudo bem ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1emf9x01bpc2wrJ22yQzQK2q5Mzd",
+      "created": 1754511137,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 395,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá! Como posso ajudá-lo hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "meu nome é lucas e gostaria de fazer um emprestimo de 1000 reais, o que voce me aconselharia ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1en29RHtsv56YpFjoauuCcq0fIE4",
+      "created": 1754511160,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 462,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "function_call",
+        "id": "call_wxvMYzBuJGqG4BTDnPxx2Ck7",
+        "call_id": null,
+        "index": 0,
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "arguments": "{}"
+      }
+    ],
+    "encoding": null,
+    "finish_reason": "tool_calls",
+    "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "tool",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {
+          "arguments": {},
+          "used_arguments": {}
+        },
+        "content_type": "function_result",
+        "id": "call_wxvMYzBuJGqG4BTDnPxx2Ck7",
+        "call_id": null,
+        "result": "None",
+        "name": "Handoff-transfer_to_FinanceAgent",
+        "function_name": "transfer_to_FinanceAgent",
+        "plugin_name": "Handoff",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "id": "chatcmpl-C1en29RHtsv56YpFjoauuCcq0fIE4",
+      "created": 1754511160,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 462,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 12,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C1en31r8cy9vjDelKIbfN6t9V1iJr",
+      "created": 1754511161,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 281,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 323,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "FinanceAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá Lucas, a decisão de como você deve proceder depende muito de suas circunstâncias individuais. Aqui estão algumas coisas que você deve considerar:\n1. Taxa de juros: Antes de fazer um empréstimo, verifique quais são as taxas de juros oferecidas. Lembre-se, quanto menor a taxa de juros, melhor.\n2. Prazo de reembolso: Verifique se o período de reembolso oferecido pelo credor é adequado para você. Um período de reembolso mais longo pode facilitar a gestão dos reembolsos, mas tenha em mente que provavelmente custará mais a longo prazo.\n3. Políticas de reembolso: Verifique se a instituição financeira oferece uma política de reembolso flexível. Se você estiver em condições de reembolsar o empréstimo antes do previsto, é bom ter essa opção sem penalidades significativas.\n4. Reputação da instituição financeira: Antes de pegar um empréstimo, é aconselhável pesquisar a reputação da instituição financeira. Leia avaliações online e pergunte a amigos e familiares sobre suas experiências.\n\nLembre-se, é sempre bom aconselhar-se com um consultor financeiro ou fazer uma pesquisa abrangente antes de tomar uma decisão. Espero que isso ajude na sua decisão.\n",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
   }
 ]
