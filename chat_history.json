@@ -907,5 +907,64 @@
     "encoding": null,
     "finish_reason": null,
     "status": null
+  },
+  {
+    "ai_model_id": null,
+    "metadata": {},
+    "content_type": "message",
+    "role": "user",
+    "name": null,
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "olá, tudo bem ?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null
+  },
+  {
+    "choice_index": 0,
+    "ai_model_id": "gpt-4",
+    "metadata": {
+      "logprobs": null,
+      "id": "chatcmpl-C3MEN17Zey4I1f2ACwKP7PzH1DXNP",
+      "created": 1754916475,
+      "system_fingerprint": null,
+      "usage": {
+        "prompt_tokens": 397,
+        "prompt_tokens_details": {
+          "audio_tokens": 0,
+          "cached_tokens": 0
+        },
+        "completion_tokens": 13,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": 0,
+          "audio_tokens": 0,
+          "reasoning_tokens": 0,
+          "rejected_prediction_tokens": 0
+        }
+      }
+    },
+    "content_type": "message",
+    "role": "assistant",
+    "name": "TriageAgent",
+    "items": [
+      {
+        "ai_model_id": null,
+        "metadata": {},
+        "content_type": "text",
+        "text": "Olá! Como posso lhe ajudar hoje?",
+        "encoding": null
+      }
+    ],
+    "encoding": null,
+    "finish_reason": null,
+    "status": null,
+    "function_invoke_attempt": 0
   }
 ]
