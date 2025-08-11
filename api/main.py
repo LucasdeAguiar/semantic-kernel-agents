@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 from .models import (
     AgentConfig, AgentResponse, MessageRequest, MessageResponse,
-    ChatHistoryResponse, SystemStatus
+    ChatHistoryResponse, SystemStatus, GuardrailConfig, GuardrailResponse
 )
 from .services import AgentService
 
@@ -235,6 +235,95 @@ async def clear_chat_history(service: AgentService = Depends(get_agent_service))
             raise HTTPException(status_code=500, detail="Falha ao limpar histórico")
     except Exception as e:
         logger.error(f"Erro ao limpar histórico: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# ==================== ENDPOINTS DE GUARDRAILS ====================
+
+@app.get("/guardrails", response_model=List[GuardrailConfig], tags=["Guardrails"])
+async def get_guardrails(service: AgentService = Depends(get_agent_service)):
+    """Lista todos os guardrails configurados"""
+    try:
+        guardrails = service.get_all_guardrails()
+        return [GuardrailConfig(**guardrail) for guardrail in guardrails]
+    except Exception as e:
+        logger.error(f"Erro ao listar guardrails: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/guardrails/{guardrail_name}", response_model=GuardrailConfig, tags=["Guardrails"])
+async def get_guardrail(guardrail_name: str, service: AgentService = Depends(get_agent_service)):
+    """Retorna um guardrail específico"""
+    try:
+        guardrail = service.get_guardrail_by_name(guardrail_name)
+        if not guardrail:
+            raise HTTPException(status_code=404, detail=f"Guardrail '{guardrail_name}' não encontrado")
+        return GuardrailConfig(**guardrail)
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Erro ao buscar guardrail {guardrail_name}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/guardrails", response_model=GuardrailResponse, tags=["Guardrails"])
+async def create_guardrail(guardrail: GuardrailConfig, service: AgentService = Depends(get_agent_service)):
+    """Cria um novo guardrail"""
+    try:
+        created_guardrail = service.create_guardrail(guardrail.model_dump())
+        return GuardrailResponse(
+            success=True,
+            message=f"Guardrail '{guardrail.name}' criado com sucesso",
+            data=created_guardrail
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Erro ao criar guardrail: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.put("/guardrails/{guardrail_name}", response_model=GuardrailResponse, tags=["Guardrails"])
+async def update_guardrail(
+    guardrail_name: str, 
+    guardrail: GuardrailConfig, 
+    service: AgentService = Depends(get_agent_service)
+):
+    """Atualiza um guardrail existente"""
+    try:
+        # Garantir que o nome na URL seja usado
+        guardrail_data = guardrail.model_dump()
+        guardrail_data["name"] = guardrail_name
+        
+        updated_guardrail = service.update_guardrail(guardrail_name, guardrail_data)
+        return GuardrailResponse(
+            success=True,
+            message=f"Guardrail '{guardrail_name}' atualizado com sucesso",
+            data=updated_guardrail
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Erro ao atualizar guardrail {guardrail_name}: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.delete("/guardrails/{guardrail_name}", response_model=GuardrailResponse, tags=["Guardrails"])
+async def delete_guardrail(guardrail_name: str, service: AgentService = Depends(get_agent_service)):
+    """Remove um guardrail"""
+    try:
+        success = service.delete_guardrail(guardrail_name)
+        if success:
+            return GuardrailResponse(
+                success=True,
+                message=f"Guardrail '{guardrail_name}' removido com sucesso"
+            )
+        else:
+            raise HTTPException(status_code=400, detail="Falha ao remover guardrail")
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    except Exception as e:
+        logger.error(f"Erro ao remover guardrail {guardrail_name}: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 

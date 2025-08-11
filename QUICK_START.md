@@ -41,6 +41,11 @@ curl -X POST "http://localhost:8000/chat/send" \
 curl "http://localhost:8000/agents"
 ```
 
+### 🛡️ Listar Guardrails
+```bash
+curl "http://localhost:8000/guardrails"
+```
+
 ### 📊 Status do Sistema
 ```bash
 curl "http://localhost:8000/status"
@@ -59,6 +64,18 @@ curl -X POST "http://localhost:8000/agents" \
        "name": "CustomerServiceAgent",
        "description": "Especialista em atendimento ao cliente",
        "instructions": "Você é um especialista em atendimento. Ajude com reclamações e dúvidas."
+     }'
+```
+
+## 🛡️ Criar Novo Guardrail
+```bash
+curl -X POST "http://localhost:8000/guardrails" \
+     -H "Content-Type: application/json" \
+     -d '{
+       "name": "PoliticsGuardrail",
+       "description": "Bloqueia discussões políticas",
+       "keywords": ["política", "eleição", "governo"],
+       "enabled": true
      }'
 ```
 

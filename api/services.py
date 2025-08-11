@@ -317,3 +317,151 @@ class AgentService:
             logger.info("Sistema limpo com sucesso")
         except Exception as e:
             logger.error(f"Erro durante cleanup: {e}")
+    
+    # ==================== MÉTODOS PARA GUARDRAILS ====================
+    
+    def get_all_guardrails(self) -> List[Dict[str, Any]]:
+        """Retorna todos os guardrails configurados"""
+        try:
+            import json
+            from pathlib import Path
+            
+            guardrails_file = Path("config/guardrails_config.json")
+            if not guardrails_file.exists():
+                return []
+            
+            with open(guardrails_file, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            logger.error(f"Erro ao carregar guardrails: {e}")
+            raise
+    
+    def get_guardrail_by_name(self, name: str) -> Optional[Dict[str, Any]]:
+        """Retorna um guardrail específico pelo nome"""
+        try:
+            guardrails = self.get_all_guardrails()
+            for guardrail in guardrails:
+                if guardrail["name"] == name:
+                    return guardrail
+            return None
+        except Exception as e:
+            logger.error(f"Erro ao buscar guardrail {name}: {e}")
+            raise
+    
+    def create_guardrail(self, guardrail_config: Dict[str, Any]) -> Dict[str, Any]:
+        """Cria um novo guardrail"""
+        try:
+            # Validações básicas
+            if not guardrail_config.get("name", "").strip():
+                raise ValueError("Nome do guardrail não pode ser vazio")
+            
+            if len(guardrail_config.get("name", "")) > 50:
+                raise ValueError("Nome do guardrail muito longo (máximo 50 caracteres)")
+            
+            # Carregar guardrails existentes
+            guardrails = self.get_all_guardrails()
+            
+            # Verificar se já existe
+            for guardrail in guardrails:
+                if guardrail["name"] == guardrail_config["name"]:
+                    raise ValueError(f"Guardrail com nome '{guardrail_config['name']}' já existe")
+            
+            # Limitar número máximo de guardrails
+            if len(guardrails) >= 20:
+                raise ValueError("Número máximo de guardrails atingido (20)")
+            
+            # Garantir campos obrigatórios
+            if "enabled" not in guardrail_config:
+                guardrail_config["enabled"] = True
+            
+            # Adicionar novo guardrail
+            guardrails.append(guardrail_config)
+            
+            # Salvar configuração
+            self._save_guardrails_config(guardrails)
+            
+            # Reinicializar sistema para aplicar novos guardrails
+            self._reinitialize_system()
+            
+            logger.info(f"Guardrail '{guardrail_config['name']}' criado com sucesso")
+            return guardrail_config
+            
+        except Exception as e:
+            logger.error(f"Erro ao criar guardrail: {e}")
+            raise
+    
+    def update_guardrail(self, name: str, guardrail_config: Dict[str, Any]) -> Dict[str, Any]:
+        """Atualiza um guardrail existente"""
+        try:
+            # Carregar guardrails existentes
+            guardrails = self.get_all_guardrails()
+            
+            # Encontrar e atualizar guardrail
+            found = False
+            for i, guardrail in enumerate(guardrails):
+                if guardrail["name"] == name:
+                    # Manter o nome original se não foi fornecido
+                    if "name" not in guardrail_config:
+                        guardrail_config["name"] = name
+                    guardrails[i] = guardrail_config
+                    found = True
+                    break
+            
+            if not found:
+                raise ValueError(f"Guardrail '{name}' não encontrado")
+            
+            # Salvar configuração
+            self._save_guardrails_config(guardrails)
+            
+            # Reinicializar sistema
+            self._reinitialize_system()
+            
+            logger.info(f"Guardrail '{name}' atualizado com sucesso")
+            return guardrail_config
+            
+        except Exception as e:
+            logger.error(f"Erro ao atualizar guardrail {name}: {e}")
+            raise
+    
+    def delete_guardrail(self, name: str) -> bool:
+        """Remove um guardrail"""
+        try:
+            # Carregar guardrails existentes
+            guardrails = self.get_all_guardrails()
+            
+            # Remover guardrail
+            guardrails_filtrados = [g for g in guardrails if g["name"] != name]
+            
+            if len(guardrails_filtrados) == len(guardrails):
+                raise ValueError(f"Guardrail '{name}' não encontrado")
+            
+            # Salvar configuração
+            self._save_guardrails_config(guardrails_filtrados)
+            
+            # Reinicializar sistema
+            self._reinitialize_system()
+            
+            logger.info(f"Guardrail '{name}' removido com sucesso")
+            return True
+            
+        except Exception as e:
+            logger.error(f"Erro ao remover guardrail {name}: {e}")
+            raise
+    
+    def _save_guardrails_config(self, guardrails: List[Dict[str, Any]]) -> None:
+        """Salva a configuração de guardrails"""
+        try:
+            import json
+            from pathlib import Path
+            
+            config_path = Path("config/guardrails_config.json")
+            config_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            with open(config_path, "w", encoding="utf-8") as f:
+                json.dump(guardrails, f, ensure_ascii=False, indent=2)
+            
+            logger.info(f"Configuração de {len(guardrails)} guardrails salva")
+            
+        except Exception as e:
+            logger.error(f"Erro ao salvar configuração de guardrails: {e}")
+            raise

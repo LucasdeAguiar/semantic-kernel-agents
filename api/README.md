@@ -37,6 +37,13 @@ python run_api.py
 - `PUT /agents/{name}` - Atualiza um agente existente
 - `DELETE /agents/{name}` - Remove um agente
 
+### Gerenciamento de Guardrails
+- `GET /guardrails` - Lista todos os guardrails
+- `GET /guardrails/{name}` - Detalhes de um guardrail específico
+- `POST /guardrails` - Cria um novo guardrail
+- `PUT /guardrails/{name}` - Atualiza um guardrail existente
+- `DELETE /guardrails/{name}` - Remove um guardrail
+
 ### Chat
 - `POST /chat/send` - Envia mensagem para o sistema
 - `GET /chat/history` - Histórico de conversas
@@ -51,6 +58,17 @@ POST /agents
   "name": "CustomerServiceAgent",
   "description": "Especialista em atendimento ao cliente",
   "instructions": "Você é um especialista em atendimento ao cliente. Ajude com reclamações, dúvidas e suporte geral."
+}
+```
+
+### Criar um novo guardrail
+```json
+POST /guardrails
+{
+  "name": "ProfanityGuardrail",
+  "description": "Bloqueia conteúdo com palavrões e linguagem ofensiva",
+  "keywords": ["palavra1", "palavra2", "palavra3"],
+  "enabled": true
 }
 ```
 

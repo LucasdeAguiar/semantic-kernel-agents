@@ -106,3 +106,28 @@ class SystemStatus(BaseModel):
     total_agents: int = Field(..., description="Total de agentes configurados")
     active_runtime: bool = Field(..., description="Se o runtime está ativo")
     last_message_time: Optional[datetime] = Field(default=None, description="Último timestamp de mensagem")
+
+
+class GuardrailConfig(BaseModel):
+    """Modelo para configuração de guardrail"""
+    name: str = Field(..., description="Nome do guardrail")
+    description: str = Field(..., description="Descrição do guardrail")
+    keywords: Optional[List[str]] = Field(default=None, description="Palavras-chave para bloqueio")
+    enabled: bool = Field(default=True, description="Se o guardrail está ativo")
+    
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "name": "ProfanityGuardrail",
+                "description": "Bloqueia conteúdo com palavrões e linguagem ofensiva",
+                "keywords": ["palavra1", "palavra2", "palavra3"],
+                "enabled": True
+            }
+        }
+
+
+class GuardrailResponse(BaseModel):
+    """Resposta padrão para operações com guardrails"""
+    success: bool = Field(..., description="Se a operação foi bem-sucedida")
+    message: str = Field(..., description="Mensagem de resposta")
+    data: Optional[Any] = Field(default=None, description="Dados retornados")
