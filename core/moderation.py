@@ -6,9 +6,6 @@ logger = logging.getLogger(__name__)
 
 
 class ModerationResult:
-    """
-    Resultado estruturado da moderação.
-    """
     def __init__(self, flagged: bool, categories: Dict[str, bool], highest_score: float, provider: str):
         self.flagged = flagged
         self.categories = categories
@@ -24,9 +21,6 @@ class ContentModerator:
         self.client = OpenAI(api_key=api_key)
 
     def analisar_mensagem(self, texto: str) -> ModerationResult:
-        """
-        Analisa uma mensagem de texto quanto a conteúdo inadequado.
-        """
         try:
             response = self.client.moderations.create(
                 input=texto,
@@ -48,7 +42,6 @@ class ContentModerator:
             return ModerationResult(flagged=False, categories={}, highest_score=0.0, provider="openai")
 
     def _extract_highest_score(self, category_scores) -> float:
-        """Extrai o score mais alto das categorias"""
         if not category_scores:
             return 0.0
         
@@ -64,7 +57,6 @@ class ContentModerator:
         return max(scores) if scores else 0.0
 
     def _extract_categories(self, categories) -> Dict[str, bool]:
-        """Extrai as categorias de moderação"""
         if hasattr(categories, 'model_dump'):
             return categories.model_dump()
         return dict(categories) if categories else {}

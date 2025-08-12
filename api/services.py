@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-# Adicionar path para imports
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agents.agent_loader import carregar_agentes_dinamicamente, salvar_configuracao_agentes, validar_configuracao_agente
@@ -15,12 +14,9 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-# Constantes
 SYSTEM_NOT_INITIALIZED = "Sistema não inicializado"
 
-
 class AgentService:
-    """Serviço para gerenciar agentes"""
     
     def __init__(self, api_key: str):
         self.api_key = api_key
@@ -28,7 +24,6 @@ class AgentService:
         self._initialize_system()
     
     def _initialize_system(self):
-        """Inicializa o sistema de agentes"""
         try:
             agentes_config = carregar_agentes_dinamicamente()
             self.triage_agent = TriageAgent(agentes_config, self.api_key)
@@ -39,7 +34,6 @@ class AgentService:
             raise
     
     def get_all_agents(self) -> List[Dict[str, Any]]:
-        """Retorna todos os agentes configurados"""
         try:
             return carregar_agentes_dinamicamente()
         except Exception as e:
@@ -47,7 +41,6 @@ class AgentService:
             raise
     
     def get_agent_by_name(self, name: str) -> Optional[Dict[str, Any]]:
-        """Retorna um agente específico pelo nome"""
         try:
             agentes = carregar_agentes_dinamicamente()
             for agente in agentes:
@@ -59,37 +52,28 @@ class AgentService:
             raise
     
     def create_agent(self, agent_config: Dict[str, Any]) -> Dict[str, Any]:
-        """Cria um novo agente"""
         try:
-            # Validar configuração
             validar_configuracao_agente(agent_config)
             
-            # Verificações adicionais de segurança
             if not agent_config.get("name", "").strip():
                 raise ValueError("Nome do agente não pode ser vazio")
             
             if len(agent_config.get("name", "")) > 50:
                 raise ValueError("Nome do agente muito longo (máximo 50 caracteres)")
             
-            # Carregar agentes existentes
             agentes = carregar_agentes_dinamicamente()
             
-            # Verificar se já existe
             for agente in agentes:
                 if agente["name"] == agent_config["name"]:
                     raise ValueError(f"Agente com nome '{agent_config['name']}' já existe")
             
-            # Limitar número máximo de agentes
             if len(agentes) >= 10:
                 raise ValueError("Número máximo de agentes atingido (10)")
             
-            # Adicionar novo agente
             agentes.append(agent_config)
             
-            # Salvar configuração
             salvar_configuracao_agentes(agentes)
             
-            # Reinicializar sistema
             self._reinitialize_system()
             
             logger.info(f"Agente '{agent_config['name']}' criado com sucesso")
@@ -100,15 +84,11 @@ class AgentService:
             raise
     
     def update_agent(self, name: str, agent_config: Dict[str, Any]) -> Dict[str, Any]:
-        """Atualiza um agente existente"""
         try:
-            # Validar configuração
             validar_configuracao_agente(agent_config)
             
-            # Carregar agentes existentes
             agentes = carregar_agentes_dinamicamente()
             
-            # Encontrar e atualizar agente
             found = False
             for i, agente in enumerate(agentes):
                 if agente["name"] == name:
@@ -119,10 +99,8 @@ class AgentService:
             if not found:
                 raise ValueError(f"Agente '{name}' não encontrado")
             
-            # Salvar configuração
             salvar_configuracao_agentes(agentes)
             
-            # Reinicializar sistema
             self._reinitialize_system()
             
             logger.info(f"Agente '{name}' atualizado com sucesso")
@@ -135,23 +113,18 @@ class AgentService:
     def delete_agent(self, name: str) -> bool:
         """Remove um agente"""
         try:
-            # Não permitir remover TriageAgent
             if name == "TriageAgent":
                 raise ValueError("Não é possível remover o TriageAgent")
             
-            # Carregar agentes existentes
             agentes = carregar_agentes_dinamicamente()
             
-            # Remover agente
             agentes_filtrados = [agente for agente in agentes if agente["name"] != name]
             
             if len(agentes_filtrados) == len(agentes):
                 raise ValueError(f"Agente '{name}' não encontrado")
             
-            # Salvar configuração
             salvar_configuracao_agentes(agentes_filtrados)
             
-            # Reinicializar sistema
             self._reinitialize_system()
             
             logger.info(f"Agente '{name}' removido com sucesso")
@@ -162,20 +135,16 @@ class AgentService:
             raise
     
     async def process_message(self, message: str) -> Dict[str, Any]:
-        """Processa uma mensagem através do sistema de agentes"""
         try:
             if not self.triage_agent:
                 raise RuntimeError(SYSTEM_NOT_INITIALIZED)
             
-            # Processar mensagem
             response = await self.triage_agent.processar_mensagem(message)
             
-            # Pegar a última resposta do histórico para identificar o agente e a resposta real
             historico = self.triage_agent.obter_historico()
             
-            # Procurar pela última mensagem de assistente (não de usuário)
             agent_name = "Sistema"
-            agent_response = response  # fallback para a resposta do sistema
+            agent_response = response  
             
             for msg in reversed(historico):
                 if (hasattr(msg, 'role') and 
@@ -206,15 +175,12 @@ class AgentService:
             }
     
     def get_chat_history(self, limit: Optional[int] = None) -> Dict[str, Any]:
-        """Retorna o histórico de chat"""
         try:
             if not self.triage_agent:
                 raise RuntimeError(SYSTEM_NOT_INITIALIZED)
             
-            # Pegar histórico do memory manager
             historico = self.triage_agent.obter_historico()
             
-            # Converter para formato da API
             messages = []
             for msg in historico:
                 if hasattr(msg, 'content') and msg.content:
@@ -222,11 +188,10 @@ class AgentService:
                         "role": msg.role.value if hasattr(msg.role, 'value') else str(msg.role),
                         "name": msg.name,
                         "content": msg.content,
-                        "timestamp": datetime.now(),  # Poderia ser extraído do metadata se disponível
+                        "timestamp": datetime.now(), 
                         "ai_model_id": getattr(msg, 'ai_model_id', None)
                     })
             
-            # Aplicar limite se especificado
             if limit:
                 messages = messages[-limit:]
             
@@ -245,7 +210,6 @@ class AgentService:
             }
     
     def clear_history(self) -> bool:
-        """Limpa o histórico de chat"""
         try:
             if not self.triage_agent:
                 raise RuntimeError(SYSTEM_NOT_INITIALIZED)
@@ -259,11 +223,9 @@ class AgentService:
             return False
     
     def get_system_status(self) -> Dict[str, Any]:
-        """Retorna status do sistema"""
         try:
             agentes = carregar_agentes_dinamicamente()
             
-            # Pegar timestamp da última mensagem se disponível
             last_message_time = None
             if self.triage_agent:
                 historico = self.triage_agent.obter_historico()
@@ -287,22 +249,17 @@ class AgentService:
             }
     
     def _reinitialize_system(self):
-        """Reinicializa o sistema após mudanças na configuração"""
         try:
-            # Parar runtime atual se existir
             if self.triage_agent and self.triage_agent.runtime:
                 import asyncio
                 loop = asyncio.get_event_loop()
                 if loop.is_running():
-                    # Se já estamos em um loop assíncrono, não podemos usar run_until_complete
-                    # Agendar para parar mais tarde
                     task = asyncio.create_task(self.triage_agent.parar_runtime())
-                    # Salvar referência da task para evitar garbage collection
+             
                     self._cleanup_task = task
                 else:
                     asyncio.run(self.triage_agent.parar_runtime())
             
-            # Reinicializar
             self._initialize_system()
             
         except Exception as e:
@@ -310,7 +267,6 @@ class AgentService:
             raise
     
     async def cleanup(self):
-        """Limpa recursos do sistema"""
         try:
             if self.triage_agent and self.triage_agent.runtime:
                 await self.triage_agent.parar_runtime()
@@ -321,7 +277,6 @@ class AgentService:
     # ==================== MÉTODOS PARA GUARDRAILS ====================
     
     def get_all_guardrails(self) -> List[Dict[str, Any]]:
-        """Retorna todos os guardrails configurados"""
         try:
             import json
             from pathlib import Path
@@ -337,7 +292,6 @@ class AgentService:
             raise
     
     def get_guardrail_by_name(self, name: str) -> Optional[Dict[str, Any]]:
-        """Retorna um guardrail específico pelo nome"""
         try:
             guardrails = self.get_all_guardrails()
             for guardrail in guardrails:
@@ -349,19 +303,15 @@ class AgentService:
             raise
     
     def create_guardrail(self, guardrail_config: Dict[str, Any]) -> Dict[str, Any]:
-        """Cria um novo guardrail"""
         try:
-            # Validações básicas
             if not guardrail_config.get("name", "").strip():
                 raise ValueError("Nome do guardrail não pode ser vazio")
             
             if len(guardrail_config.get("name", "")) > 50:
                 raise ValueError("Nome do guardrail muito longo (máximo 50 caracteres)")
             
-            # Carregar guardrails existentes
             guardrails = self.get_all_guardrails()
             
-            # Verificar se já existe
             for guardrail in guardrails:
                 if guardrail["name"] == guardrail_config["name"]:
                     raise ValueError(f"Guardrail com nome '{guardrail_config['name']}' já existe")
@@ -370,17 +320,13 @@ class AgentService:
             if len(guardrails) >= 20:
                 raise ValueError("Número máximo de guardrails atingido (20)")
             
-            # Garantir campos obrigatórios
             if "enabled" not in guardrail_config:
                 guardrail_config["enabled"] = True
             
-            # Adicionar novo guardrail
             guardrails.append(guardrail_config)
             
-            # Salvar configuração
             self._save_guardrails_config(guardrails)
             
-            # Reinicializar sistema para aplicar novos guardrails
             self._reinitialize_system()
             
             logger.info(f"Guardrail '{guardrail_config['name']}' criado com sucesso")
@@ -391,16 +337,12 @@ class AgentService:
             raise
     
     def update_guardrail(self, name: str, guardrail_config: Dict[str, Any]) -> Dict[str, Any]:
-        """Atualiza um guardrail existente"""
         try:
-            # Carregar guardrails existentes
             guardrails = self.get_all_guardrails()
             
-            # Encontrar e atualizar guardrail
             found = False
             for i, guardrail in enumerate(guardrails):
                 if guardrail["name"] == name:
-                    # Manter o nome original se não foi fornecido
                     if "name" not in guardrail_config:
                         guardrail_config["name"] = name
                     guardrails[i] = guardrail_config
@@ -409,11 +351,9 @@ class AgentService:
             
             if not found:
                 raise ValueError(f"Guardrail '{name}' não encontrado")
-            
-            # Salvar configuração
+        
             self._save_guardrails_config(guardrails)
             
-            # Reinicializar sistema
             self._reinitialize_system()
             
             logger.info(f"Guardrail '{name}' atualizado com sucesso")
@@ -424,21 +364,16 @@ class AgentService:
             raise
     
     def delete_guardrail(self, name: str) -> bool:
-        """Remove um guardrail"""
         try:
-            # Carregar guardrails existentes
             guardrails = self.get_all_guardrails()
             
-            # Remover guardrail
             guardrails_filtrados = [g for g in guardrails if g["name"] != name]
             
             if len(guardrails_filtrados) == len(guardrails):
                 raise ValueError(f"Guardrail '{name}' não encontrado")
             
-            # Salvar configuração
             self._save_guardrails_config(guardrails_filtrados)
             
-            # Reinicializar sistema
             self._reinitialize_system()
             
             logger.info(f"Guardrail '{name}' removido com sucesso")
@@ -449,7 +384,6 @@ class AgentService:
             raise
     
     def _save_guardrails_config(self, guardrails: List[Dict[str, Any]]) -> None:
-        """Salva a configuração de guardrails"""
         try:
             import json
             from pathlib import Path

@@ -43,11 +43,9 @@ semantic-kernel-agents/
 ### 1. Instalação
 
 ```bash
-# Clone o repositório
 git clone <seu-repositorio>
 cd semantic-kernel-agents
 
-# Instale as dependências
 pip install -r requirements.txt
 ```
 

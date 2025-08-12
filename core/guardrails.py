@@ -43,14 +43,12 @@ class GuardrailsManager:
             rule_name = rule.get("name", "Unknown")
             logger.debug(f"[GUARDRAIL] Verificando regra: {rule_name}")
 
-            # Verificação por palavra-chave 
             keywords = rule.get("keywords", [])
             if keywords:
                 result = self._check_keyword_guardrail(texto, rule)
                 if result.blocked:
                     return result
 
-            # Verificação semântica (se houver descrição e client)
             if self.client and rule.get("description", ""):
                 result = self._check_semantic_guardrail(texto, rule)
                 if result.blocked:

@@ -18,41 +18,31 @@ load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 
-# Configurar logging mais limpo
 logging.basicConfig(
-    level=logging.WARNING,  # Só mostra warnings e erros por padrão
+    level=logging.WARNING, 
     format='%(levelname)s: %(message)s'
 )
 
-# Configurar loggers específicos para mostrar apenas o essencial
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
-# Silenciar logs verbosos do runtime e httpx
 logging.getLogger('in_process_runtime').setLevel(logging.WARNING)
 logging.getLogger('in_process_runtime.events').setLevel(logging.WARNING) 
 logging.getLogger('httpx').setLevel(logging.WARNING)
 logging.getLogger('semantic_kernel').setLevel(logging.WARNING)
 
-# Manter logs importantes dos agentes
 logging.getLogger('orchestrator.triage_agent').setLevel(logging.INFO)
 logging.getLogger('agents.agent_loader').setLevel(logging.INFO)
 
 async def main():
-    """
-    Função principal do sistema de agentes especialistas com handoff orchestration
-    """
     try:
         print("🤖 Sistema de Agentes Especialistas com Semantic Kernel")
         print("=" * 60)
         
-        # Carregar configurações dos agentes
         agentes_config = carregar_agentes_dinamicamente()
         
-        # Criar o agente orquestrador (Triage Agent)
         orquestrador = TriageAgent(agentes_config, OPENAI_API_KEY)
         
-        # Inicializar runtime
         orquestrador.iniciar_runtime()
         
         print(f"\n✅ Sistema iniciado com {len(agentes_config)} agentes!")
@@ -66,7 +56,6 @@ async def main():
         print("🔄 O sistema usa handoff orchestration para rotear automaticamente")
         print("=" * 60)
         
-        # Loop principal de conversa
         while True:
             try:
                 user_input = input("\n👤 Você: ").strip()
@@ -78,7 +67,6 @@ async def main():
                     print("\n👋 Encerrando sistema...")
                     break
                 
-                # Comandos especiais
                 if user_input.lower() == "historico":
                     print("\n📋 Histórico da conversa:")
                     historico = orquestrador.obter_historico()
@@ -100,15 +88,12 @@ async def main():
                     print("  • sair/exit/quit - encerra o sistema")
                     continue
                 
-                # Processar mensagem através do orquestrador
                 print("🔄 Processando...")
                 resposta = await orquestrador.processar_mensagem(user_input)
                 
-                # A resposta já é exibida pelo callback do agente
                 if resposta and not resposta.startswith("🤖"):
                     print(f"📋 Status: {resposta}")
                 
-                # Salvar histórico automaticamente
                 orquestrador.memory_manager.save_history()
                 
             except KeyboardInterrupt:
@@ -123,12 +108,10 @@ async def main():
         return
     
     finally:
-        # Cleanup
         try:
             if 'orquestrador' in locals() and orquestrador.runtime:
                 await orquestrador.parar_runtime()
             
-            # Salvar histórico final
             if 'orquestrador' in locals():
                 orquestrador.memory_manager.save_history()
         except Exception as e:
@@ -138,7 +121,6 @@ async def main():
 
 
 def verificar_dependencias():
-    """Verifica se as dependências estão instaladas"""
     try:
         import semantic_kernel
         import openai
@@ -152,7 +134,6 @@ def verificar_dependencias():
 if __name__ == "__main__":
     print("🚀 Inicializando Sistema de Agentes Especialistas...")
     
-    # Verificar dependências
     if not verificar_dependencias():
         exit(1)
     
@@ -160,7 +141,6 @@ if __name__ == "__main__":
         print("⚠️ ATENÇÃO: A variável OPENAI_API_KEY não foi encontrada no .env")
         print("🔑 Crie um arquivo .env com a chave OPENAI_API_KEY=...")
         
-        # Permitir continuar mesmo sem chave para teste da estrutura
         resposta = input("Continuar mesmo assim? (s/N): ")
         if resposta.lower() != 's':
             exit(1)

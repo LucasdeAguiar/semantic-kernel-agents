@@ -12,17 +12,14 @@ from .models import (
 )
 from .services import AgentService
 
-# Carregar variáveis de ambiente
 load_dotenv()
 
-# Configurar logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
 )
 logger = logging.getLogger(__name__)
 
-# Instância global do serviço
 agent_service: Optional[AgentService] = None
 
 
@@ -31,12 +28,11 @@ async def lifespan(app: FastAPI):
     """Gerenciamento do ciclo de vida da aplicação"""
     global agent_service
     
-    # Startup
     try:
         api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:
             logger.warning("OPENAI_API_KEY não encontrada. Alguns recursos podem não funcionar.")
-            api_key = "dummy-key"  # Para permitir inicialização mesmo sem chave
+            api_key = "dummy-key"  
         
         agent_service = AgentService(api_key)
         logger.info("🚀 Sistema de Agentes inicializado com sucesso")
@@ -46,7 +42,6 @@ async def lifespan(app: FastAPI):
         logger.error(f"❌ Erro ao inicializar sistema: {e}")
         raise
     
-    # Shutdown
     finally:
         if agent_service:
             try:
@@ -56,7 +51,6 @@ async def lifespan(app: FastAPI):
                 logger.error(f"⚠️ Erro durante cleanup: {e}")
 
 
-# Criar aplicação FastAPI
 app = FastAPI(
     title="Sistema de Agentes Especialistas",
     description="API REST para gerenciar agentes usando Semantic Kernel",
@@ -87,7 +81,6 @@ async def root():
 
 @app.get("/status", response_model=SystemStatus, tags=["Sistema"])
 async def get_system_status(service: AgentService = Depends(get_agent_service)):
-    """Retorna o status atual do sistema"""
     try:
         status = service.get_system_status()
         return SystemStatus(**status)
@@ -100,7 +93,6 @@ async def get_system_status(service: AgentService = Depends(get_agent_service)):
 
 @app.get("/agents", response_model=List[AgentConfig], tags=["Agentes"])
 async def get_agents(service: AgentService = Depends(get_agent_service)):
-    """Lista todos os agentes configurados"""
     try:
         agents = service.get_all_agents()
         return [AgentConfig(**agent) for agent in agents]
@@ -111,7 +103,6 @@ async def get_agents(service: AgentService = Depends(get_agent_service)):
 
 @app.get("/agents/{agent_name}", response_model=AgentConfig, tags=["Agentes"])
 async def get_agent(agent_name: str, service: AgentService = Depends(get_agent_service)):
-    """Retorna um agente específico"""
     try:
         agent = service.get_agent_by_name(agent_name)
         if not agent:
@@ -126,7 +117,6 @@ async def get_agent(agent_name: str, service: AgentService = Depends(get_agent_s
 
 @app.post("/agents", response_model=AgentResponse, tags=["Agentes"])
 async def create_agent(agent: AgentConfig, service: AgentService = Depends(get_agent_service)):
-    """Cria um novo agente"""
     try:
         created_agent = service.create_agent(agent.model_dump())
         return AgentResponse(
@@ -147,9 +137,7 @@ async def update_agent(
     agent: AgentConfig, 
     service: AgentService = Depends(get_agent_service)
 ):
-    """Atualiza um agente existente"""
     try:
-        # Garantir que o nome na URL seja usado
         agent_data = agent.model_dump()
         agent_data["name"] = agent_name
         
@@ -168,7 +156,6 @@ async def update_agent(
 
 @app.delete("/agents/{agent_name}", response_model=AgentResponse, tags=["Agentes"])
 async def delete_agent(agent_name: str, service: AgentService = Depends(get_agent_service)):
-    """Remove um agente"""
     try:
         success = service.delete_agent(agent_name)
         if success:
@@ -192,7 +179,6 @@ async def send_message(
     message: MessageRequest, 
     service: AgentService = Depends(get_agent_service)
 ):
-    """Envia uma mensagem para o sistema de agentes"""
     try:
         result = await service.process_message(message.message)
         return MessageResponse(**result)
@@ -212,7 +198,6 @@ async def get_chat_history(
     limit: Optional[int] = None,
     service: AgentService = Depends(get_agent_service)
 ):
-    """Retorna o histórico de conversas"""
     try:
         history = service.get_chat_history(limit)
         return ChatHistoryResponse(**history)
@@ -223,7 +208,6 @@ async def get_chat_history(
 
 @app.delete("/chat/history", response_model=AgentResponse, tags=["Chat"])
 async def clear_chat_history(service: AgentService = Depends(get_agent_service)):
-    """Limpa o histórico de conversas"""
     try:
         success = service.clear_history()
         if success:
@@ -242,7 +226,6 @@ async def clear_chat_history(service: AgentService = Depends(get_agent_service))
 
 @app.get("/guardrails", response_model=List[GuardrailConfig], tags=["Guardrails"])
 async def get_guardrails(service: AgentService = Depends(get_agent_service)):
-    """Lista todos os guardrails configurados"""
     try:
         guardrails = service.get_all_guardrails()
         return [GuardrailConfig(**guardrail) for guardrail in guardrails]
@@ -253,7 +236,6 @@ async def get_guardrails(service: AgentService = Depends(get_agent_service)):
 
 @app.get("/guardrails/{guardrail_name}", response_model=GuardrailConfig, tags=["Guardrails"])
 async def get_guardrail(guardrail_name: str, service: AgentService = Depends(get_agent_service)):
-    """Retorna um guardrail específico"""
     try:
         guardrail = service.get_guardrail_by_name(guardrail_name)
         if not guardrail:
@@ -268,7 +250,6 @@ async def get_guardrail(guardrail_name: str, service: AgentService = Depends(get
 
 @app.post("/guardrails", response_model=GuardrailResponse, tags=["Guardrails"])
 async def create_guardrail(guardrail: GuardrailConfig, service: AgentService = Depends(get_agent_service)):
-    """Cria um novo guardrail"""
     try:
         created_guardrail = service.create_guardrail(guardrail.model_dump())
         return GuardrailResponse(
@@ -289,9 +270,7 @@ async def update_guardrail(
     guardrail: GuardrailConfig, 
     service: AgentService = Depends(get_agent_service)
 ):
-    """Atualiza um guardrail existente"""
     try:
-        # Garantir que o nome na URL seja usado
         guardrail_data = guardrail.model_dump()
         guardrail_data["name"] = guardrail_name
         
@@ -310,7 +289,6 @@ async def update_guardrail(
 
 @app.delete("/guardrails/{guardrail_name}", response_model=GuardrailResponse, tags=["Guardrails"])
 async def delete_guardrail(guardrail_name: str, service: AgentService = Depends(get_agent_service)):
-    """Remove um guardrail"""
     try:
         success = service.delete_guardrail(guardrail_name)
         if success:
@@ -331,7 +309,6 @@ async def delete_guardrail(guardrail_name: str, service: AgentService = Depends(
 
 @app.exception_handler(Exception)
 async def general_exception_handler(request, exc):
-    """Handler geral para exceções não tratadas"""
     logger.error(f"Erro não tratado: {exc}")
     return JSONResponse(
         status_code=500,
