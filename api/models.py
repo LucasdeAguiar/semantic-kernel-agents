@@ -46,6 +46,8 @@ class MessageResponse(BaseModel):
     response: str = Field(..., description="Resposta do agente")
     agent_name: str = Field(..., description="Nome do agente que respondeu")
     timestamp: datetime = Field(..., description="Timestamp da resposta")
+    response_time_seconds: Optional[float] = Field(default=None, description="Tempo de resposta em segundos")
+    performance_metrics: Optional[Dict[str, Any]] = Field(default=None, description="Métricas detalhadas de performance")
     
     class Config:
         json_schema_extra = {
@@ -53,7 +55,13 @@ class MessageResponse(BaseModel):
                 "success": True,
                 "response": "Olá! Posso ajudá-lo com questões de investimentos...",
                 "agent_name": "FinanceAgent",
-                "timestamp": "2025-08-06T10:00:00Z"
+                "timestamp": "2025-08-06T10:00:00Z",
+                "response_time_seconds": 2.534,
+                "performance_metrics": {
+                    "total_time": 2.534,
+                    "agent_used": "FinanceAgent",
+                    "message_length": 45
+                }
             }
         }
 

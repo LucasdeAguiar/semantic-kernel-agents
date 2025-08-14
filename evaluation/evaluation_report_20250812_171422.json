@@ -1,0 +1,190 @@
+{
+  "summary": {
+    "total_tests": 17,
+    "routing_accuracy": 0.9411764705882353,
+    "avg_response_time_ms": 14253.217697143555,
+    "context_usage_rate": 1.0
+  },
+  "agent_performance": {
+    "routing_accuracy_by_agent": {
+      "FinanceAgent": 1.0,
+      "TechSupportAgent": 1.0,
+      "SalesAgent": 1.0,
+      "HRAgent": 1.0,
+      "TriageAgent": 0.5
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "routing_finance_01",
+      "message": "Quero investir R$ 1000 em renda fixa",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Ótimo! Investir é sempre uma boa opção. Se você deseja aplicar seu dinheiro em renda fixa, há algumas opções à sua escolha. Aqui estão alguns exemplos:\n\n1. **Tesouro Direto**: O Tesouro Direto é uma das aplicações mais seguras do mercado, pois é garantido pelo Governo Federal. Ele é um programa de venda de títulos públicos a pessoas físicas, de maneira 100% online.\n\n2. **CDB (Certificado de Depósito Bancário)**: Este investimento é um título privado emitido por bancos. Em resumo, ao comprar um CDB, você está emprestando dinheiro ao banco em troca do recebimento de juros.\n\n3. **LCI (Letra de Crédito Imobiliário) e LCA (Letra de Crédito do Agronegócio)**: São títulos emitidos por bancos para financiar atividades destes setores. Uma de suas principais vantagens é a isenção de Imposto de Renda.\n\nAntes de escolher um investimento, é importante considerar alguns pontos como o prazo de resgate, a liquidez e a rentabilidade. Além disso, é fundamental fazer sua reserva de emergência antes de considerar investimentos de longo prazo. \n\nLembre-se sempre de diversificar seus investimentos para minimizar riscos. Seria interessante conversar com um consultor financeiro para avaliar qual é a melhor opção para o seu perfil e objetivos financeiros.",
+      "response_time_ms": 20020.950317382812,
+      "timestamp": "2025-08-12T17:09:03.102022"
+    },
+    {
+      "id": "routing_finance_02",
+      "message": "Como faço um empréstimo pessoal?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Para fazer um empréstimo pessoal, você precisa seguir os seguintes passos:\n\n1. **Identifique a necessidade**: Antes de fazer um empréstimo pessoal, você precisa identificar a necessidade. O empréstimo pessoal é um compromisso financeiro sério, por isso é crucial entender se você realmente precisa do empréstimo e como planeja pagá-lo.\n\n2. **Pesquise várias opções**: Há uma variedade de instituições financeiras que oferecem empréstimos pessoais, e cada uma tem suas próprias condições e taxas de juros. É importante pesquisar várias opções para encontrar a mais adequada para você.\n\n3. **Verifique seu crédito**: Muitas instituições financeiras consideram sua pontuação de crédito ao determinar se você é elegível para um empréstimo. Certifique-se de que não há erros no seu relatório de crédito antes de solicitar um empréstimo.\n\n4. **Solicite o empréstimo**: Dependendo da instituição financeira, você pode precisar solicitar o empréstimo pessoal online ou pessoalmente.\n\n5. **Aguarde a aprovação**: Após a solicitação, a instituição financeira irá revisar seu pedido e, se aprovado, você receberá os fundos.\n\nTenha em mente que fazer um empréstimo pessoal é uma decisão importante. É sempre recomendável se consultar com um conselheiro financeiro ou um especialista em finanças antes de solicitar um.",
+      "response_time_ms": 17117.586851119995,
+      "timestamp": "2025-08-12T17:09:22.256950"
+    },
+    {
+      "id": "routing_tech_01",
+      "message": "O app não está abrindo no meu celular",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito por você estar tendo problemas com o aplicativo. Posso ajudar a resolver isso. Primeiro, preciso de algumas informações. Você pode me dizer o tipo de celular que está usando e o sistema operacional (por exemplo, android, iOS)? E qual é exatamente o problema? O aplicativo está demorando para carregar, fechando inesperadamente ou você recebe algum tipo de mensagem de erro?",
+      "response_time_ms": 11741.941452026367,
+      "timestamp": "2025-08-12T17:09:36.038120"
+    },
+    {
+      "id": "routing_tech_02",
+      "message": "Estou tendo erro 404 no sistema",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo que está enfrentando um erro 404. Esse erro geralmente significa que o recurso que você está tentando acessar não pôde ser encontrado no servidor, o que é comumente um problema de link quebrado ou página removida.\n\nNo entanto, para poder ajudá-lo melhor, preciso de algumas informações adicionais:\n\n1) Você poderia me dizer o sistema exato em que está enfrentando esse erro?\n2. O erro ocorre quando você tenta acessar uma página específica ou acontece com todas as páginas que você tenta abrir?\n3. Você já tentou limpar o cache do seu navegador ou tentou acessar a mesma página usando navegadores diferentes ou outro dispositivo?\n4. Se o sistema tiver requisitos específicos de navegador, você está usando o navegador recomendado?",
+      "response_time_ms": 14942.576885223389,
+      "timestamp": "2025-08-12T17:09:53.007097"
+    },
+    {
+      "id": "routing_sales_01",
+      "message": "Qual o preço do cartão de crédito premium?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O cartão de crédito Premium está disponível por uma taxa anual de R$ 300. No entanto, temos uma promoção em andamento na qual a taxa anual é dispensada para o primeiro ano se a solicitação do cartão for aprovada este mês. Além disso, não cobramos nenhuma taxa mensal para este cartão.",
+      "response_time_ms": 9825.134992599487,
+      "timestamp": "2025-08-12T17:10:04.860934"
+    },
+    {
+      "id": "routing_sales_02",
+      "message": "Quais são os produtos disponíveis para conta corrente?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "Temos várias opções de produtos para conta corrente, que incluem:\n\n1. **Cheque especial**: Esta é uma linha de crédito que fica disponível na sua conta corrente sempre que precisar. \n\n2. **Cartão de débito/crédito**: Pode fazer compras e saques em qualquer lugar do mundo, 24 horas por dia, 7 dias por semana. Além disso, você pode ter acesso à programa de benefícios, como cashback, pontos, milhas aéreas, etc. \n\n3. **Aplicativos de mobile banking**: Permite realizar transações bancárias, como pagamentos, transferências, consulta de saldo e extrato, aplicação e resgate de investimentos, etc., de maneira fácil e segura diretamente do seu smartphone.\n\n4. **Operações de Crédito**: Oferecemos várias opções de crédito para os correntistas, incluindo empréstimo pessoal, crédito imobiliário, financiamento de veículos, etc.\n\n5. **Investimentos**: Uma variedade de opções de investimento, incluindo poupança, CDB, fundos de investimento, previdência privada, etc. \n\nCada um desses produtos pode ter características diferentes dependendo do pacote de conta corrente que você escolher. Para mais detalhes, recomendo visitar nosso site ou falar com um de nossos especialistas.",
+      "response_time_ms": 19405.962705612183,
+      "timestamp": "2025-08-12T17:10:26.301062"
+    },
+    {
+      "id": "routing_hr_01",
+      "message": "Como consulto meus benefícios na empresa?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Para consultar seus benefícios na empresa, normalmente você pode fazer o seguinte:\n\n1. **Portal do funcionário / Intranet:** Muitas empresas têm um portal online onde os funcionários podem fazer login e ver informações sobre benefícios. Verifique se existe tal recurso em sua empresa.\n2. **Fale com o RH:** Se você não consegue encontrar as informações de que precisa ou se não tem certeza, pergunte ao departamento de RH da sua empresa. Eles devem ser capazes de fornecer detalhes completos sobre seus benefícios.\n3. **Revisar documentos de emprego:** Quando você começou na empresa, deveria ter recebido um pacote de informações de benefícios. Este documento provavelmente contém muitas das informações que você está procurando.\n   \nPor fim, vale lembrar que os benefícios podem variar de empresa para empresa, portanto, é sempre uma boa ideia verificar os detalhes específicos dos seus.",
+      "response_time_ms": 15727.542877197266,
+      "timestamp": "2025-08-12T17:10:44.072644"
+    },
+    {
+      "id": "routing_hr_02",
+      "message": "Quando sai a folha de pagamento?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "A folha de pagamento geralmente é processada no final do mês, porém, a data exata pode variar dependendo da política interna da empresa. Você deve consultar o departamento de RH da sua empresa ou consultar o calendário de pagamento designado para informações mais precisas.",
+      "response_time_ms": 10500.547170639038,
+      "timestamp": "2025-08-12T17:10:56.600466"
+    },
+    {
+      "id": "context_investment_flow",
+      "message": "Qual a rentabilidade?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "A rentabilidade do CDB pode variar muito dependendo de diversos fatores, incluindo o banco que você escolher para investir, o tipo de CDB (pré-fixado, pós-fixado ou híbrido) e a duração do seu investimento. \n\nPara CDBs pré-fixados, a rentabilidade é determinada no momento em que você faz o investimento. Para os pós-fixados, a rentabilidade é geralmente atrelada ao CDI, que é uma taxa que segue de perto a taxa Selic. Já os CDBs híbridos têm uma parte da rentabilidade pré-fixada e uma parte pós-fixada.\n\nRecomendo que você consulte o especialista do seu banco para obter informações mais específicas sobre as opções de CDB disponíveis para você.",
+      "response_time_ms": 14257.34567642212,
+      "timestamp": "2025-08-12T17:11:33.261866"
+    },
+    {
+      "id": "context_tech_followup",
+      "message": "Ainda não funcionou",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Eu sinto muito em ouvir que ainda está tendo problemas. Aqui estão mais algumas etapas que você pode experimentar para resolver o problema:\n\n1. Atualize o app: Vá para a loja de aplicativos do seu telefone (Google Play para Android ou App Store para iOS) e confira se há uma atualização disponível para o app que está com problemas.\n\n2. Limpe o cache e os dados do app: Isso pode ser feito nas configurações do aplicativo no seu telefone. Observe que isso apagará qualquer conteúdo salvo em cache, o que pode incluir salvamentos de jogos ou rascunhos.\n\n3. Reinstale o app: Se nenhuma das opções acima funcionar, tente desinstalar o app do seu telefone e, em seguida, reinstale-o da loja de aplicativos.\n\nSe nenhuma dessas etapas resolver o problema, pode ser útil entrar em contato com o suporte ao cliente do aplicativo ou do fabricante do seu telefone para obter assistência adicional.\n\nFique à vontade para me informar se você tem outros problemas técnicos que eu possa ajudá-lo.",
+      "response_time_ms": 21388.993740081787,
+      "timestamp": "2025-08-12T17:12:16.772064"
+    },
+    {
+      "id": "context_sales_details",
+      "message": "E as vantagens?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "Claro! As vantagens do nosso cartão Premium incluem:\n\n- Acesso gratuito ao nosso programa de fidelidade, que oferece benefícios exclusivos\n- Atendimento ao cliente priorizado 24/7\n- Descontos especiais em nossos parceiros selecionados\n- Frete grátis sempre que você comprar em nossa loja online\n- Brindes exclusivos em dias especiais\n- Não há taxas adicionais para transações internacionais\n\nEspero que encontre valor nestas vantagens incríveis!",
+      "response_time_ms": 11941.992998123169,
+      "timestamp": "2025-08-12T17:12:40.500897"
+    },
+    {
+      "id": "context_hr_process",
+      "message": "E para mudar?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Para mudar suas opções de benefícios, normalmente você deve esperar pelo período anual de inscrição aberta. No entanto, eventos de vida qualificados, como casamento, nascimento de um filho ou perda de cobertura de saúde, permitem que você faça mudanças fora do período de inscrição aberta. Por favor, entre em contato com o departamento de RH para discutir suas opções específicas.",
+      "response_time_ms": 11347.203016281128,
+      "timestamp": "2025-08-12T17:13:07.793053"
+    },
+    {
+      "id": "wrong_routing_test_01",
+      "message": "Qual o sentido da vida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Desculpe, mas essa questão está fora do meu domínio de especialidades. Não tenho a capacidade de fornecer uma resposta para tal pergunta.",
+      "response_time_ms": 7189.032077789307,
+      "timestamp": "2025-08-12T17:13:17.035556"
+    },
+    {
+      "id": "wrong_routing_test_02",
+      "message": "Como fazer bolo de chocolate?",
+      "actual_agent": "Sistema",
+      "expected_agent": "TriageAgent",
+      "routing_correct": false,
+      "response": "⛔ Sua mensagem foi bloqueada por regras de segurança (ComidaGuardrail): - A mensagem menciona alimentos ao falar sobre bolo de chocolate.",
+      "response_time_ms": 4985.007524490356,
+      "timestamp": "2025-08-12T17:13:24.071069"
+    },
+    {
+      "id": "complex_routing_finance_tech",
+      "message": "O app do banco não está mostrando meu saldo correto",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito pelos problemas que você está tendo com o aplicativo do banco. Há várias coisas que poderiam causar isso. Para começar, tente fechar o aplicativo completamente e reiniciá-lo. Se isso não funcionar, verifique se há alguma atualização disponível para o aplicativo na loja de aplicativos do seu dispositivo. Às vezes, os bugs são corrigidos com atualizações de software.\n\nSe essas etapas não resolverem o problema, o problema pode estar no lado do servidor do banco. Neste caso, eu recomendaria que você entrasse em contato diretamente com o suporte ao cliente do seu banco para obter assistência adicional. Além disso, lembre-se de não compartilhar informações bancárias sensíveis online ou com pessoas que você não confia. \n\nPor favor, deixe-me saber se você precisa de mais assistência!",
+      "response_time_ms": 14660.31551361084,
+      "timestamp": "2025-08-12T17:13:40.771223"
+    },
+    {
+      "id": "edge_case_multiple_domains",
+      "message": "Preciso de um cartão corporativo para a empresa, mas o sistema não deixa solicitar",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Parece que você está enfrentando problemas com o nosso sistema ao solicitar um cartão corporativo. Vamos tentar resolver essa questão juntos. \n\nPrimeiramente, poderia me fornecer mais detalhes sobre o erro que você está experimentando? Existem mensagens de erro aparecendo no sistema quando você tenta fazer a solicitação? Quais etapas você seguiu antes de encontrar o problema? \n\nIsso ajudará a entender melhor o que pode estar causando o problema.",
+      "response_time_ms": 10013.983964920044,
+      "timestamp": "2025-08-12T17:13:52.834038"
+    },
+    {
+      "id": "performance_test_long_message",
+      "message": "Gostaria de entender todas as opções de investimento disponíveis no banco, incluindo renda fixa como CDB, LCI, LCA, Tesouro Direto, e também renda variável como ações, fundos de investimento, ETFs, e produtos mais sofisticados como COE e derivativos, além de previdência privada PGBL e VGBL, considerando meu perfil conservador mas com interesse em diversificar a carteira mantendo baixo risco",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Claro, posso te ajudar com isso. Abaixo estão os principais tipos de investimentos que você pode encontrar em um banco:\n\n1. **CDB (Certificado de Depósito Bancário)**\n   - Produto de renda fixa onde você empresta dinheiro para o banco em troca de uma remuneração no futuro.\n   - Como é garantido pelo FGC, é um investimento de baixo risco.\n\n2. **LCI e LCA (Letras de Crédito Imobiliário e do Agronegócio)**\n   - Também são títulos de renda fixa, mas com a vantagem de serem isentos de Imposto de Renda para pessoas físicas.\n\n3. **Tesouro Direto**\n   - São títulos públicos emitidos pelo governo federal.\n   - Baixo risco, já que o credor é o governo, mas a rentabilidade depende do tipo do título adquirido.\n\n4. **Fundos de Investimento**\n   - Você compra uma cota de um fundo gerenciado por uma gestora de recursos, que utiliza esse dinheiro para fazer diversos investimentos.\n   \n5. **Ações**\n   - Você torna-se sócio de uma empresa.\n   - Tem alto potencial de lucro, mas também de perdas.\n\n6. **ETFs (Exchange Traded Funds)**\n   - São fundos que replicam índices de mercado e são negociados em bolsa.\n   - Suas principais vantagens são a diversificação e liquidez.\n\n7. **COE (Certificado de Operações Estruturadas)**\n   - Também é uma operação de renda fixa, mas com um componente variável ligado a algum outro ativo, como ações, moedas, etc...\n   - Tem a possibilidade de proteção do capital investido.\n\n8. **Derivativos**\n   - Melhor para investidores mais avançados. São contratos que derivam a maior parte do seu valor de um ativo subjacente.\n\n9. **Previdência Privada (PGBL e VGBL)**\n   - Espécie de poupança de longo prazo, ideal para quem busca complementar a aposentadoria ou juntar dinheiro para um objetivo específico.\n\nComo você tem um perfil conservador, as opções de CDB, LCI, LCA, Tesouro Direto e Fundos de Investimento de baixa volatilidade (como fundos DI e de renda fixa) podem ser interessantes para você. Também vale a pena considerar a Previdência Privada se seus objetivos são de longo prazo.\n\nAntes de qualquer investimento, é importante se informar bem sobre cada produto, para garantir que você está confortável com os riscos e retornos potenciais.",
+      "response_time_ms": 27238.583087921143,
+      "timestamp": "2025-08-12T17:14:22.128033"
+    }
+  ],
+  "timestamp": "2025-08-12T17:14:22.128033"
+}

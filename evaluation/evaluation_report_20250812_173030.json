@@ -1,0 +1,220 @@
+{
+  "summary": {
+    "total_tests": 20,
+    "routing_accuracy": 1.0,
+    "avg_response_time_ms": 11186.798107624054,
+    "context_usage_rate": 1.0
+  },
+  "agent_performance": {
+    "routing_accuracy_by_agent": {
+      "FinanceAgent": 1.0,
+      "TechSupportAgent": 1.0,
+      "SalesAgent": 1.0,
+      "HRAgent": 1.0,
+      "TriageAgent": 1.0
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "routing_finance_01",
+      "message": "Quero investir R$ 1000 em renda fixa",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Excelente! Investir em renda fixa pode ser uma ótima forma de começar a acumular patrimônio de uma maneira segura. No entanto, a escolha depende do seu perfil de investidor, dos seus objetivos e do prazo do seu investimento.\n\nExistem algumas opções que você pode considerar no universo de Renda fixa. Aqui estão algumas delas:\n\n1. **Tesouro Direto**: É um programa de venda de títulos públicos a pessoas físicas por meio da internet. Existem vários tipos de títulos, mas os mais comuns são o Tesouro Selic, o Tesouro IPCA+ e o Tesouro Prefixado. \n\n2. **CDB (Certificado de Depósito Bancário)**: É um tipo de investimento em que você empresta dinheiro para o banco e recebe o valor de volta com juros no vencimento.\n\n3. **LCI e LCA (Letra de Crédito Imobiliário e Letra de Crédito do Agronegócio)**: Estes são títulos emitidos por bancos para financiar projetos imobiliários ou do agronegócio. A vantagem deles é a isenção de imposto de renda.\n\n4. **Debêntures e CRI/CRA**: São títulos emitidos por empresas privadas e têm potencial para pagar rendimentos mais altos. No entanto, eles têm risco de crédito maior.\n\nPor favor, considere que esta é uma sugestão baseada em informações gerais. Para um conselho personalizado, você deve procurar aconselhamento com um consultor financeiro licenciado ou um robô consultor.",
+      "response_time_ms": 17785.187005996704,
+      "timestamp": "2025-08-12T17:24:59.642353"
+    },
+    {
+      "id": "routing_tech_01",
+      "message": "O app não está abrindo no meu celular",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito por você estar tendo problemas com o nosso aplicativo. Podemos tentar alguns passos de solução de problemas para corrigir isso. Primeiro, você poderia me informar qual o modelo do seu celular e qual o sistema operacional que você está usando? Além disso, por favor, informe qual é o app que você está tentando abrir.",
+      "response_time_ms": 8804.336071014404,
+      "timestamp": "2025-08-12T17:25:44.599146"
+    },
+    {
+      "id": "routing_tech_02",
+      "message": "Estou tendo erro 404 no sistema",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo a frustração causada por esse erro. O código de erro 404 geralmente indica que a página da web que você está tentando acessar não pode ser encontrada no servidor. Isso geralmente é devido a um link quebrado ou a uma página que foi removida.\n\nAqui estão algumas etapas de solução de problemas que você pode tentar:\n\n1. Verifique o URL: Certifique-se de que o URL que você digitou está correto. Às vezes, pode haver um erro de digitação ou erro de cálculo.\n\n2. Atualize a página: Tente atualizar a página pressionando F5 ou clicando no botão \"Atualizar\" no seu navegador.\n\n3. Limpe o cache do seu navegador: Às vezes, as informações salvas no cache do seu navegador podem causar problemas. Tente limpar o cache do seu navegador.\n\n4. Desative as extensões do navegador: Alguns plugins de navegador ou extensões podem causar conflitos e resultar em erros. Tente desativar as extensões do navegador para ver se isso resolve o problema.\n\n5. Use outro navegador: Em alguns casos, pode ser um problema específico do navegador. Tente abrir a página em um navegador diferente para ver se o problema persiste.\n\nSe nenhuma das etapas acima resolver, pode ser que o erro seja do lado do servidor. Nesse caso, a melhor opção seria entrar em contato com o administrador do site ou o suporte técnico.",
+      "response_time_ms": 16000.895977020264,
+      "timestamp": "2025-08-12T17:26:02.654770"
+    },
+    {
+      "id": "routing_sales_01",
+      "message": "Qual o preço do cartão de crédito premium?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O preço do nosso cartão de crédito Premium é de R$ 30,00 mensais. Incluído neste valor está uma gama de benefícios exclusivos, como pontuação em dobro no programa de fidelidade, acesso a salas VIP em aeroportos, seguro de viagem incluído e muito mais. Vale lembrar que o valor pode variar dependendo das promoções disponíveis. Gostaria de alguma informação adicional sobre o nosso cartão de crédito Premium?",
+      "response_time_ms": 9562.887907028198,
+      "timestamp": "2025-08-12T17:26:14.272491"
+    },
+    {
+      "id": "routing_sales_02",
+      "message": "Quais são os produtos disponíveis para conta corrente?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "Atualmente, para uma conta corrente, oferecemos os seguintes produtos:\n\n1. Cheque Especial: acesso a uma linha de crédito que pode ser usada sempre que você precisar.\n2. Cartão de Débito: permite que você faça compras e saques no caixa eletrônico.\n3. Internet Banking: comodidade para acessar e gerir sua conta de qualquer lugar.\n4. Mobile Banking: acesso a sua conta corrente por meio do nosso aplicativo móvel.\n5. Programa de Recompensas: ganhe pontos todas as vezes que usar o cartão da conta.\n\nPor favor, tenha em mente que cada produto tem seus próprios termos e condições que devem ser lidos e compreendidos antes de optar por usá-los.",
+      "response_time_ms": 10312.323093414307,
+      "timestamp": "2025-08-12T17:26:26.632824"
+    },
+    {
+      "id": "routing_hr_01",
+      "message": "Como consulto meus benefícios na empresa?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Isso dependerá das políticas e sistemas específicos da sua organização. No entanto, a maioria das empresas costuma fornecer essas informações através do seu portal online de RH ou Intranet, onde os funcionários podem acessar e revisar seus benefícios a qualquer momento. \n\nAlgumas empresas também podem ter aplicativos específicos para gerenciar benefícios. Nesses portais ou aplicativos, você geralmente encontrará informações sobre seguro saúde, planos de aposentadoria, dias de folga pagos, entre outros.\n\nSe você não tem certeza ou não consegue encontrar essas informações, sugiro que entre em contato com a equipe de RH da sua empresa. Eles podem fornecer instruções passo a passo sobre como acessar seus benefícios.",
+      "response_time_ms": 11241.368055343628,
+      "timestamp": "2025-08-12T17:26:39.929366"
+    },
+    {
+      "id": "routing_hr_02",
+      "message": "Quando sai a folha de pagamento?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "A data de emissão da folha de pagamento pode variar dependendo da política de cada empresa. Normalmente, ela é processada no final do mês ou no início do mês seguinte. Para obter informações mais precisas, você deve verificar com o departamento de RH da sua empresa ou consultar o seu contrato de trabalho, onde esta informação deveria estar especificada.",
+      "response_time_ms": 9872.732639312744,
+      "timestamp": "2025-08-12T17:26:51.844811"
+    },
+    {
+      "id": "context_investment_flow",
+      "message": "Qual a rentabilidade?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "A rentabilidade de um Certificado de Depósito Bancário (CDB) pode variar dependendo do tipo de CDB que você escolher. Existem três tipos principais:\n\n1. CDB Prefixado: A rentabilidade é definida no momento da contratação. Por exemplo, se o CDB for prefixado com uma taxa de 6%, você já saberá que esse será o retorno anual do seu investimento.\n\n2. CDB Pós-fixado: A rentabilidade é atrelada a um indexador, como a taxa Selic ou o CDI. Nesse caso, a rentabilidade pode variar ao longo do tempo.\n\n3. CDB Híbrido: A rentabilidade é composta por uma taxa fixa mais a variação de um indexador, por exemplo, IPCA + 3%. Esse tipo de CDB é bom para quem quer proteger seu dinheiro da inflação.\n\nOutro fator que pode afetar a rentabilidade é o prazo do investimento. Em geral, quanto maior o prazo, maior a rentabilidade oferecida pelo banco. Mas lembre-se, o dinheiro investido em um CDB geralmente só pode ser resgatado no vencimento, a não ser no caso do CDB com liquidez diária. Além disso, a remuneração de um CDB é sempre bruta, ou seja, sobre o rendimento incide o Imposto de Renda (IR), seguindo a tabela regressiva do IR.\n",
+      "response_time_ms": 15666.517496109009,
+      "timestamp": "2025-08-12T17:27:27.913484"
+    },
+    {
+      "id": "context_tech_followup",
+      "message": "Ainda não funcionou",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo, me desculpe por isso! Vamos tentar algumas outras soluções. Você pode por favor tentar as seguintes etapas:\n\n1. Verificar a atualização do sistema: Às vezes, algumas aplicações podem não funcionar devido à falta de atualização do sistema. Por favor, verifique se o seu sistema operacional está atualizado.\n2. Atualizar o app: Se o seu sistema operacional estiver atualizado, o próximo passo seria verificar se o seu app está atualizado.\n3. Limpar o cache do app: Se ainda não estiver funcionando, você pode tentar limpar o cache da aplicação.\n4. Reinstalar o app: Se nenhuma das opções acima funcionar, desinstalar e reinstalar o app pode ser a solução.\n\nPor favor, tente essas soluções e me avise o resultado.",
+      "response_time_ms": 14646.364212036133,
+      "timestamp": "2025-08-12T17:28:01.357854"
+    },
+    {
+      "id": "context_sales_details",
+      "message": "E as vantagens?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "As vantagens do nosso Cartão Premium incluem, mas não se limitam a:\n\n- Frete grátis em todas as compras\n- Acesso antecipado a novos produtos e promoções\n- Descontos exclusivos em uma variedade de produtos\n- Serviço de atendimento ao cliente prioritário\n\nPor favor, note que estes são apenas alguns dos benefícios. A lista completa pode variar dependendo da região e da disponibilidade.",
+      "response_time_ms": 8791.95261001587,
+      "timestamp": "2025-08-12T17:28:19.510064"
+    },
+    {
+      "id": "context_hr_process",
+      "message": "E para mudar?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Para alterar seus benefícios, geralmente há um período específico do ano em que isso é permitido, chamado de período de inscrição aberta. Fora desse período, as alterações geralmente são permitidas apenas se houver uma mudança de vida qualificada, como casamento, nascimento de um bebê ou perda de cobertura de saúde. \n\nRecomendamos sempre rever a política da empresa sobre benefícios ou contatar o departamento de RH para entender melhor suas opções.",
+      "response_time_ms": 9417.65284538269,
+      "timestamp": "2025-08-12T17:28:40.317754"
+    },
+    {
+      "id": "triage_test_01",
+      "message": "Qual o sentido da vida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Desculpe, mas isso é uma questão filosófica que eu, como um assistente virtual, não posso ajudar a responder. Você teria alguma outra questão mais específica?",
+      "response_time_ms": 7235.935688018799,
+      "timestamp": "2025-08-12T17:28:49.596497"
+    },
+    {
+      "id": "triage_test_02",
+      "message": "Como está o tempo hoje?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Desculpe, eu só posso te encaminhar para um dos nossos especialistas em finanças, tecnologia, vendas ou recursos humanos. Não tenho capacidade para fornecer informações sobre o clima. Se você tiver uma pergunta relacionada a algum desses tópicos, estarei feliz em ajudar.",
+      "response_time_ms": 7202.797412872314,
+      "timestamp": "2025-08-12T17:28:58.843499"
+    },
+    {
+      "id": "triage_test_03",
+      "message": "Preciso de ajuda",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Claro, ficarei feliz em te ajudar! Por favor, poderia me dizer com o que você precisa de ajuda?",
+      "response_time_ms": 5635.587215423584,
+      "timestamp": "2025-08-12T17:29:06.528413"
+    },
+    {
+      "id": "triage_test_04",
+      "message": "Como faço?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Olá! Para poder ajudá-lo precisamos de mais informações. Você poderia elaborar melhor sua pergunta?",
+      "response_time_ms": 5722.239255905151,
+      "timestamp": "2025-08-12T17:29:14.304602"
+    },
+    {
+      "id": "triage_test_05",
+      "message": "Quero fazer uma reclamação sobre política",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Lamento ouvir que você tem uma reclamação. No entanto, não temos um especialista em política. Por favor, especifique sua preocupação para que eu possa direcioná-lo ao melhor agente para ajudá-lo. Você está tendo problemas com questões financeiras, tecnológicas, vendas ou de recursos humanos?",
+      "response_time_ms": 6829.239130020142,
+      "timestamp": "2025-08-12T17:29:23.174602"
+    },
+    {
+      "id": "triage_test_06",
+      "message": "Me ajuda com receita de comida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Desculpe, como agente de triagem, minha função é encaminhar você para especialistas em Finanças, Tecnologia, Vendas ou Recursos Humanos. Para receitas de comida, sugiro buscar ajuda em aplicativos de receitas ou websites de culinária.",
+      "response_time_ms": 6363.793611526489,
+      "timestamp": "2025-08-12T17:29:31.578714"
+    },
+    {
+      "id": "complex_routing_finance_tech",
+      "message": "O app do banco não está mostrando meu saldo correto",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito que você esteja tendo problemas para visualizar o saldo correto no seu aplicativo bancário. Aqui estão algumas etapas de solução de problemas que você pode seguir:\n\n1. **Reinicie o aplicativo**: Feche o aplicativo totalmente, em vez de apenas minimizá-lo. Em seguida, abra o aplicativo novamente e verifique se o saldo foi atualizado.\n\n2. **Verifique sua conexão com a Internet**: Uma conexão ruim com a Internet pode causar atrasos na atualização das informações no aplicativo.\n\n3. **Atualização de aplicativo**: Verifique na loja de aplicativos do seu dispositivo se há uma nova versão do aplicativo do seu banco. Uma atualização pode resolver o problema se ele for causado por um bug na versão atual do aplicativo.\n\n4. **Desinstalar e reinstalar**: Como último recurso, você pode tentar desinstalar e reinstalar o aplicativo.\n\nLembre-se de que a visualização na aplicação pode ter um atraso em relação às operações realizadas. Se o problema persistir, será necessário entrar em contato com o suporte do banco para que eles possam corroborar a informação.\n\nNo entanto, se este for um problema relacionado às transações ou ao saldo da sua conta, eu preciso transferir isso para nosso Agente Financeiro. O que você acha?",
+      "response_time_ms": 15257.632970809937,
+      "timestamp": "2025-08-12T17:29:48.886168"
+    },
+    {
+      "id": "edge_case_multiple_domains",
+      "message": "Preciso de um cartão corporativo para a empresa, mas o sistema não deixa solicitar",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo que você está tendo problemas para solicitar um cartão corporativo para sua empresa através do nosso sistema. Certamente posso ajudar com isso. \n\nPara começar, pode me informar qualquer mensagem de erro específica que esteja recebendo quando tenta fazer o pedido? Além disso, você já tem uma conta corporativa existente conosco? Isso ajudará a entender melhor o problema.",
+      "response_time_ms": 9661.263227462769,
+      "timestamp": "2025-08-12T17:30:00.595217"
+    },
+    {
+      "id": "performance_test_long_message",
+      "message": "Gostaria de entender todas as opções de investimento disponíveis no banco, incluindo renda fixa como CDB, LCI, LCA, Tesouro Direto, e também renda variável como ações, fundos de investimento, ETFs, e produtos mais sofisticados como COE e derivativos, além de previdência privada PGBL e VGBL, considerando meu perfil conservador mas com interesse em diversificar a carteira mantendo baixo risco",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Certamente, eu posso ajudá-lo a entender as opções de investimento disponíveis no banco. Considerando o seu perfil conservador e o interesse em manter um baixo risco, aqui estão as principais opções:\n\n1. **CDB (Certificado de Depósito Bancário):** Basicamente, você empresta dinheiro para o banco e recebe juros por isso. É um investimento seguro, pois é garantido pelo FGC (Fundo Garantidor de Créditos) até um limite de R$ 250 mil por CPF e por instituição financeira.\n\n2. **LCI (Letra de Crédito Imobiliário) e LCA (Letra de Crédito do Agronegócio):** Funcionam de maneira semelhante ao CDB, mas focados em financiamentos do setor imobiliário e do agronegócio, respectivamente. A vantagem é que são isentos de Imposto de Renda para pessoas físicas.\n\n3. **Tesouro Direto:** São títulos emitidos pelo Governo Federal com a finalidade de financiar a dívida pública. Existem diferentes opções de títulos (prefixados, pós-fixados e indexados à inflação) que se adequam a diversos perfis e objetivos. É um investimento com baixo risco, sendo o principal risco o de crédito soberano (risco do país não honrar a dívida).\n\n4. **Ações, Fundos de Investimento e ETFs (Exchange Traded Funds):** Esses produtos estão no campo da renda variável. As ações representam uma fração do capital social de uma empresa e o seu desempenho depende do desempenho da empresa. Os Fundos de Investimento podem ser compostos por diferentes ativos (ações, imóveis, títulos de dívida, etc.) e os ETFs são fundos negociados em bolsa cujo objetivo é replicar índices. Esses produtos podem oferecer rendimentos mais elevados, mas também envolvem mais risco.\n\n5. **COE (Certificado de Operações Estruturadas) e Derivativos:** São produtos mais complexos, que combinam elementos de renda fixa e renda variável de uma forma estruturada. Eles podem ser interessantes para investidores mais sofisticados que estão dispostos a assumir um pouco mais de risco em troca de potenciais rendimentos mais elevados.\n\n6. **Previdência Privada PGBL e VGBL:** São planos de aposentadoria privada que podem ser utilizados como uma forma de complementar a aposentadoria oficial. O PGBL é indicado para quem declara o Imposto de Renda pelo modelo completo e o VGBL para quem utiliza o modelo simplificado.\n\nÉ importante ressaltar que a diversificação da carteira é uma estratégia fundamental para a gestão dos seus investimentos. Lembre-se que o aconselhável é buscar conhecimento ou assessoria especializada antes de tomar qualquer decisão de investimento.",
+      "response_time_ms": 27725.255727767944,
+      "timestamp": "2025-08-12T17:30:30.373352"
+    }
+  ],
+  "timestamp": "2025-08-12T17:30:30.373352"
+}

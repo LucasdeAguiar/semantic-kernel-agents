@@ -1,0 +1,190 @@
+{
+  "summary": {
+    "total_tests": 17,
+    "routing_accuracy": 0.9411764705882353,
+    "avg_response_time_ms": 15323.69845053729,
+    "context_usage_rate": 1.0
+  },
+  "agent_performance": {
+    "routing_accuracy_by_agent": {
+      "FinanceAgent": 1.0,
+      "TechSupportAgent": 1.0,
+      "SalesAgent": 1.0,
+      "HRAgent": 1.0,
+      "TriageAgent": 0.5
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "routing_finance_01",
+      "message": "Quero investir R$ 1000 em renda fixa",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Ótimo! Investir em renda fixa pode ser uma escolha segura. Aqui estão algumas opções que você pode considerar:\n\n1. **Certificados de Depósito Bancário (CDB)**: Trata-se de um título emitido pelos bancos para financiar suas atividades em troca de uma remuneração para o investidor.\n\n2. **Letra de Crédito Imobiliário (LCI)** ou **Letra de Crédito do Agronegócio (LCA)**: São títulos de crédito emitidos por instituições financeiras, cujos recursos são direcionados para o financiamento imobiliário ou do agronegócio, respectivamente.\n\n3. **Tesouro Direto**: Programa do Governo Federal para venda de títulos públicos a pessoas físicas. São considerados seguros porque são garantidos pelo Governo.\n\nCada uma dessas opções tem características, vantagens e desvantagens diferentes. Recomendo que você consulte um consultor de investimentos ou faça sua própria pesquisa antes de tomar uma decisão. E lembre-se, todo investimento envolve algum grau de risco. \n\nVale ressaltar que a taxa de retorno desses investimentos varia conforme o cenário econômico e a política de juros do país, então é importante considerar isso na hora da decisão, além de verificar as taxas de administração e possíveis impostos. \n\nLembre-se de diversificar seus investimentos para diminuir os riscos. Mesmo sendo um investimento de renda fixa, é importante ter uma parte do seu dinheiro em aplicações mais líquidas, ou seja, que possam ser resgatadas a qualquer momento. \n\nFiz uma explicação geral para você. Se precisar de mais detalhes sobre estas opções ou sobre outras opções de investimento, sinta-se à vontade para perguntar. \n",
+      "response_time_ms": 21644.352197647095,
+      "timestamp": "2025-08-12T16:46:04.417818"
+    },
+    {
+      "id": "routing_finance_02",
+      "message": "Como faço um empréstimo pessoal?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Existem algumas etapas básicas para solicitar um empréstimo pessoal:\n\n1. Avalie as suas necessidades: Antes de começar o processo de solicitação de um empréstimo, é importante entender qual é a sua necessidade de crédito. Este passo o ajudará a decidir sobre o valor que você precisa pedir emprestado e também ajudará você escolher o tipo de empréstimo que é mais adequado para a sua situação.\n\n2. Verifique a sua pontuação de crédito: A sua pontuação de crédito é um dos principais fatores que os credores consideram ao determinar se aprovam o seu pedido de empréstimo e qual será a taxa de juros. Se a sua pontuação de crédito for baixa, você pode precisar trabalhar para melhorá-la antes de solicitar um empréstimo.\n\n3. Pesquise pelos diferentes tipos de empréstimos disponíveis: Existem muitos tipos diferentes de empréstimos pessoais, incluindo empréstimos não garantidos, empréstimos garantidos, empréstimos de crédito ruim, etc. Cada um desses empréstimos tem os seus próprios requisitos, condições e taxas de juros.\n\n4. Compare as ofertas de empréstimo: Cada credor tem suas próprias taxas de juros e condições de empréstimo. Compare as ofertas de diferentes credores para encontrar as condições de empréstimo mais favoráveis.\n\n5. Preencha a solicitação de empréstimo: Depois de escolher um credor, você precisará preencher e enviar uma solicitação de empréstimo. A solicitação exigirá informações sobre as suas finanças e emprego.\n\n6. Espere a aprovação do empréstimo: O tempo que demora para o seu empréstimo ser aprovados variará dependendo do credor. Alguns credores podem aprovar o seu empréstimo no mesmo dia, enquanto outros podem demorar vários dias.\n\nLembre-se de que empréstimos pessoais devem ser usados ​​com responsabilidade e apenas para necessidades financeiras genuínas.\n",
+      "response_time_ms": 26987.584114074707,
+      "timestamp": "2025-08-12T16:46:33.442692"
+    },
+    {
+      "id": "routing_tech_01",
+      "message": "O app não está abrindo no meu celular",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo que você está tendo problemas para abrir um aplicativo específico no seu celular. Vamos tentar resolver isso. \n\nPrimeiro, pode me dizer qual é o modelo do seu celular e qual aplicativo você está tentando abrir? Além disso, você se lembra de ver alguma mensagem de erro quando tenta abrir o aplicativo?",
+      "response_time_ms": 9986.209154129028,
+      "timestamp": "2025-08-12T16:46:45.469234"
+    },
+    {
+      "id": "routing_tech_02",
+      "message": "Estou tendo erro 404 no sistema",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito que você esteja experimentando esse problema. O erro 404 geralmente indica que o recurso solicitado (página da web, arquivo, etc.) não está disponível. Aqui estão algumas soluções possíveis que você pode tentar:\n\n1. Verifique o URL: Verifique se o URL da página que você está tentando acessar está correto. Isso é especialmente importante se você tiver digitado o URL manualmente. Erros de digitação ou pequenos erros podem causar um erro 404.\n\n2. Atualize a página: Às vezes, um problema temporário com o seu navegador ou com a página da web em si pode causar um erro 404. Você pode fazer isso simplesmente pressionando F5 em seu teclado ou clicando no botão 'recarregar' no seu navegador.\n\n3. Limpe o cache do seu navegador: Se a página que você está tentando acessar mudou recentemente, é possível que uma versão antiga da página esteja armazenada em cache no seu navegador. Limpar o cache do seu navegador pode resolver esse problema.\n\n4. Desativar extensões do navegador: As extensões do navegador podem às vezes interferir com a maneira como as páginas são carregadas. Se você tem muitas extensões do navegador ativadas, pode valer a pena desativá-las temporariamente para ver se isso resolve o problema.\n\n5. Verifique sua conexão com a internet: Às vezes, problemas com sua conexão com a internet podem causar um erro 404. Verifique se você tem uma forte conexão com a internet e tente acessar a página novamente.\n\nSe nenhuma das sugestões acima resolver o problema, por favor me forneça mais algumas informações para que eu possa lhe ajudar melhor. Você está tentando acessar um site específico ou um recurso dentro de um aplicativo ou programa? Além disso, qual navegador ou sistema operacional você está usando?",
+      "response_time_ms": 27663.220405578613,
+      "timestamp": "2025-08-12T16:47:15.166569"
+    },
+    {
+      "id": "routing_sales_01",
+      "message": "Qual o preço do cartão de crédito premium?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O preço do cartão de crédito premium é de R$ 45,00 mensais. Ele vem com muitos benefícios, incluindo acesso a lounges de aeroportos, seguro de viagem e cashback em várias compras.",
+      "response_time_ms": 11889.4362449646,
+      "timestamp": "2025-08-12T16:47:29.091204"
+    },
+    {
+      "id": "routing_sales_02",
+      "message": "Quais são os produtos disponíveis para conta corrente?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "Temos várias opções de produtos para conta corrente. Algumas delas incluem:\n\n1. Cartão de crédito/débito - Permite transações fáceis e rápidas com o cartão vinculado à sua conta corrente.\n\n2. Cheques - Fornece uma forma segura e sem problemas de fazer pagamentos.\n\n3. Overdraft Banking - Isso permite que você retire dinheiro acima do saldo de sua conta corrente até um limite pré-aprovado.\n\n4. Internet Banking - Permite gerenciar e controlar suas transações bancárias no conforto de sua casa.\n\n5. Mobile Banking - Permite que você gerencie sua conta e transações com smartphone.\n\n6. Deposit Products - Incluem depósitos fixos, depósitos recorrentes etc.\n\nPor favor, veja qual produto é o mais adequado para suas necessidades.",
+      "response_time_ms": 16299.951076507568,
+      "timestamp": "2025-08-12T16:47:47.406279"
+    },
+    {
+      "id": "routing_hr_01",
+      "message": "Como consulto meus benefícios na empresa?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "A consulta aos benefícios da empresa pode variar dependendo das políticas internas e da plataforma utilizada pela organização. Normalmente, a maioria das empresas fornece essas informações através de um portal de funcionários ou um portal de RH onde você pode fazer login e verificar os detalhes.\n\nNo entanto, se a sua empresa não possuir um sistema online, você pode solicitar essa informação diretamente ao departamento de Recursos Humanos. Eles devem ser capazes de fornecer uma lista atualizada de todos os benefícios disponíveis para você.",
+      "response_time_ms": 12314.93067741394,
+      "timestamp": "2025-08-12T16:48:01.759315"
+    },
+    {
+      "id": "routing_hr_02",
+      "message": "Quando sai a folha de pagamento?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "A data da folha de pagamento pode variar dependendo da política da empresa. Normalmente, muitas empresas processam a folha de pagamento no último dia útil do mês, enquanto outras podem escolher uma data específica a cada mês. Por favor, verifique a política da sua empresa para uma resposta precisa.",
+      "response_time_ms": 10593.112230300903,
+      "timestamp": "2025-08-12T16:48:14.386819"
+    },
+    {
+      "id": "context_investment_flow",
+      "message": "Qual a rentabilidade?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "A rentabilidade do CDB pode variar bastante conforme a instituição financeira e o tipo de certificado escolhido. Em geral, existem três tipos de CDBs quanto à forma de remuneração:\n\n1. **CDBs Pós-Fixados**: A rentabilidade está atrelada a algum indicador de mercado, como a taxa DI, que geralmente segue a Selic muito de perto. Nesse caso, a rentabilidade é expressa como um percentual do indicador, por exemplo, 90% do CDI. \n\n2. **CDBs Prefixados**: Nesse caso, a taxa de retorno é acertada no momento da aplicação. Você sabe desde o princípio quanto vai receber no vencimento.\n\n3. **CDBs Híbridos**: São associados a algum indicador de inflação, como o IPCA, mais uma taxa de juros prefixada. Assim, o investidor tem a rentabilidade garantida acima da inflação.\n\nAlém disso, vale lembrar que a rentabilidade do CDB é tributada pelo Imposto de Renda, com alíquotas que diminuem quanto maior o prazo de aplicação. É possível encontrar opções de CDB no mercado com rendimentos atraentes, principalmente em bancos menores, que oferecem taxas maiores para atrair investidores.",
+      "response_time_ms": 21089.932441711426,
+      "timestamp": "2025-08-12T16:49:06.968772"
+    },
+    {
+      "id": "context_tech_followup",
+      "message": "Ainda não funcionou",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Eu sinto muito por ouvir que o reinício do seu telefone não resolveu o problema. Para que eu possa ajudá-lo melhor, gostaria que você me desse mais detalhes sobre o problema que está experimentando. Você poderia especificar qual aplicativo ou software está causando problemas? É um erro que está acontecendo ou seu telefone está agindo estranhamente?",
+      "response_time_ms": 9325.155019760132,
+      "timestamp": "2025-08-12T16:49:44.279177"
+    },
+    {
+      "id": "context_sales_details",
+      "message": "E as vantagens?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "As vantagens do nosso cartão premium incluem:\n\n1. Descontos exclusivos com nossos parceiros comerciais.\n2. Acesso antecipado a vários eventos e vendas.\n3. Serviços gratuitos de consulta e orientação.\n4. Ofertas especiais de aniversário.\n5. Pontos de recompensa adicionais para cada compra que você faz.\n\nPor favor, note que estas vantagens podem variar dependendo da localidade e das promoções atuais.",
+      "response_time_ms": 10742.279052734375,
+      "timestamp": "2025-08-12T16:50:06.591265"
+    },
+    {
+      "id": "context_hr_process",
+      "message": "E para mudar?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Para alterar os benefícios, é recomendável falar primeiro com o departamento de Recursos Humanos para entender qual é o processo. Alguns benefícios podem ser alterados a qualquer momento, enquanto outros só podem ser alterados durante determinados períodos do ano, como durante o processo de inscrição aberta. Após essa conversa, geralmente você pode realizar mudanças por meio do seu portal de RH ou folha de pagamento.",
+      "response_time_ms": 13161.994218826294,
+      "timestamp": "2025-08-12T16:50:31.851869"
+    },
+    {
+      "id": "wrong_routing_test_01",
+      "message": "Qual o sentido da vida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Desculpe, mas não tenho a capacidade de responder a perguntas filosóficas como \"Qual é o sentido da vida\". Posso te ajudar com questões financeiras, suporte técnico, vendas ou recursos humanos.",
+      "response_time_ms": 7749.834060668945,
+      "timestamp": "2025-08-12T16:50:41.644116"
+    },
+    {
+      "id": "wrong_routing_test_02",
+      "message": "Como fazer bolo de chocolate?",
+      "actual_agent": "Sistema",
+      "expected_agent": "TriageAgent",
+      "routing_correct": false,
+      "response": "⛔ Sua mensagem foi bloqueada por regras de segurança (ComidaGuardrail): - A mensagem menciona alimentos ao falar sobre bolo de chocolate.",
+      "response_time_ms": 4601.962089538574,
+      "timestamp": "2025-08-12T16:50:48.282969"
+    },
+    {
+      "id": "complex_routing_finance_tech",
+      "message": "O app do banco não está mostrando meu saldo correto",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo que você está tendo problemas com o app do banco que não está exibindo o saldo corretamente. Sugiro algumas ações que você pode tentar:\n\n1. Verifique sua conexão com a internet: veja se você possui uma conexão estável e se outros aplicativos e sites estão funcionando corretamente.\n\n2. Tente fechar o aplicativo e abri-lo novamente: às vezes, esses problemas são temporários e são resolvidos simplesmente reiniciando o aplicativo.\n\n3. Atualize o aplicativo: talvez uma atualização esteja disponível que corrija o problema.\n\n4. Desinstale e reinstale o aplicativo: se nenhuma das opções acima funcionar, tente desinstalar o aplicativo e baixá-lo novamente.\n\nSe o problema persistir, você deve entrar em contato com o suporte ao cliente do seu banco, pois pode ser um problema específico do banco. Se o app do banco exibir algum erro ou código específico, informe-o ao se comunicar com o suporte do banco.",
+      "response_time_ms": 15950.018167495728,
+      "timestamp": "2025-08-12T16:51:06.256231"
+    },
+    {
+      "id": "edge_case_multiple_domains",
+      "message": "Preciso de um cartão corporativo para a empresa, mas o sistema não deixa solicitar",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Parece que você está enfrentando problemas com nosso sistema ao solicitar um cartão corporativo. Vou precisar de mais detalhes para entender melhor e resolver o problema. \n\n1. Você poderia me dizer se está recebendo algum código de erro específico?\n2. Em qual etapa do processo você está tendo problemas?\n3. Você já tentou se desconectar e reconectar no sistema? Isso ajuda muitas vezes.\n4. Qual navegador você está usando? Às vezes, simplesmente mudar para um navegador diferente ou atualizar o navegador atual pode resolver o problema.",
+      "response_time_ms": 11828.368425369263,
+      "timestamp": "2025-08-12T16:51:20.099016"
+    },
+    {
+      "id": "performance_test_long_message",
+      "message": "Gostaria de entender todas as opções de investimento disponíveis no banco, incluindo renda fixa como CDB, LCI, LCA, Tesouro Direto, e também renda variável como ações, fundos de investimento, ETFs, e produtos mais sofisticados como COE e derivativos, além de previdência privada PGBL e VGBL, considerando meu perfil conservador mas com interesse em diversificar a carteira mantendo baixo risco",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Claro, ficarei feliz em ajudá-lo a entender as opções de investimento disponíveis!\n\n1. **Renda Fixa:** Esses são investimentos relativamente seguros e previsíveis. O investidor empresta dinheiro ao emissor do ativo e recebe de volta com juros. Algumas das opções de renda fixa disponíveis são:\n\n   - **CDB (Certificado de Depósito Bancário):** É basicamente um empréstimo que você faz ao banco e é pago com juros após um determinado período de tempo (prazo de vencimento).\n   \n   - **LCI (Letra de Crédito Imobiliário) e LCA (Letra de Crédito do Agronegócio):** São títulos de crédito emitidos por bancos com o objetivo de financiar o setor imobiliário e do agronegócio respectivamente. Esses títulos são isentos de imposto de renda para pessoas físicas o que os torna atraentes para os investidores.\n   \n   - **Tesouro Direto:** São títulos públicos emitidos pelo governo federal. Os títulos do tesouro são considerados os investimentos mais seguros do país.\n\n2. **Renda Variável:** Aqui, o retorno do investimento não é algo previsível ou garantido. Incluem:\n\n   - **Ações:** Ao comprar ações, você se torna co-proprietário de uma empresa e tem seu rendimento atrelado ao desempenho de tal empresa.\n   \n   - **Fundos de Investimento:** São um tipo de aplicação coletiva onde os recursos de vários investidores são administrados por uma gestora.\n   \n   - **ETFs (Exchange Traded Funds):** São fundos que buscam replicar índices do mercado financeiro e suas cotas são negociadas na bolsa de valores.\n   \n   - **COE (Certificado de Operações Estruturadas) e derivativos:** São produtos mais complexos que combinam elementos de renda fixa e renda variável.\n\n3. **Previdência Privada:** Ideal para quem deseja acumular recursos para o longo prazo. O PGBL é mais vantajoso para quem faz a declaração completa do Imposto de Renda, já o VGBL é mais recomendado para quem faz a declaração simplificada.\n\nLembre-se que ao construir uma carteira é muito importante levar em consideração o seu perfil de investidor e seus objetivos financeiros. No seu caso, como você mencionou ser um investidor conservador, é recomendável priorizar investimentos de renda fixa e considerar uma pequena exposição a investimentos de renda variável para diversificação.",
+      "response_time_ms": 28674.53408241272,
+      "timestamp": "2025-08-12T16:51:50.810659"
+    }
+  ],
+  "timestamp": "2025-08-12T16:51:50.810659"
+}

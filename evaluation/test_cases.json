@@ -1,0 +1,189 @@
+{
+  "test_cases": [
+    {
+      "id": "routing_finance_01",
+      "message": "Quero investir R$ 1000 em renda fixa",
+      "expected_agent": "FinanceAgent",
+      "expected_response_type": "investment_advice",
+      "context_dependent": false,
+      "ground_truth": "Para investir R$ 1000 em renda fixa, você pode considerar opções como CDB, Tesouro Direto ou LCI/LCA. O CDB oferece segurança e liquidez, o Tesouro Direto tem diferentes prazos e indexadores, e LCI/LCA são isentos de IR para pessoa física."
+    },
+    {
+      "id": "routing_finance_02", 
+      "message": "Como faço um empréstimo pessoal?",
+      "expected_agent": "FinanceAgent",
+      "expected_response_type": "loan_guidance",
+      "context_dependent": false,
+      "ground_truth": "Para solicitar um empréstimo pessoal, você precisa: 1) Verificar sua renda e capacidade de pagamento, 2) Pesquisar taxas em diferentes bancos, 3) Reunir documentos (RG, CPF, comprovante de renda), 4) Fazer a solicitação online ou presencial, 5) Aguardar análise de crédito."
+    },
+    {
+      "id": "routing_tech_01",
+      "message": "O app não está abrindo no meu celular",
+      "expected_agent": "TechSupportAgent", 
+      "expected_response_type": "technical_support",
+      "context_dependent": false,
+      "ground_truth": "Para resolver problemas de app que não abre: 1) Feche e reabra o app, 2) Reinicie o celular, 3) Verifique se há atualizações do app, 4) Limpe o cache do aplicativo, 5) Se persistir, desinstale e reinstale o app."
+    },
+    {
+      "id": "routing_tech_02",
+      "message": "Estou tendo erro 404 no sistema",
+      "expected_agent": "TechSupportAgent",
+      "expected_response_type": "error_resolution", 
+      "context_dependent": false,
+      "ground_truth": "O erro 404 indica que a página não foi encontrada. Soluções: 1) Verifique se a URL está correta, 2) Atualize a página (F5), 3) Limpe cache do navegador, 4) Tente acessar pelo menu principal, 5) Se persistir, pode ser problema temporário do servidor."
+    },
+    {
+      "id": "routing_sales_01",
+      "message": "Qual o preço do cartão de crédito premium?",
+      "expected_agent": "SalesAgent",
+      "expected_response_type": "product_pricing",
+      "context_dependent": false,
+      "ground_truth": "O cartão de crédito premium possui anuidade de R$ 300,00, mas pode ser isenta mediante movimentação mensal de R$ 5.000. Inclui benefícios como acesso a salas VIP, seguro viagem internacional e programa de pontos diferenciado."
+    },
+    {
+      "id": "routing_sales_02",
+      "message": "Quais são os produtos disponíveis para conta corrente?",
+      "expected_agent": "SalesAgent", 
+      "expected_response_type": "product_catalog",
+      "context_dependent": false,
+      "ground_truth": "Para conta corrente oferecemos: Conta Digital (gratuita), Conta Clássica (R$ 12/mês), Conta Premium (R$ 25/mês) e Conta Private (R$ 50/mês). Cada uma com benefícios específicos como cartões, seguros e atendimento diferenciado."
+    },
+    {
+      "id": "routing_hr_01",
+      "message": "Como consulto meus benefícios na empresa?",
+      "expected_agent": "HRAgent",
+      "expected_response_type": "benefits_info",
+      "context_dependent": false,
+      "ground_truth": "Para consultar seus benefícios: 1) Acesse o portal do colaborador, 2) Entre na seção 'Meus Benefícios', 3) Consulte plano de saúde, vale-refeição, vale-transporte e outros, 4) Para dúvidas específicas, contate o RH pelo ramal 2000."
+    },
+    {
+      "id": "routing_hr_02",
+      "message": "Quando sai a folha de pagamento?",
+      "expected_agent": "HRAgent",
+      "expected_response_type": "payroll_info",
+      "context_dependent": false,
+      "ground_truth": "A folha de pagamento é disponibilizada todo dia 5 do mês seguinte. O pagamento é creditado na conta até o 5º dia útil. Você pode consultar o holerite no portal do colaborador ou solicitar 2ª via pelo RH."
+    },
+    {
+      "id": "context_investment_flow",
+      "message": "Qual a rentabilidade?",
+      "expected_agent": "FinanceAgent",
+      "expected_response_type": "contextual_response",
+      "context_dependent": true,
+      "previous_messages": [
+        "Quero investir em CDB"
+      ],
+      "expected_keywords": ["CDB", "rentabilidade", "taxa"],
+      "ground_truth": "A rentabilidade do CDB varia conforme a instituição e prazo. Atualmente oferecemos CDB com rentabilidade de 100% a 110% do CDI. Para prazos maiores, a rentabilidade pode chegar a 115% do CDI."
+    },
+    {
+      "id": "context_tech_followup",
+      "message": "Ainda não funcionou",
+      "expected_agent": "TechSupportAgent", 
+      "expected_response_type": "contextual_support",
+      "context_dependent": true,
+      "previous_messages": [
+        "O app não está abrindo",
+        "Tente reiniciar o celular"
+      ],
+      "expected_keywords": ["app", "alternativa", "solução"],
+      "ground_truth": "Como reiniciar não resolveu, vamos tentar outras soluções: 1) Desinstale e reinstale o app, 2) Verifique se há espaço suficiente no celular, 3) Teste com wifi e dados móveis, 4) Se persistir, pode ser incompatibilidade - qual modelo do seu celular?"
+    },
+    {
+      "id": "context_sales_details",
+      "message": "E as vantagens?",
+      "expected_agent": "SalesAgent",
+      "expected_response_type": "product_benefits",
+      "context_dependent": true,
+      "previous_messages": [
+        "Qual o preço do cartão premium?"
+      ],
+      "expected_keywords": ["cartão", "premium", "benefícios", "vantagens"],
+      "ground_truth": "As vantagens do cartão premium incluem: acesso gratuito a salas VIP em aeroportos, seguro viagem internacional, concierge 24h, programa de pontos com resgate diferenciado, atendimento prioritário e descontos em parceiros."
+    },
+    {
+      "id": "context_hr_process",
+      "message": "E para mudar?",
+      "expected_agent": "HRAgent",
+      "expected_response_type": "benefit_change_process", 
+      "context_dependent": true,
+      "previous_messages": [
+        "Como consulto meus benefícios?"
+      ],
+      "expected_keywords": ["alterar", "mudar", "benefícios", "processo"],
+      "ground_truth": "Para alterar seus benefícios: 1) Acesse o portal durante o período de revisão anual (outubro), 2) Fora do período, alterações só em casos específicos (casamento, nascimento, etc.), 3) Preencha formulário de alteração, 4) Anexe documentos comprobatórios, 5) Aguarde aprovação do RH."
+    },
+    {
+      "id": "triage_test_01",
+      "message": "Qual o sentido da vida?",
+      "expected_agent": "TriageAgent",
+      "expected_response_type": "out_of_scope",
+      "context_dependent": false,
+      "ground_truth": "Desculpe, mas essa questão está fora do meu domínio de especialidades. Não tenho a capacidade de fornecer uma resposta para tal pergunta."
+    },
+    {
+      "id": "triage_test_02", 
+      "message": "Como está o tempo hoje?",
+      "expected_agent": "TriageAgent",
+      "expected_response_type": "out_of_scope",
+      "context_dependent": false,
+      "ground_truth": "Desculpe, mas essa questão está fora do meu domínio de especialidades. Não tenho a capacidade de fornecer uma resposta para tal pergunta."
+    },
+    {
+      "id": "triage_test_03",
+      "message": "Preciso de ajuda",
+      "expected_agent": "TriageAgent", 
+      "expected_response_type": "clarification_request",
+      "context_dependent": false,
+      "ground_truth": "Poderia ser mais específico sobre o que precisa? Isso me ajudará a direcioná-lo ao especialista certo."
+    },
+    {
+      "id": "triage_test_04",
+      "message": "Como faço?",
+      "expected_agent": "TriageAgent",
+      "expected_response_type": "clarification_request", 
+      "context_dependent": false,
+      "ground_truth": "Poderia ser mais específico sobre o que precisa? Isso me ajudará a direcioná-lo ao especialista certo."
+    },
+    {
+      "id": "triage_test_05",
+      "message": "Quero fazer uma reclamação sobre política",
+      "expected_agent": "TriageAgent",
+      "expected_response_type": "out_of_scope",
+      "context_dependent": false,
+      "ground_truth": "Desculpe, mas essa questão está fora do meu domínio de especialidades. Não tenho a capacidade de fornecer uma resposta para tal pergunta."
+    },
+    {
+      "id": "triage_test_06",
+      "message": "Me ajuda com receita de comida?",
+      "expected_agent": "TriageAgent",
+      "expected_response_type": "out_of_scope",
+      "context_dependent": false,
+      "ground_truth": "Desculpe, mas essa questão está fora do meu domínio de especialidades. Não tenho a capacidade de fornecer uma resposta para tal pergunta."
+    },
+    {
+      "id": "complex_routing_finance_tech",
+      "message": "O app do banco não está mostrando meu saldo correto",
+      "expected_agent": "TechSupportAgent",
+      "expected_response_type": "technical_finance",
+      "context_dependent": false,
+      "ground_truth": "Para problemas de saldo no app: 1) Force o fechamento e reabra o app, 2) Puxe a tela para baixo para atualizar, 3) Saia e entre novamente na conta, 4) Verifique sua conexão de internet, 5) Se persistir, pode ser problema de sincronização - aguarde alguns minutos ou entre em contato."
+    },
+    {
+      "id": "edge_case_multiple_domains",
+      "message": "Preciso de um cartão corporativo para a empresa, mas o sistema não deixa solicitar",
+      "expected_agent": "TechSupportAgent",
+      "expected_response_type": "complex_support",
+      "context_dependent": false,
+      "ground_truth": "Para problemas na solicitação de cartão corporativo: 1) Verifique se está logado com perfil empresarial, 2) Confirme se empresa tem limite disponível, 3) Tente usar navegador diferente ou modo incógnito, 4) Se erro persistir, anote a mensagem de erro e entre em contato com suporte técnico."
+    },
+    {
+      "id": "performance_test_long_message",
+      "message": "Gostaria de entender todas as opções de investimento disponíveis no banco, incluindo renda fixa como CDB, LCI, LCA, Tesouro Direto, e também renda variável como ações, fundos de investimento, ETFs, e produtos mais sofisticados como COE e derivativos, além de previdência privada PGBL e VGBL, considerando meu perfil conservador mas com interesse em diversificar a carteira mantendo baixo risco",
+      "expected_agent": "FinanceAgent",
+      "expected_response_type": "comprehensive_investment",
+      "context_dependent": false,
+      "ground_truth": "Para seu perfil conservador com interesse em diversificação, recomendo: 60-70% em renda fixa (CDB, Tesouro IPCA+, LCI/LCA), 20-30% em fundos conservadores ou multimercado, 5-10% em ações de empresas sólidas ou ETFs, e considerar previdência PGBL/VGBL para planejamento de longo prazo. COE pode ser uma opção para pequena parcela da carteira."
+    }
+  ]
+}

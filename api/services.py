@@ -135,43 +135,83 @@ class AgentService:
             raise
     
     async def process_message(self, message: str) -> Dict[str, Any]:
+        import time
+        start_time = time.time()
+        
         try:
             if not self.triage_agent:
                 raise RuntimeError(SYSTEM_NOT_INITIALIZED)
             
             response = await self.triage_agent.processar_mensagem(message)
             
-            historico = self.triage_agent.obter_historico()
+            # Calcular tempo de resposta
+            end_time = time.time()
+            response_time = round(end_time - start_time, 3)
             
-            agent_name = "Sistema"
-            agent_response = response  
+            # Verificar se a resposta é de bloqueio por guardrails ou moderação
+            is_blocked_message = (
+                "bloqueada por regras de segurança" in response or
+                "Conteúdo sensível detectado" in response or
+                "⛔" in response or
+                "⚠️" in response
+            )
             
-            for msg in reversed(historico):
-                if (hasattr(msg, 'role') and 
-                    msg.role.value == "assistant" and 
-                    msg.name and 
-                    msg.name != "Sistema" and
-                    hasattr(msg, 'content') and 
-                    msg.content):
-                    
-                    agent_name = msg.name
-                    agent_response = msg.content
-                    break
+            if is_blocked_message:
+                # Para mensagens bloqueadas, usar a resposta diretamente sem buscar no histórico
+                agent_name = "Sistema"
+                agent_response = response
+            else:
+                # Para mensagens normais, buscar o agente que respondeu no histórico
+                historico = self.triage_agent.obter_historico()
+                
+                agent_name = "Sistema"
+                agent_response = response  
+                
+                for msg in reversed(historico):
+                    if (hasattr(msg, 'role') and 
+                        msg.role.value == "assistant" and 
+                        msg.name and 
+                        msg.name != "Sistema" and
+                        hasattr(msg, 'content') and 
+                        msg.content):
+                        
+                        agent_name = msg.name
+                        agent_response = msg.content
+                        break
+            
+            # Log da performance
+            logger.info(f"⏱️ Tempo de resposta: {response_time}s | Agente: {agent_name} | Mensagem: {message[:50]}...")
             
             return {
                 "success": True,
                 "response": agent_response,
                 "agent_name": agent_name,
-                "timestamp": datetime.now()
+                "timestamp": datetime.now(),
+                "response_time_seconds": response_time,
+                "performance_metrics": {
+                    "total_time": response_time,
+                    "agent_used": agent_name,
+                    "message_length": len(message)
+                }
             }
             
         except Exception as e:
-            logger.error(f"Erro ao processar mensagem: {e}")
+            end_time = time.time()
+            response_time = round(end_time - start_time, 3)
+            
+            logger.error(f"⏱️ Erro após {response_time}s | Mensagem: {message[:50]}... | Erro: {e}")
             return {
                 "success": False,
                 "response": f"Erro ao processar mensagem: {str(e)}",
                 "agent_name": "Sistema",
-                "timestamp": datetime.now()
+                "timestamp": datetime.now(),
+                "response_time_seconds": response_time,
+                "performance_metrics": {
+                    "total_time": response_time,
+                    "agent_used": "Sistema",
+                    "error": str(e),
+                    "message_length": len(message)
+                }
             }
     
     def get_chat_history(self, limit: Optional[int] = None) -> Dict[str, Any]:

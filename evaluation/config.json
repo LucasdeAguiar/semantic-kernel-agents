@@ -1,0 +1,53 @@
+{
+  "api_config": {
+    "base_url": "http://localhost:8000",
+    "timeout": 30,
+    "endpoints": {
+      "send_message": "/chat/send",
+      "get_history": "/chat/history", 
+      "clear_history": "/chat/history",
+      "status": "/status"
+    }
+  },
+  
+  "evaluation_config": {
+    "test_file": "test_cases.json",
+    "output_directory": "results",
+    "parallel_execution": false,
+    "delay_between_tests": 0.5,
+    "clear_history_before_start": true
+  },
+  
+  "ragas_config": {
+    "metrics": [
+      "answer_relevancy",
+      "answer_correctness", 
+      "answer_similarity",
+      "faithfulness"
+    ],
+    "openai_model": "gpt-4",
+    "timeout": 60
+  },
+  
+  "reporting_config": {
+    "generate_charts": true,
+    "generate_interactive_dashboard": true,
+    "export_formats": ["json", "csv", "html"],
+    "chart_style": "seaborn-v0_8"
+  },
+  
+  "performance_thresholds": {
+    "routing_accuracy_min": 0.85,
+    "context_usage_min": 0.75,
+    "response_time_max_ms": 5000,
+    "ragas_score_min": 0.7
+  },
+  
+  "agent_mapping": {
+    "finance": ["FinanceAgent", "investment", "loan", "banking"],
+    "tech": ["TechSupportAgent", "technical", "error", "system"],
+    "sales": ["SalesAgent", "product", "price", "purchase"],
+    "hr": ["HRAgent", "benefits", "payroll", "employee"],
+    "triage": ["TriageAgent", "general", "routing"]
+  }
+}

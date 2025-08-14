@@ -88,7 +88,7 @@ Responda apenas com:
 Seguido de uma breve explicação em uma linha."""
 
             response = self.client.chat.completions.create(
-                model="gpt-4o",
+                model="gpt-4.1-mini",
                 messages=[
                     {"role": "system", "content": "Você é um sistema de moderação que analisa se mensagens violam políticas específicas."},
                     {"role": "user", "content": prompt}

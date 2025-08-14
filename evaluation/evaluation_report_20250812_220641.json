@@ -1,0 +1,230 @@
+{
+  "summary": {
+    "total_tests": 21,
+    "routing_accuracy": 0.8095238095238095,
+    "avg_response_time_ms": 7792.93722198123,
+    "context_usage_rate": 1.0
+  },
+  "agent_performance": {
+    "routing_accuracy_by_agent": {
+      "FinanceAgent": 0.75,
+      "TechSupportAgent": 0.6,
+      "SalesAgent": 0.6666666666666666,
+      "HRAgent": 1.0,
+      "TriageAgent": 1.0
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "routing_finance_01",
+      "message": "Quero investir R$ 1000 em renda fixa",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Para investir R$ 1000 em renda fixa, considere as seguintes opções:\n\n1. **CDB (Certificado de Depósito Bancário)**:\n   - Oferece rendimento atrelado ao CDI.\n   - Escolha instituições sólidas e compare taxas de retorno.\n   - Liquidez varia: pode ser prefixado ou pós-fixado.\n\n2. **LCI/LCA (Letra de Crédito Imobiliário/Agronegócio)**:\n   - Isentas de Imposto de Renda.\n   - Prazo de vencimento pode variar, geralmente a partir de 90 dias.\n   - Rendimento pode ser prefixado ou pós-fixado.\n\n3. **Tesouro Direto**:\n   - Segurança do governo e oportunidades como Tesouro Selic, Prefixado e IPCA+.\n   - Liquidez diária (venda no mercado secundário).\n   - Taxa de administração baixa, mas atente-se para a cobrança de IR conforme o prazo do investimento.\n\nAvalie suas necessidades de liquidez e perfil de risco antes de tomar uma decisão.",
+      "response_time_ms": 9958.869695663452,
+      "timestamp": "2025-08-12T22:02:47.070719"
+    },
+    {
+      "id": "routing_finance_02",
+      "message": "Como faço um empréstimo pessoal?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": false,
+      "response": "Vou transferi-lo para um especialista em finanças pessoais e investimentos que poderá ajudá-lo com informações sobre como fazer um empréstimo pessoal. Um momento, por favor.",
+      "response_time_ms": 7051.009654998779,
+      "timestamp": "2025-08-12T22:02:56.143791"
+    },
+    {
+      "id": "routing_tech_01",
+      "message": "O app não está abrindo no meu celular",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Aqui estão algumas soluções rápidas para o problema do app não abrir:\n\n1. **Reinicie o celular**: Desligue e ligue o dispositivo para resolver possíveis falhas temporárias.\n\n2. **Verifique a conexão com a internet**: Certifique-se de que você está conectado a uma rede Wi-Fi ou de dados móveis.\n\n3. **Atualize o app**: Acesse a loja de aplicativos e verifique se há atualizações disponíveis para o app.\n\n4. **Limpe o cache do app**: Vá em \"Configurações\" > \"Apps\" > [Nome do app] > \"Armazenamento\" e toque em \"Limpar cache\".\n\n5. **Reinstale o app**: Desinstale o aplicativo e faça o download novamente na loja de aplicativos.\n\nTente essas soluções e veja se o problema persiste!",
+      "response_time_ms": 8467.66448020935,
+      "timestamp": "2025-08-12T22:03:06.683230"
+    },
+    {
+      "id": "routing_tech_02",
+      "message": "Estou tendo erro 404 no sistema",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Aqui estão algumas soluções rápidas para o erro 404:\n\n1. **Atualize a Página**: Pressione F5 ou clique no botão de atualizar para recarregar a página.\n\n2. **Verifique o URL**: Confirme se o endereço digitado está correto e não contém erros de digitação.\n\n3. **Limpe o Cache do Navegador**: Vá nas configurações do navegador e limpe o cache e cookies. \n\n4. **Use Outro Navegador**: Tente acessar o site em um navegador diferente para ver se o problema persiste.\n\n5. **Entre em Contato com o Suporte**: Se nenhuma das opções acima funcionar, entre em contato com o suporte técnico do sistema. \n\nSe precisar de mais ajuda, me avise!",
+      "response_time_ms": 8780.138969421387,
+      "timestamp": "2025-08-12T22:03:17.510819"
+    },
+    {
+      "id": "routing_sales_01",
+      "message": "Qual o preço do cartão de crédito premium?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O preço do cartão de crédito premium varia conforme a instituição financeira, mas, em média, a anuidade pode girar em torno de R$ 500 a R$ 1.200. Ao optar por um cartão premium, você ganha acesso a benefícios exclusivos como programas de pontos, salas VIP em aeroportos e seguros de viagem, que podem aumentar consideravelmente a sua experiência como consumidor.\n\nSe você estiver interessado, muitas instituições estão com promoções que oferecem isenção ou redução na anuidade no primeiro ano. Posso ajudar com mais informações sobre essas promoções ou sobre o processo de aquisição?",
+      "response_time_ms": 8773.685216903687,
+      "timestamp": "2025-08-12T22:03:28.341361"
+    },
+    {
+      "id": "routing_sales_02",
+      "message": "Quais são os produtos disponíveis para conta corrente?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": false,
+      "response": "Vou transferir você para o especialista em vendas que pode fornecer informações sobre os produtos disponíveis para conta corrente. Um momento, por favor.",
+      "response_time_ms": 7229.02512550354,
+      "timestamp": "2025-08-12T22:03:37.597601"
+    },
+    {
+      "id": "routing_hr_01",
+      "message": "Como consulto meus benefícios na empresa?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Para consultar seus benefícios na empresa, siga os seguintes passos:\n\n1. Acesse o portal do funcionário da empresa com seu login e senha.\n2. Navegue até a seção de \"Benefícios\" ou \"Recursos Humanos\".\n3. Verifique as opções disponíveis, onde você encontrará informações sobre planos de saúde, vale alimentação, previdência, entre outros.\n\nSe você tiver alguma dúvida específica ou precisar de assistência, entre em contato com o departamento de Recursos Humanos diretamente.",
+      "response_time_ms": 7235.101699829102,
+      "timestamp": "2025-08-12T22:03:46.884704"
+    },
+    {
+      "id": "routing_hr_02",
+      "message": "Quando sai a folha de pagamento?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "A folha de pagamento geralmente é elaborada em um período específico, que pode variar conforme a política da empresa. Normalmente, ela é disponível no final de cada mês ou início do mês seguinte. \n\nPara obter informações precisas, recomendo verificar o calendário de pagamentos da sua empresa ou consultar o departamento de RH diretamente. Se precisar de mais detalhes sobre como funciona o processo, estou à disposição!",
+      "response_time_ms": 8669.029474258423,
+      "timestamp": "2025-08-12T22:03:57.608608"
+    },
+    {
+      "id": "context_investment_flow",
+      "message": "Qual a rentabilidade?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "A rentabilidade do CDB varia conforme o banco e o prazo, mas geralmente é:\n\n- **Predefinida**: Entre 90% a 120% do CDI (Certificado de Depósito Interbancário).\n- **Positiva**: Taxas podem superar a inflação, especialmente em bancos menores ou ofertas específicas.\n\nAlém disso, o rendimento é tributado conforme a tabela regressiva do Imposto de Renda, reduzindo a rentabilidade líquida. Para informações exatas, consulte seu banco ou instituição financeira.",
+      "response_time_ms": 7393.024206161499,
+      "timestamp": "2025-08-12T22:04:17.706950"
+    },
+    {
+      "id": "context_tech_followup",
+      "message": "Ainda não funcionou",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": false,
+      "response": "Vou transferir você para o especialista em suporte técnico. Um momento, por favor.",
+      "response_time_ms": 7419.170141220093,
+      "timestamp": "2025-08-12T22:04:41.424276"
+    },
+    {
+      "id": "context_sales_details",
+      "message": "E as vantagens?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O cartão premium oferece uma variedade de vantagens, incluindo acesso a salas VIP em aeroportos, descontos em hotéis e restaurantes, e assistência em viagens. Além disso, você tem acesso a promoções exclusivas e cashback em compras, o que pode trazer uma economia significativa ao longo do ano.\n\nCom esse investimento de R$ 299,00 por ano, você transforma suas experiências em momentos mais prazerosos e ainda economiza nas suas despesas. É uma forma inteligente de elevar seu estilo de vida sem pesar no bolso!",
+      "response_time_ms": 7342.22149848938,
+      "timestamp": "2025-08-12T22:04:58.646979"
+    },
+    {
+      "id": "context_hr_process",
+      "message": "E para mudar?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "Para mudar seus benefícios, siga os passos abaixo:\n\n1. Acesse o portal do colaborador ou aplicativo da empresa.\n2. Navegue até a seção de \"Benefícios\" ou \"Gerenciar Benefícios\".\n3. Selecione a opção de alterar os benefícios desejados.\n4. Siga as instruções para efetuar as alterações e finalize o processo.\n\nCertifique-se de revisar as políticas da empresa relacionadas às mudanças de benefícios, pois pode haver prazos ou condições específicas.",
+      "response_time_ms": 6713.555335998535,
+      "timestamp": "2025-08-12T22:05:14.789922"
+    },
+    {
+      "id": "triage_test_01",
+      "message": "Qual o sentido da vida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Essa pergunta é filosófica e pode ter muitas respostas diferentes, dependendo de crenças pessoais, culturais e experiências de vida. Para uma discussão mais profunda sobre o sentido da vida, você pode considerar conversar com um filósofo ou um terapeuta. Se precisar de algo mais específico ou prático, por favor, me avise!",
+      "response_time_ms": 6275.6898403167725,
+      "timestamp": "2025-08-12T22:05:23.094378"
+    },
+    {
+      "id": "triage_test_02",
+      "message": "Como está o tempo hoje?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Não sou especialista em meteorologia. Você gostaria de falar sobre outro assunto?",
+      "response_time_ms": 4540.490627288818,
+      "timestamp": "2025-08-12T22:05:29.668420"
+    },
+    {
+      "id": "triage_test_03",
+      "message": "Preciso de ajuda",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Por favor, poderia fornecer mais detalhes sobre a ajuda que você precisa? Assim poderei direcioná-lo ao especialista adequado.",
+      "response_time_ms": 4417.351484298706,
+      "timestamp": "2025-08-12T22:05:36.121815"
+    },
+    {
+      "id": "triage_test_04",
+      "message": "Como faço?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Para ajudá-lo melhor, poderia me dar mais detalhes sobre o que você precisa? Assim, poderei direcioná-lo ao especialista adequado.",
+      "response_time_ms": 4923.269748687744,
+      "timestamp": "2025-08-12T22:05:43.091640"
+    },
+    {
+      "id": "triage_test_05",
+      "message": "Quero fazer uma reclamação sobre política",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Direcionando você para o especialista em recursos humanos e questões trabalhistas.",
+      "response_time_ms": 6815.114259719849,
+      "timestamp": "2025-08-12T22:05:51.945874"
+    },
+    {
+      "id": "triage_test_06",
+      "message": "Me ajuda com receita de comida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Parece que você está buscando informações sobre receitas. No entanto, não sou um especialista em culinária. Posso ajudar você a se conectar com o especialista adequado, ou você gostaria de mudar o assunto?",
+      "response_time_ms": 5099.800586700439,
+      "timestamp": "2025-08-12T22:05:59.095581"
+    },
+    {
+      "id": "complex_routing_finance_tech",
+      "message": "O app do banco não está mostrando meu saldo correto",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "1. **Atualize o App**: Verifique se há atualizações disponíveis na loja de aplicativos e faça a atualização do app do banco.\n\n2. **Reinicie o App**: Force o fechamento do app e reinicie-o para ver se o saldo é atualizado.\n\n3. **Verifique a Conexão**: Assegure-se de que você está conectado a uma rede Wi-Fi ou dados móveis confiável.\n\n4. **Limpe o Cache**: Acesse as configurações do seu dispositivo, encontre o app do banco e limpe o cache.\n\n5. **Entre em Contato com o Suporte**: Se nada funcionar, entre em contato com o suporte do banco para relatar o problema.\n\nSe precisar de mais assistência, posso transferir para um agente de triagem.",
+      "response_time_ms": 7997.321844100952,
+      "timestamp": "2025-08-12T22:06:09.129049"
+    },
+    {
+      "id": "edge_case_multiple_domains",
+      "message": "Preciso de um cartão corporativo para a empresa, mas o sistema não deixa solicitar",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": false,
+      "response": "Vou transferi-lo para um especialista em finanças pessoais e investimentos, que poderá ajudá-lo com a solicitação do cartão corporativo. Um momento, por favor.",
+      "response_time_ms": 13269.448041915894,
+      "timestamp": "2025-08-12T22:06:24.436070"
+    },
+    {
+      "id": "performance_test_long_message",
+      "message": "Gostaria de entender todas as opções de investimento disponíveis no banco, incluindo renda fixa como CDB, LCI, LCA, Tesouro Direto, e também renda variável como ações, fundos de investimento, ETFs, e produtos mais sofisticados como COE e derivativos, além de previdência privada PGBL e VGBL, considerando meu perfil conservador mas com interesse em diversificar a carteira mantendo baixo risco",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Para um investidor com perfil conservador que deseja diversificar sua carteira mantendo baixo risco, aqui estão algumas opções de investimento:\n\n### Renda Fixa\n1. **CDB (Certificado de Depósito Bancário)**: Oferece rentabilidade maior que a poupança, com prazos variados e segurança, pois é garantido pelo FGC (Fundo Garantidor de Créditos).\n2. **LCI/LCA (Letra de Crédito Imobiliário/Agronegócio)**: Isentas de Imposto de Renda para pessoas físicas, são seguras e têm rentabilidade atrelada ao CDI.\n3. **Tesouro Direto**: Títulos emitidos pelo governo, como Tesouro Selic (baixo risco e liquidez), Tesouro Prefixado e Tesouro IPCA+ (protege contra a inflação).\n\n### Renda Variável (baixo risco)\n1. **Fundos de Investimento**: Podem ser de renda fixa ou multimercados, permitindo diversificação com gestão profissional.\n2. **ETFs (Exchange Traded Funds)**: Fundos que replicam índices de ações ou obrigações, oferecendo diversificação instantânea com um custo baixo.\n3. **Previdência Privada (PGBL e VGBL)**: Ideal para planejamento de longo prazo, com vantagens fiscais e possibilidade de investimentos em perfis conservadores.\n\nRecomendo que você considere qual parte da sua carteira pode estar exposta a renda variável, sempre mantendo um foco em produtos que combinem segurança e rentabilidade.",
+      "response_time_ms": 15280.699729919434,
+      "timestamp": "2025-08-12T22:06:41.754692"
+    }
+  ],
+  "timestamp": "2025-08-12T22:06:41.754692"
+}

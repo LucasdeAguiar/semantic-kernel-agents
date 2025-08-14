@@ -8,17 +8,5 @@
       "decepticons"
     ],
     "enabled": true
-  },
-  {
-    "name": "ComidaGuardrail",
-    "description": "Impede menções a alimentos, refeições ou ingestão de comida.",
-    "keywords": [
-      "pizza",
-      "comida",
-      "jantar",
-      "almoço",
-      "fome"
-    ],
-    "enabled": true
   }
 ]

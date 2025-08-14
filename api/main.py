@@ -179,17 +179,29 @@ async def send_message(
     message: MessageRequest, 
     service: AgentService = Depends(get_agent_service)
 ):
+    import time
+    start_time = time.time()
+    
     try:
         result = await service.process_message(message.message)
         return MessageResponse(**result)
     except Exception as e:
-        logger.error(f"Erro ao processar mensagem: {e}")
+        response_time = round(time.time() - start_time, 3)
+        logger.error(f"⏱️ Erro no endpoint após {response_time}s: {e}")
+        
         from datetime import datetime
         return MessageResponse(
             success=False,
             response=f"Erro ao processar mensagem: {str(e)}",
             agent_name="Sistema",
-            timestamp=datetime.now()
+            timestamp=datetime.now(),
+            response_time_seconds=response_time,
+            performance_metrics={
+                "total_time": response_time,
+                "agent_used": "Sistema",
+                "error": str(e),
+                "message_length": len(message.message)
+            }
         )
 
 

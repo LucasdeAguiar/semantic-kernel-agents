@@ -1,0 +1,190 @@
+{
+  "summary": {
+    "total_tests": 17,
+    "routing_accuracy": 0.8823529411764706,
+    "avg_response_time_ms": 14601.679297054516,
+    "context_usage_rate": 1.0
+  },
+  "agent_performance": {
+    "routing_accuracy_by_agent": {
+      "FinanceAgent": 1.0,
+      "TechSupportAgent": 1.0,
+      "SalesAgent": 1.0,
+      "HRAgent": 0.6666666666666666,
+      "TriageAgent": 0.5
+    }
+  },
+  "detailed_results": [
+    {
+      "id": "routing_finance_01",
+      "message": "Quero investir R$ 1000 em renda fixa",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Ótimo! Investir em renda fixa pode ser uma excelente maneira de fazer seu dinheiro render com uma menor exposição ao risco quando comparado a outros tipos de investimento, como ações, por exemplo. \n\nA Renda Fixa é uma categoria de investimentos financeiros onde você empresta dinheiro para o emissor do título e em troca recebe uma remuneração por um determinado período, na forma de juros e/ou correção monetária, podendo ser pré ou pós-fixada.\n\nExistem diversas opções de investimentos em renda fixa, como:\n\n1. Tesouro Direto: Títulos públicos emitidos pelo Tesouro Nacional. Há opções prefixadas, pós-fixadas e atreladas à inflação.\n2. CDB (Certificado de Depósito Bancário): Um empréstimo que você faz ao banco. Pode ser pré ou pós-fixado.\n3. LCA (Letra de Crédito do Agronegócio) e LCI (Letra de Crédito Imobiliário): Investimentos isentos de Imposto de Renda, remunerados por um percentual do CDI (Certificado de Depósito Interbancário).\n4. Poupança: Apesar de ser menos rentável, ainda é muito popular entre os brasileiros.\n\nO ideal é você entender seu perfil de risco, objetivos e prazo do investimento antes de escolher a melhor opção para você. Você já tem alguma preferência ou precisa de mais orientação sobre cada uma dessas modalidades?",
+      "response_time_ms": 21493.60680580139,
+      "timestamp": "2025-08-12T16:37:06.832004"
+    },
+    {
+      "id": "routing_finance_02",
+      "message": "Como faço um empréstimo pessoal?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Fazer um empréstimo pessoal geralmente envolve os seguintes passos:\n\n1. **Avalie suas necessidades financeiras:** Determine a quantidade de dinheiro que você precisa, bem como sua capacidade de reembolso. Tente evitar pedir mais dinheiro do que você realmente precisa.\n\n2. **Pesquise as opções disponíveis:** Vários bancos e instituições financeiras oferecem empréstimos pessoais. Avalie as taxas de juros, condições, prazos de pagamento e outros fatores importantes. \n\n3. **Verifique seu crédito:** Sua pontuação e histórico de crédito podem afetar tanto a aprovação do seu empréstimo quanto as taxas de juros que você terá que pagar.\n\n4. **Faça a candidatura:** Aplique para o empréstimo pessoal no banco ou instituição financeira de sua escolha. O processo de candidatura pode variar dependendo da instituição. Geralmente, eles solicitam alguma forma de identificação, comprovação de renda e, às vezes, detalhes de despesas ou dívidas já existentes.\n\n5. **Aguarde a aprovação:** Após apresentar sua candidatura, o banco ou instituição financeira vai avaliá-la. Eles podem verificar sua pontuação de crédito, seus antecedentes de empréstimo e sua capacidade de reembolso. Se tudo estiver em ordem, seu empréstimo será aprovado.\n\n6. **Receba o dinheiro:** Uma vez aprovado, o dinheiro será depositado diretamente em sua conta bancária ou fornecido como cheque.\n\n7. **Reembolso:** Certifique-se de reembolsar o empréstimo conforme as condições acordadas. Atrasos ou faltas de pagamento podem levar a multas e danos à sua pontuação de crédito.\n\nLembre-se sempre de ler cuidadosamente os termos e condições antes de se comprometer com um empréstimo. Se possível, converse com um consultor financeiro para entender completamente suas obrigações.",
+      "response_time_ms": 25325.95729827881,
+      "timestamp": "2025-08-12T16:37:34.207556"
+    },
+    {
+      "id": "routing_tech_01",
+      "message": "O app não está abrindo no meu celular",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo que você está tendo problemas para abrir o aplicativo em seu telefone. Vou tentar ajudá-lo com isso. \n\n1. Você poderia por favor me dizer qual modelo de telefone você está usando e qual sistema operacional ele usa? (android ou iOS)\n2. Qual é o aplicativo que você está tentando abrir?\n3. Você se lembra se o problema começou após você ter atualizado o aplicativo ou o sistema operacional do telefone?",
+      "response_time_ms": 9807.72590637207,
+      "timestamp": "2025-08-12T16:37:46.057658"
+    },
+    {
+      "id": "routing_tech_02",
+      "message": "Estou tendo erro 404 no sistema",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito por você estar enfrentando esse problema. O erro 404 é geralmente um erro de \"Página não encontrada\" que ocorre quando o servidor da web não pode encontrar a página ou o recurso que você está tentando acessar. Isso pode ser devido a um link quebrado, uma página que foi movida ou excluída ou uma URL mal digitada. \n\nAqui estão algumas soluções possíveis que você pode tentar:\n\n1. Verifique se a URL está correta. Certifique-se de que não há erros de digitação ou caracteres incorretos.\n\n2. Limpe o cache do seu navegador. Às vezes, um cache antigo pode causar problemas ao tentar acessar páginas da web.\n\n3. Tente atualizar a página. Às vezes, um simples refresh pode resolver o problema.\n\n4. Verifique se a página está disponível em outro navegador. Isso pode ajudá-lo a determinar se o problema é específico do navegador.\n\n5. Reinicie o seu roteador. Às vezes, problemas de rede podem causar erros 404.\n\nSe nenhuma dessas soluções funcionar, você pode precisar entrar em contato com a equipe de suporte do site ou sistema que está causando o erro 404. Eles podem ser capazes de fornecer mais informações sobre o problema ou ajudá-lo com uma solução. \n\nEspero que isso ajude! Se você precisar de mais assistência, não hesite em perguntar.",
+      "response_time_ms": 22745.30267715454,
+      "timestamp": "2025-08-12T16:38:10.838410"
+    },
+    {
+      "id": "routing_sales_01",
+      "message": "Qual o preço do cartão de crédito premium?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O preço do nosso cartão de crédito premium é de R$ 30,00 mensais. No entanto, a primeira anuidade é gratuita. Além disso, se você gastar mais de R$ 2.000 por mês com o cartão, a taxa mensal também será dispensada.",
+      "response_time_ms": 9913.861513137817,
+      "timestamp": "2025-08-12T16:38:22.808587"
+    },
+    {
+      "id": "routing_sales_02",
+      "message": "Quais são os produtos disponíveis para conta corrente?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "Claro, ficarei feliz em te ajudar. Nossos produtos para conta corrente incluem:\n\n1. Conta Corrente Básica: É o nosso produto padrão que vem com recursos básicos como saques, transferências, pagamentos de contas e depósitos.\n\n2. Conta Corrente Premium: Além dos recursos básicos, também inclui alguns benefícios adicionais como acesso a linhas de crédito com taxas de juros preferenciais, limite de saque mais alto e assistência dedicada para transações e consultas.\n\n3. Conta Digital: Esta é uma conta exclusivamente online com todos os recursos da conta corrente básica, mas sem as taxas mensais. Ela é gerida principalmente através do nosso aplicativo móvel ou plataforma online.\n\n4. Conta Corrente para Estudantes: É uma opção mais acessível para estudantes, com requisitos mínimos de saldo e benefícios adicionais como descontos em estabelecimentos parceiros.\n\n5. Conta de Negócios: Especialmente projetada para proprietários de pequenas e médias empresas. Esta conta oferece recursos como pagamento de salários, transferências de negócios e opções de financiamento.\n\nPor favor, tenha em mente que cada produto conta corrente tem requisitos e taxas específicas. Quer saber mais sobre cada um deles?",
+      "response_time_ms": 16994.436502456665,
+      "timestamp": "2025-08-12T16:38:41.825837"
+    },
+    {
+      "id": "routing_hr_01",
+      "message": "Como consulto meus benefícios na empresa?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "O processo para consultar seus benefícios pode variar dependendo da política da empresa. No entanto, aqui estão alguns métodos gerais que você pode tentar:\n\n1. **Verifique seu pacote de contratação ou manual do funcionário:** Muitas empresas incluem detalhes sobre benefícios nessas documentações.\n\n2. **Use o portal do funcionário online:** Se sua empresa tiver um, é provável que informações sobre benefícios estejam disponíveis lá.\n\n3. **Consulte o departamento de RH:** Eles são, na maioria das vezes, o melhor recurso para obter informações específicas sobre seus benefícios. Alguns podem até ter uma seção de FAQ para perguntas frequentes sobre benefícios.\n\n4. **Verifique com seu gerente:** Seu gerente direto também pode ser capaz de ajudá-lo a entender quais benefícios você tem e como acessá-los.\n\nLembre-se de que as empresas variam em como fornecem essas informações, por isso é melhor tentar todas essas opções se não tiver certeza.",
+      "response_time_ms": 13794.015407562256,
+      "timestamp": "2025-08-12T16:38:57.634704"
+    },
+    {
+      "id": "routing_hr_02",
+      "message": "Quando sai a folha de pagamento?",
+      "actual_agent": "HRAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": true,
+      "response": "A data de emissão da folha de pagamento pode variar dependendo das políticas da empresa. Normalmente, a folha de pagamento é emitida no último dia útil do mês, mas em algumas empresas, pode ser emitida no primeiro dia útil do mês seguinte. Recomendo que você verifique essa informação com o seu gestor ou no manual do funcionário, caso disponível.",
+      "response_time_ms": 10911.994695663452,
+      "timestamp": "2025-08-12T16:39:10.596553"
+    },
+    {
+      "id": "context_investment_flow",
+      "message": "Qual a rentabilidade?",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "A rentabilidade de um Certificado de Depósito Bancário (CDB) pode variar dependendo de alguns fatores, tais como o prazo do investimento e a taxa de acordo feito com o banco no momento da compra. \n\nExistem três tipos principais de rentabilidade do CDB:\n\n1. Pré-fixada: onde a taxa de juros é definida no momento da compra. Então, independente do comportamento da economia, o investidor sabe exatamente quanto irá receber no vencimento do título.\n\n2. Pós-fixada: a rentabilidade é atrelada a algum índice econômico, geralmente o CDI (Certificado de Depósito Interbancário). Então, o rendimento do CDB tende a acompanhar a alta ou baixa dos juros na economia. \n\n3. Híbrida: nesse caso, uma parte do rendimento é pré-fixada e a outra parte é pós-fixada, geralmente atrelada à inflação (IPCA).\n\nVale lembrar que todos os investimentos em CDB são protegidos pelo FGC (Fundo Garantidor de Créditos) até o limite de R$250.000 por CPF por instituição financeira.\n\nEntão, para saber a rentabilidade específica do CDB que você está considerando, é necessário consultar as condições oferecidas pelo banco emissor.",
+      "response_time_ms": 17369.33970451355,
+      "timestamp": "2025-08-12T16:39:54.594721"
+    },
+    {
+      "id": "context_tech_followup",
+      "message": "Ainda não funcionou",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Sinto muito que reiniciar o celular não resolveu o problema. Vamos tentar algumas outras etapas:\n\n1. Verifique se o aplicativo está atualizado: Acesse a loja de aplicativos do seu dispositivo e verifique se há alguma atualização disponível para o aplicativo. Se houver, atualize e tente novamente.\n\n2. Limpar cache: As vezes o cache do aplicativo pode causar problemas. Vá em Configurações > Aplicativos > Selecione o aplicativo com problemas > Armazenamento > Limpar Cache.\n\n3. Reinstalar o aplicativo: Se as etapas anteriores não resolverem, a última opção seria desinstalar e reinstalar o aplicativo.\n\nPor favor tente esses passos e me informe se o problema persiste.",
+      "response_time_ms": 12095.76940536499,
+      "timestamp": "2025-08-12T16:40:29.926005"
+    },
+    {
+      "id": "context_sales_details",
+      "message": "E as vantagens?",
+      "actual_agent": "SalesAgent",
+      "expected_agent": "SalesAgent",
+      "routing_correct": true,
+      "response": "O nosso cartão Premium oferece várias vantagens para os nossos clientes. Algumas das principais vantagens incluem:\n\n1. Descontos exclusivos em nossos produtos e serviços.\n2. Acesso prioritário a novos lançamentos e promoções.\n3. Serviço de atendimento ao cliente 24/7.\n4. Opções de pagamento flexíveis.\n5. Ofertas especiais de parceiros selecionados.\n\nEsses são apenas alguns exemplos dos benefícios de se tornar um membro Premium. Por favor, tome nota que as vantagens específicas podem variar dependendo da disponibilidade e dos termos e condições.",
+      "response_time_ms": 13757.991313934326,
+      "timestamp": "2025-08-12T16:40:54.896429"
+    },
+    {
+      "id": "context_hr_process",
+      "message": "E para mudar?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "HRAgent",
+      "routing_correct": false,
+      "response": "Para te ajudar de forma mais eficaz, poderia especificar o que você gostaria de mudar? Estamos falando de algum benefício específico ou de uma política da empresa?",
+      "response_time_ms": 7495.653390884399,
+      "timestamp": "2025-08-12T16:41:19.086177"
+    },
+    {
+      "id": "wrong_routing_test_01",
+      "message": "Qual o sentido da vida?",
+      "actual_agent": "TriageAgent",
+      "expected_agent": "TriageAgent",
+      "routing_correct": true,
+      "response": "Desculpe, mas como assistente de triagem, minha função é direcioná-lo para um especialista apropriado para suas perguntas ou problemas específicos. Seus questionamentos filosóficos estão além do meu escopo de assistência.",
+      "response_time_ms": 14973.653316497803,
+      "timestamp": "2025-08-12T16:41:36.106172"
+    },
+    {
+      "id": "wrong_routing_test_02",
+      "message": "Como fazer bolo de chocolate?",
+      "actual_agent": "Sistema",
+      "expected_agent": "TriageAgent",
+      "routing_correct": false,
+      "response": "⛔ Sua mensagem foi bloqueada por regras de segurança (ComidaGuardrail): - A mensagem menciona alimentos ao falar sobre bolo de chocolate.",
+      "response_time_ms": 4667.4134731292725,
+      "timestamp": "2025-08-12T16:41:42.835929"
+    },
+    {
+      "id": "complex_routing_finance_tech",
+      "message": "O app do banco não está mostrando meu saldo correto",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Entendo que você está enfrentando problemas com o saldo exibido no seu aplicativo bancário. Aqui estão algumas soluções possíveis que você pode tentar:\n\n1. **Atualize o aplicativo**: Às vezes, esses tipos de problemas podem ser causados por versões desatualizadas do aplicativo. Tente atualizar o app para a versão mais recente.\n\n2. **Atualize os dados do aplicativo**: Em seu telefone, vá em Configurações > Aplicativos > [o seu banco] > Armazenamento > Limpar cache e dados. Isso forçará o aplicativo a atualizar todos os dados quando você acessá-lo novamente.\n\n3. **Verifique sua conexão com a internet**: Às vezes, uma conexão de internet instável ou lenta pode causar atrasos na atualização do saldo da sua conta. \n\n4. **Entre em contato com seu banco**: Se o problema persistir, você pode precisar entrar em contato com o suporte ao cliente do seu banco.\n\nLembre-se de nunca compartilhar seus dados pessoais ou senhas confidenciais ao buscar suporte para este problema.",
+      "response_time_ms": 16222.521543502808,
+      "timestamp": "2025-08-12T16:42:01.095870"
+    },
+    {
+      "id": "edge_case_multiple_domains",
+      "message": "Preciso de um cartão corporativo para a empresa, mas o sistema não deixa solicitar",
+      "actual_agent": "TechSupportAgent",
+      "expected_agent": "TechSupportAgent",
+      "routing_correct": true,
+      "response": "Parece que há um problema com o sistema que impede você de solicitar um cartão corporativo para sua empresa. Para ajudá-lo a resolver esse problema, poderia fornecer mais detalhes? Por exemplo, algum erro específico aparece? Você se depara com o problema em uma etapa específica do processo de solicitação? Toda a informação adicional pode ser útil para solucionar o problema.",
+      "response_time_ms": 9939.307689666748,
+      "timestamp": "2025-08-12T16:42:13.077379"
+    },
+    {
+      "id": "performance_test_long_message",
+      "message": "Gostaria de entender todas as opções de investimento disponíveis no banco, incluindo renda fixa como CDB, LCI, LCA, Tesouro Direto, e também renda variável como ações, fundos de investimento, ETFs, e produtos mais sofisticados como COE e derivativos, além de previdência privada PGBL e VGBL, considerando meu perfil conservador mas com interesse em diversificar a carteira mantendo baixo risco",
+      "actual_agent": "FinanceAgent",
+      "expected_agent": "FinanceAgent",
+      "routing_correct": true,
+      "response": "Claro, eu posso fornecer uma visão geral de todas essas opções de investimento para você. \n\n1. Renda Fixa: Inclui CDB, LCI, LCA e Tesouro Direto. Estes são investimentos de baixo risco em que você sabe o rendimento ou a taxa que vai receber na data de vencimento. A rentabilidade destes investimentos pode ser pré ou pós-fixada.\n\n2. Renda Variável: Aqui se encontram ações, ETFs (fundos de investimento negociados em bolsa), fundos imobiliários e COE (Certificado de Operações Estruturadas). Nestes, a rentabilidade varia de acordo com os preços e cotações do mercado. O risco aqui é maior, porém o potencial de ganho também.\n\n3. Previdência Privada: São os planos PGBL e VGBL. Essas aplicações são mais aconselháveis para pessoas que visam um retorno a longo prazo, como uma preparação para a aposentadoria. Uma vantagem é a possibilidade de escolher entre um regime de tributação progressivo ou regressivo, de acordo com a sua perspectiva de renda futura.\n\nComo seu perfil é conservador, portanto, é recomendável que a maior parte do seu portfólio seja composta por investimentos de baixo risco, como renda fixa e previdência privada. No entanto, é possível diversificar incluindo uma pequena parte em renda variável, de preferência via fundos de investimentos ou ETFs, que possuem gestores qualificados para gerir esses recursos e que podem oferecer uma diversificação maior.\n\nImportante: Antes de fazer qualquer investimento, é fundamental que você procure um assessor de investimentos, que poderá entender melhor seus objetivos e recomendar uma carteira ajustada à sua necessidade.\n\nEspero que essa informação tenha sido útil! Deixe-me saber se você precisa de mais ajuda.",
+      "response_time_ms": 20719.99740600586,
+      "timestamp": "2025-08-12T16:42:35.832505"
+    }
+  ],
+  "timestamp": "2025-08-12T16:42:35.832505"
+}
